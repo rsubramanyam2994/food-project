@@ -40,8 +40,7 @@
   ],
   "totalWeightInGrams": 310,
   "oneCupWeightInGramsAfterCooking": 160,
-  "numberOfFullCupServings": 2,
-  "numberOfPeopleWhoCanBeServed": 2,
+  "numberOfPeopleWhoCanBeServed": 3,
   "instructions": []
 }
 
