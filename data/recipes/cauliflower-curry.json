@@ -30,7 +30,7 @@
   "approxIngredients": [
     {
       "item": "water",
-      "note": "Enough to boil, but not too much that water remains after cooking. About 0.25 - 0.5 cup of water would do for quarter kilo gobi"
+      "note": "Enough to boil, but not too much that water remains after cooking. About 0.25 - 0.5 cup of water would do for quarter kilo cauliflower"
     }
   ],
   "negligibleIngredientsForTaste": [
@@ -41,7 +41,8 @@
   "totalWeightInGrams": 310,
   "oneCupWeightInGramsAfterCooking": 160,
   "numberOfPeopleWhoCanBeServed": 3,
-  "instructions": []
+  "instructions": [],
+  "tags": ["dry-gravy", "side", "lunch", "dinner"]
 }
 
 
