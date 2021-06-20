@@ -1,0 +1,18 @@
+[
+  {
+    "id": "carrot",
+    "grams": 120
+  },
+  {
+    "id": "beans",
+    "grams": 100
+  },
+  {
+    "id": "chowchow",
+    "grams": 160
+  },
+  {
+    "id": "peas",
+    "grams": ""
+  }
+]
