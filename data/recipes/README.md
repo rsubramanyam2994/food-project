@@ -1,4 +1,4 @@
-How to add a complete recipe to the database?
+How to add a regular recipe to the database?
 
 1. Create file in recipes/ and ensure to fill all fields. Refer gobi-curry.json as a sample file.
 2. Ensure all ingredients have an entry in cup-to-grams/ in one of the files, else add one with a TODO:
@@ -18,3 +18,8 @@ Note: Difference between total weight and weight of ingredients will give an ide
 
 Note: weightPerCup after cooking will include the absorbed water. While computing macros for the same, reduce water absorption. For Fat secret, add water as additional ingredient by doing 
       (final weight - sum of individual ingredients)
+
+
+How to measure a recipe which involves deep frying?
+1. Do steps to add a regular recipe as above along with the additional steps below
+2. Weight oil before and after frying and compute oil absorption. Add that amount of oil as an ingredient. 
