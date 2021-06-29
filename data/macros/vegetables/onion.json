@@ -1,0 +1,21 @@
+{
+  "id": "onion",
+  "fat": {
+    "saturated-fat": 0.042,
+    "mono-unsaturated": 0.013,
+    "poly-unsaturated": 0.017,
+    "total": 0.1
+  },
+  "protein": 1.1,
+  "carbohydrates": {
+    "natural-sugars": 4.24,
+    "added-sugars": 0,
+    "starch": 5.1,
+    "fiber": {
+      "soluble-fiber": 0.68,
+      "insoluble-fiber": 1.02
+    },
+    "total": 9.34
+  },
+  "calories": 40
+}

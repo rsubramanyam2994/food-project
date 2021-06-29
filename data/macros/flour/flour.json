@@ -1,0 +1,71 @@
+[
+  {
+    "id": "white-flour",
+    "brand": "aashirvad",
+    "fat": {
+      "saturated": 10,
+      "poly-unsaturated": 5,
+      "mono-unsaturated": 10
+    },
+    "carbohydrates": {
+      "natural-sugars": 10,
+      "added-sugars": 10,
+      "fiber": {
+        "soluble-fiber": 1,
+        "insoluble-fiber": 4
+      }
+    },
+    "protein": "100"
+  },
+  {
+    "id": "rice-flour",
+    "fat": {
+      "saturated": 10,
+      "poly-unsaturated": 5,
+      "mono-unsaturated": 10
+    },
+    "carbohydrates": {
+      "natural-sugars": 10,
+      "added-sugars": 10,
+      "fiber": {
+        "soluble-fiber": 1,
+        "insoluble-fiber": 4
+      }
+    },
+    "protein": "100"
+  },
+  {
+    "id": "gram-flour",
+    "fat": {
+      "saturated": 10,
+      "poly-unsaturated": 5,
+      "mono-unsaturated": 10
+    },
+    "carbohydrates": {
+      "natural-sugars": 10,
+      "added-sugars": 10,
+      "fiber": {
+        "soluble-fiber": 1,
+        "insoluble-fiber": 4
+      }
+    },
+    "protein": "100"
+  },
+  {
+    "id": "wheat-flour",
+    "fat": {
+      "saturated": 10,
+      "poly-unsaturated": 5,
+      "mono-unsaturated": 10
+    },
+    "carbohydrates": {
+      "natural-sugars": 10,
+      "added-sugars": 10,
+      "fiber": {
+        "soluble-fiber": 1,
+        "insoluble-fiber": 4
+      }
+    },
+    "protein": "100"
+  }
+]

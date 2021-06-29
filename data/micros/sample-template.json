@@ -1,7 +1,7 @@
 {
   "id": "template",
   "quantity": 100,
-  "unit": "grams",
+  "unit": "gram",
   "macros": {
     "fat": {
       "saturated": {

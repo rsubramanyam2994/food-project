@@ -1,0 +1,21 @@
+{
+  "id": "spinach",
+  "fat": {
+    "saturated-fat": 0.063,
+    "mono-unsaturated": 0.01,
+    "poly-unsaturated": 0.165,
+    "total": 0.39
+  },
+  "protein": 2.86,
+  "carbohydrates": {
+    "natural-sugars": 0.42,
+    "added-sugars": 0,
+    "starch": 3.21,
+    "fiber": {
+      "soluble-fiber": 1.584,
+      "insoluble-fiber": 0.616
+    },
+    "total": 3.63
+  },
+  "calories": 23
+}

@@ -1,0 +1,64 @@
+{
+  "ingredients": [
+    {
+      "id": "toor-dal",
+      "brand": "tata",
+      "amount": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "masoor-dal",
+      "amount": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "onion",
+      "amount": 50,
+      "unit": "gram",
+      "approxAmountDescription": "1 medium sized onion"
+    },
+    {
+      "id": "tomato",
+      "amount": 50,
+      "unit": "gram",
+      "approxAmountDescription": "1 medium sized tomato"
+    },
+    {
+      "id": "salt",
+      "amount": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "brand": "borges",
+      "amount": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "ghee",
+      "brand": "aavin",
+      "amount": 1,
+      "unit": "tsp"
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water",
+      "note": "Based on required consistency"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "turmeric",
+    "chilli-powder",
+    "garam-masala",
+    "green-chilli",
+    "..."
+  ],
+  "totalWeightInGrams": 550,
+  "oneCupWeightInGramsAfterCooking": 220,
+  "numberOfPeopleWhoCanBeServed": 1.5,
+  "instructions": [],
+  "tags": []
+}
+
+

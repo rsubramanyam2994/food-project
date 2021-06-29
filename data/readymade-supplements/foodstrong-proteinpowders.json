@@ -1,0 +1,23 @@
+[
+  {
+    "id": "foodstrong-kesar",
+    "fat": {
+      "saturated-fat": 0.05,
+      "mono-unsaturated": 0.01,
+      "poly-unsaturated": 0.113,
+      "total": 0.22
+    },
+    "protein": 1.83,
+    "carbohydrates": {
+      "natural-sugars": 3.26,
+      "added-sugars": 0,
+      "starch": 3.71,
+      "fiber": {
+        "soluble-fiber": 1.08,
+        "insoluble-fiber": 1.62
+      },
+      "total": 6.97
+    },
+    "calories": 31
+  }
+]

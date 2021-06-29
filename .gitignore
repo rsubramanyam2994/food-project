@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/food-project.Rproj
+/node_modules/
+.DS_Store
+.idea/

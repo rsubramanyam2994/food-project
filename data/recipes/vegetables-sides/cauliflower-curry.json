@@ -1,0 +1,49 @@
+{
+  "ingredients": [
+    {
+      "id": "cauliflower",
+      "amount": 250,
+      "unit": "gram"
+    },
+    {
+      "id": "frozen-peas",
+      "amount": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "onion",
+      "amount": 50,
+      "unit": "gram",
+      "approxAmountDescription": "1 medium sized onion"
+    },
+    {
+      "id": "salt",
+      "amount": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "brand": "borges",
+      "amount": 1,
+      "unit": "tsp"
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water",
+      "note": "Enough to boil, but not too much that water remains after cooking. About 0.25 - 0.5 cup of water would do for quarter kilo cauliflower"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "ginger-garlic-paste",
+    "chilli-powder",
+    "garam-masala"
+  ],
+  "totalWeightInGrams": 310,
+  "oneCupWeightInGramsAfterCooking": 160,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": ["dry-gravy", "side", "lunch", "dinner"]
+}
+
+

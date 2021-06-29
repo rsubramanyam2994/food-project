@@ -1,0 +1,21 @@
+{
+  "id": "yam",
+  "fat": {
+    "saturated-fat": 0.029,
+    "mono-unsaturated": 0.005,
+    "poly-unsaturated": 0.06,
+    "total": 0.14
+  },
+  "protein": 1.49,
+  "carbohydrates": {
+    "natural-sugars": 0.49,
+    "added-sugars": 0,
+    "starch": 26.99,
+    "fiber": {
+      "soluble-fiber": 0.78,
+      "insoluble-fiber": 3.12
+    },
+    "total": 27.48
+  },
+  "calories": 116
+}

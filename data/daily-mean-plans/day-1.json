@@ -1,0 +1,90 @@
+[
+  {
+    "morning": {
+      "menu": [
+        {
+          "id": "my-coffee"
+        },
+        {
+          "id": "hebbars-bread-chilli"
+        }
+      ]
+    },
+    "morning-snacks": [
+      {
+        "id": "apple",
+        "amount": 120,
+        "unit": "gram"
+      }
+
+    ],
+    "lunch": {
+      "menu": [
+        {
+          "id": "my-daal"
+        },
+        {
+          "id": "boiled-brown-rice",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "id": "hebbars-kalyana-rasam",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "id": "beans-carrot-curry",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "id": "curd",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ]
+    },
+    "dinner": {
+      "menu": [
+        {
+          "id": "hebbars-chapathi",
+          "discrete": true,
+          "amount": 3
+        },
+        {
+          "id": "hebbars-dal-tadka",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "id": "curd",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ]
+    },
+    "evening-snacks": [
+      {
+        "id": "my-nuts-mix"
+      },
+      {
+        "id": "strawberry",
+        "amount": 30,
+        "unit": "gram"
+      },
+      {
+        "id": "pomegranate",
+        "amount": 100,
+        "unit": "gram"
+      }
+    ],
+    "readymade-supplements": [
+      {
+        "id": "foodstrong-kesar"
+      }
+    ]
+
+  }
+
+]
