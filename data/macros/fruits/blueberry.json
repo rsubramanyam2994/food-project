@@ -1,0 +1,21 @@
+{
+  "id": "blueberry",
+  "fat": {
+    "saturated-fat": 0.028,
+    "mono-unsaturated": 0.047,
+    "poly-unsaturated": 0.146,
+    "total": 0.33
+  },
+  "protein": 0.74,
+  "carbohydrates": {
+    "natural-sugars": 9.96,
+    "added-sugars": 0,
+    "starch": 4.53,
+    "fiber": {
+      "soluble-fiber": 2.4,
+      "insoluble-fiber": 0
+    },
+    "total": 14.49
+  },
+  "calories": 57
+}

@@ -1,0 +1,21 @@
+{
+  "id": "pista",
+  "fat": {
+    "saturated-fat": 5.645,
+    "mono-unsaturated": 24.534,
+    "poly-unsaturated": 13.346,
+    "total": 45.82
+  },
+  "protein": 21.05,
+  "carbohydrates": {
+    "natural-sugars": 7.74,
+    "added-sugars": 0,
+    "starch": 20.54,
+    "fiber": {
+      "soluble-fiber": 10.3,
+      "insoluble-fiber": 0
+    },
+    "total": 28.28
+  },
+  "calories": 572
+}

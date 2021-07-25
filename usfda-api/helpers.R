@@ -13,24 +13,30 @@ get_nutrient_code_value <- function(df, code) {
 
 populate_macros <- function(merged_df, food_ndb_mapping, soluble_fiber_to_total_ratio, file_path_prefix) {
   
+
   for (i in seq(1: nrow(food_ndb_mapping))) {
-    food_info <- merged_df %>% filter(ingredient_code == food_ndb_mapping[i, ]$ndb_number)
+    
     id = food_ndb_mapping[i, ]$food_name
     
-    total_fiber = get_nutrient_code_value(food_info, 291) 
+    print(str_interp("Creating ${id}"))
+  
+    food_info <- merged_df %>% filter(ingredient_code == food_ndb_mapping[i, ]$ndb_number)
     
-    saturated_fat = get_nutrient_code_value(food_info, 606) 
+
+    total_fiber = get_nutrient_code_value(food_info, 291)
+
+    saturated_fat = get_nutrient_code_value(food_info, 606)
     monounsaturated_fat = get_nutrient_code_value(food_info, 645)
     polyunsaturated_fat = get_nutrient_code_value(food_info, 646)
-    
+
     natural_sugars <- get_nutrient_code_value(food_info, 269)
     total_carbs <- get_nutrient_code_value(food_info, 205)
-  
+
     total_protein <- get_nutrient_code_value(food_info, 203)
     total_cals <- get_nutrient_code_value(food_info, 208)
-    
+
     total_fat <- get_nutrient_code_value(food_info, 204)
-    
+
     soluble_fiber_fraction <- (soluble_fiber_to_total_ratio %>% filter(food_name == id))$ratio
     output <- list(
       id = id,
@@ -53,11 +59,11 @@ populate_macros <- function(merged_df, food_ndb_mapping, soluble_fiber_to_total_
       ),
       calories = total_cals
     )
-    
+
     fileConn <- file(paste0("./data/macros/", file_path_prefix, "/", id, ".json"))
     writeLines(jsonlite::toJSON(output, pretty=TRUE, auto_unbox=TRUE), fileConn)
     close(fileConn)
-    
+
   }
 }
 
@@ -65,25 +71,25 @@ read_food_ndb_mapping <- function(string) {
   ndb_mapping_file <- jsonlite::fromJSON(readLines(paste0("./data/usfda-mapping/", string, "/ndb-mapping.json")))
   food_names <- names(ndb_mapping_file)
   names(ndb_mapping_file) <- NULL
-  
+
   food_ndb_mapping <- data.frame(
-    food_name = food_names,
+    food_name = as.character(food_names),
     ndb_number = unlist(ndb_mapping_file)
-  )
-  
+  ) %>% mutate(food_name = as.character(food_name))
+
   return(food_ndb_mapping)
 }
 
 read_fiber_ratio_file <- function(string) {
-  fiber_ratio_file <- jsonlite::fromJSON(readLines(paste0("./data/usfda-mapping/", string, "/fiber-ratio.json")))
+  fiber_ratio_file <- jsonlite::fromJSON(readLines(paste0("./data/usfda-mapping/", string, "/soluble-to-total-fiber-ratio.json")))
   food_names <- names(fiber_ratio_file)
   names(fiber_ratio_file) <- NULL
-  
+
   soluble_fiber_to_total_ratio <- data.frame(
     food_name = food_names,
     ratio = unlist(fiber_ratio_file)
-  )
-  
+  ) %>% mutate(food_name = as.character(food_name))
+
   return(soluble_fiber_to_total_ratio)
-  
+
 }

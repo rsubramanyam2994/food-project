@@ -3,36 +3,18 @@
     "id": "cow-milk",
     "brand": "aavin-blue",
     "fat": {
-      "saturated": 10,
-      "poly-unsaturated": 5,
-      "mono-unsaturated": 10
+      "saturated": 3,
+      "poly-unsaturated": 0,
+      "mono-unsaturated": 0
     },
     "carbohydrates": {
-      "natural-sugars": 10,
-      "added-sugars": 10,
+      "natural-sugars": 4.7,
+      "added-sugars": 0,
       "fiber": {
-        "soluble-fiber": 1,
-        "insoluble-fiber": 4
+        "soluble-fiber": 0,
+        "insoluble-fiber": 0
       }
     },
-    "protein": "100"
-  },
-  {
-    "id": "cow-milk",
-    "brand": "aavin-orange",
-    "fat": {
-      "saturated": 10,
-      "poly-unsaturated": 5,
-      "mono-unsaturated": 10
-    },
-    "carbohydrates": {
-      "natural-sugars": 10,
-      "added-sugars": 10,
-      "fiber": {
-        "soluble-fiber": 1,
-        "insoluble-fiber": 4
-      }
-    },
-    "protein": "100"
+    "protein": 3.2
   }
 ]

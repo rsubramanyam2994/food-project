@@ -1,0 +1,21 @@
+{
+  "id": "papaya",
+  "fat": {
+    "saturated-fat": 0.081,
+    "mono-unsaturated": 0.072,
+    "poly-unsaturated": 0.058,
+    "total": 0.26
+  },
+  "protein": 0.47,
+  "carbohydrates": {
+    "natural-sugars": 7.82,
+    "added-sugars": 0,
+    "starch": 3,
+    "fiber": {
+      "soluble-fiber": 1.7,
+      "insoluble-fiber": 0
+    },
+    "total": 10.82
+  },
+  "calories": 43
+}

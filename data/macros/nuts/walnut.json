@@ -1,0 +1,21 @@
+{
+  "id": "walnut",
+  "fat": {
+    "saturated-fat": 6.126,
+    "mono-unsaturated": 8.933,
+    "poly-unsaturated": 47.174,
+    "total": 65.21
+  },
+  "protein": 15.23,
+  "carbohydrates": {
+    "natural-sugars": 2.61,
+    "added-sugars": 0,
+    "starch": 11.1,
+    "fiber": {
+      "soluble-fiber": 6.7,
+      "insoluble-fiber": 0
+    },
+    "total": 13.71
+  },
+  "calories": 654
+}

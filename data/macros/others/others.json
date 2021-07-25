@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sago",
+    "fat": {
+      "saturated": 10,
+      "poly-unsaturated": 5,
+      "mono-unsaturated": 10
+    },
+    "carbohydrates": {
+      "natural-sugars": 10,
+      "added-sugars": 10,
+      "fiber": {
+        "soluble-fiber": 1,
+        "insoluble-fiber": 4
+      },
+      "starch": 1
+    },
+    "protein": "100"
+  }
+]

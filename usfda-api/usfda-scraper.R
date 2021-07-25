@@ -21,9 +21,16 @@ nutrients_info <- read.csv("./data/usfda/nutrient.csv", stringsAsFactors = FALSE
 merged_df <- merge(ingredients_info, nutrients_info) %>% select(ingredient_code, sr_description, name, unit_name, nutrient_value, nutrient_code)
 unique_foods <- merged_df %>% group_by(sr_description) %>% summarise(ndb_number = ingredient_code[1]) %>% arrange(ndb_number)
 
-food_ndb_mapping = read_food_ndb_mapping("vegetables")
-soluble_fiber_to_total_ratio = read_fiber_ratio_file("vegetables")
-populate_macros(merged_df, food_ndb_mapping, soluble_fiber_to_total_ratio, "vegetables")
+# food_ndb_mapping = read_food_ndb_mapping("vegetables")
+# soluble_fiber_to_total_ratio = read_fiber_ratio_file("vegetables")
+# populate_macros(merged_df, food_ndb_mapping, soluble_fiber_to_total_ratio, "vegetables")
+for (x in c("fruits", "vegetables", "nuts")) {
+  food_ndb_mapping = read_food_ndb_mapping(x)
+  soluble_fiber_to_total_ratio = read_fiber_ratio_file(x)
+  populate_macros(merged_df, food_ndb_mapping, soluble_fiber_to_total_ratio, x)
+}
+
+
 
 # Fiber sources
 # 1. Beetroot - https://healthfully.com/370840-soluble-fiber-beets.html

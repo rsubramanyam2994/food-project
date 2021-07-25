@@ -12,8 +12,8 @@
     "added-sugars": 0,
     "starch": 8.78,
     "fiber": {
-      "soluble-fiber": 4.104,
-      "insoluble-fiber": 1.596
+      "soluble-fiber": [],
+      "insoluble-fiber": []
     },
     "total": 14.45
   },

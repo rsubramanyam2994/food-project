@@ -1,0 +1,21 @@
+{
+  "id": "almond",
+  "fat": {
+    "saturated-fat": 3.802,
+    "mono-unsaturated": 31.551,
+    "poly-unsaturated": 12.329,
+    "total": 49.93
+  },
+  "protein": 21.15,
+  "carbohydrates": {
+    "natural-sugars": 4.35,
+    "added-sugars": 0,
+    "starch": 17.2,
+    "fiber": {
+      "soluble-fiber": 12.5,
+      "insoluble-fiber": 0
+    },
+    "total": 21.55
+  },
+  "calories": 579
+}
