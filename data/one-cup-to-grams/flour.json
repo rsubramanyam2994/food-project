@@ -1,0 +1,22 @@
+[
+  {
+    "id": "rice-flour",
+    "grams": 100
+  },
+  {
+    "id": "gram-flour",
+    "grams": 100
+  },
+  {
+    "id": "wheat-flour",
+    "grams": 100
+  },
+  {
+    "id": "white-flour",
+    "grams": 100
+  },
+  {
+    "id": "corn-flour",
+    "grams": 100
+  }
+]

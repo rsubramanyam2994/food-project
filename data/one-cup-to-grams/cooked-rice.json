@@ -1,6 +1,14 @@
 [
   {
-    "id": "ponni-white-rice",
+    "id": "boiled-white-rice-short-grain",
     "grams": 160
+  },
+  {
+    "id": "boiled-red-rice",
+    "grams": 100
+  },
+  {
+    "id": "boiled-brown-rice",
+    "grams": 100
   }
 ]
