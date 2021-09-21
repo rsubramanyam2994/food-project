@@ -1,14 +1,18 @@
 [
   {
     "id": "toor-dal",
-    "grams": 240
+    "grams": 220
   },
   {
     "id": "masoor-dal",
-    "grams": 240
+    "grams": 1
   },
   {
     "id": "moong-dal",
-    "grams": 240
+    "grams": 220
+  },
+  {
+    "id": "urad-dal",
+    "grams": 1
   }
 ]

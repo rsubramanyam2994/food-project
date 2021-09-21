@@ -1,32 +1,34 @@
 [
   {
-    "id": "dosai-recipe-1",
+    "id": "rava-dosai",
     "mixBased": true,
     "discrete": true,
     "ingredientsPerUnit": [
       {
-        "id": "extra-virgin-olive-oil",
-        "brand": "borges",
+        "id": "oil",
         "amount": 1,
         "unit": "tsp"
       }
     ],
     "ingredientsForMix": [
       {
-        "id": "urad-dal",
-        "brand": "",
-        "amount": 2,
+        "id": "rice-flour",
+        "amount": 0.67,
         "unit": "cup"
       },
       {
-        "id": "parboiled-rice-white",
-        "brand": "",
-        "amount": 2,
+        "id": "white-flour",
+        "amount": 0.67,
+        "unit": "cup"
+      },
+      {
+        "id": "bombay-rava",
+        "amount": 0.67,
         "unit": "cup"
       },
       {
         "id": "salt",
-        "amount": 1,
+        "amount": 0.75,
         "unit": "tsp"
       }
     ],
@@ -35,8 +37,8 @@
         "item": "water"
       }
     ],
-    "totalWeightOfMixInGrams": 460,
-    "weightOfOneUnitInGrams": 46,
+    "totalWeightOfMixInGrams": 1062,
+    "weightOfOneUnitInGrams": 110,
     "numUnitsServed": 10
   }
 ]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "brown-rice-medium-grain",
+    "grams": 210,
+    "afterCooking": 960,
+    "waterToRiceRatio": 3
+  },
+  {
+    "id": "parboiled-rice-white",
+    "grams": ""
+  }
+]

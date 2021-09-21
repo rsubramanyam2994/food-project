@@ -1,21 +1,23 @@
 [
   {
     "id": "toor-dal",
-    "brand": "tata",
+    "brand": "tata-sampann-unpolished",
+    "approximateFat": true,
+    "approximateFiber": true,
     "fat": {
-      "saturated": 10,
-      "poly-unsaturated": 5,
-      "mono-unsaturated": 10
+      "saturated": 0.4,
+      "poly-unsaturated": 0.7,
+      "mono-unsaturated": 0.7
     },
     "carbohydrates": {
-      "natural-sugars": 10,
-      "added-sugars": 10,
+      "natural-sugars": 64.6,
+      "added-sugars": 0,
       "fiber": {
-        "soluble-fiber": 1,
-        "insoluble-fiber": 4
+        "soluble-fiber": 4.66,
+        "insoluble-fiber": 6.44
       }
     },
-    "protein": "100"
+    "protein": 20.8
   },
   {
     "id": "moong-dal",
@@ -33,24 +35,24 @@
         "insoluble-fiber": 4
       }
     },
-    "protein": "100"
+    "protein": 1
   },
   {
     "id": "masoor-dal",
     "brand": "himalayan-natives",
     "fat": {
-      "saturated": 10,
-      "poly-unsaturated": 5,
-      "mono-unsaturated": 10
+      "saturated": 0.12,
+      "poly-unsaturated": 0.23,
+      "mono-unsaturated": 0.23
     },
     "carbohydrates": {
-      "natural-sugars": 10,
-      "added-sugars": 10,
+      "natural-sugars": 30,
+      "added-sugars": 0,
       "fiber": {
         "soluble-fiber": 1,
         "insoluble-fiber": 4
       }
     },
-    "protein": "100"
+    "protein": 25.2
   }
 ]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "poori",
+    "mixBased": true,
+    "discrete": true,
+    "ingredientsPerUnit": [
+      {
+        "id": "oil-absorption",
+        "amount": 2.85,
+        "unit": "gram"
+      }
+    ],
+    "ingredientsForMix": [
+      {
+        "id": "wheat-flour",
+        "amount": 1.5,
+        "unit": "cup"
+      },
+      {
+        "id": "salt",
+        "amount": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "bombay-rava",
+        "amount": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ghee",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "oil",
+        "amount": 1,
+        "unit": "tsp"
+      }
+    ],
+    "approxIngredients": [
+      {
+        "item": "water"
+      }
+    ],
+    "absorptions": [
+      {
+        "id": "oil-absorption",
+        "amount": 40,
+        "unit": "gram"
+      }
+    ],
+    "totalWeightOfMixInGrams": 321,
+    "weightOfOneUnitInGrams": 23,
+    "numUnitsServed": 14
+  }
+]
