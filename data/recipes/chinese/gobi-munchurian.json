@@ -1,0 +1,51 @@
+{
+  "ingredients": [
+    {
+      "id": "cauliflower",
+      "amount": 327,
+      "unit": "gram"
+    },
+    {
+      "id": "salt",
+      "amount": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "white-flour",
+      "amount": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "corn-flour",
+      "amount": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "ginger-garlic-paste",
+      "amount": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "chilli-powder",
+      "amount": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "oil-absorption",
+      "amount": 45,
+      "unit": "gram"
+    }
+  ],
+  "approxIngredients": [],
+  "negligibleIngredientsForTaste": [
+    "ginger-garlic-paste",
+    "chilli-powder"
+  ],
+  "totalWeightInGrams": "add all input plus 80 ml water",
+  "oneCupWeightInGramsAfterCooking": ,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": []
+}
+
+

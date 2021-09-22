@@ -22,6 +22,11 @@
       "unit": "tsp"
     },
     {
+      "id": "bengal-dal",
+      "amount": 0.5,
+      "unit": "tbsp"
+    },
+    {
       "id": "grated-coconut",
       "amount": 3,
       "unit": "tbsp"
