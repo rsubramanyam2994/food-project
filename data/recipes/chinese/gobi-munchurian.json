@@ -34,7 +34,13 @@
       "id": "oil-absorption",
       "amount": 45,
       "unit": "gram"
+    },
+    {
+      "id": "water",
+      "amount": 80,
+      "unit": "gram"
     }
+    ]
   ],
   "approxIngredients": [],
   "negligibleIngredientsForTaste": [
@@ -42,7 +48,7 @@
     "chilli-powder"
   ],
   "totalWeightInGrams": "add all input plus 80 ml water",
-  "oneCupWeightInGramsAfterCooking": ,
+  "oneCupWeightInGramsAfterCooking": 105,
   "numberOfPeopleWhoCanBeServed": 3,
   "instructions": [],
   "tags": []

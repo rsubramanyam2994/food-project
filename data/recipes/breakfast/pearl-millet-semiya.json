@@ -1,0 +1,43 @@
+{
+  "ingredients": [
+    {
+      "id": "pearl-millet-semiya",
+      "brand": "anil",
+      "amount": 170,
+      "unit": "gram"
+    },
+    {
+      "id": "capsicum",
+      "amount": 60,
+      "unit": "gram"
+    },
+    {
+      "id": "onion",
+      "amount": 60,
+      "unit": "gram",
+      "approxAmountDescription": "1 medium sized onion"
+    },
+    {
+      "id": "salt",
+      "amount": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "id": "oil",
+      "amount": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "carrot",
+      "amount": 20,
+      "unit": "gram"
+    }
+  ],
+  "totalWeightInGrams": 456,
+  "oneCupWeightInGramsAfterCooking": 137,
+  "numberOfPeopleWhoCanBeServed": 3.5,
+  "instructions": [],
+  "tags": []
+}
+
+
