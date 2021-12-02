@@ -6,7 +6,9 @@
           "id": "my-coffee"
         },
         {
-          "id": "hebbars-bread-chilli"
+          "id": "hebbars-bread-chilli",
+          "amount": "1 serving",
+
         }
       ]
     },

@@ -54,5 +54,25 @@
       }
     },
     "protein": 25.2
+  },
+  {
+    "id": "urad-dal",
+    "brand": "udhayam",
+    "approximateFat": true,
+    "approximateFiber": true,
+    "fat": {
+      "saturated": 0,
+      "poly-unsaturated": 0.63,
+      "mono-unsaturated": 0.63
+    },
+    "carbohydrates": {
+      "natural-sugars": 56,
+      "added-sugars": 0,
+      "fiber": {
+        "soluble-fiber": 0.43,
+        "insoluble-fiber": 0.43
+      }
+    },
+    "protein": 22
   }
 ]
