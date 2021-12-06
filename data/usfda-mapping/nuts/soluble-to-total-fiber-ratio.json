@@ -1,9 +1,9 @@
 {
   "walnut": 1,
-  "almond": null,
-  "pista": null,
-  "roasted-groundnut": null,
-  "boiled-groundnut-with-salt": null,
-  "pumpkin-seed": null,
-  "cashew": null
+  "almond": 1,
+  "pista": 1,
+  "roasted-groundnut": 1,
+  "boiled-groundnut-with-salt": 1,
+  "pumpkin-seed": 1,
+  "cashew": 1
 }

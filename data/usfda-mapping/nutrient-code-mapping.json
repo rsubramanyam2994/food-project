@@ -1,0 +1,108 @@
+{
+  "calories": 208,
+  "macros": {
+    "cholesterol": 601,
+    "carbohydrates" : {
+      "total": 205,
+      "fiber": 291,
+      "sugar": 269,
+      "starch": 209
+    },
+    "fat": {
+      "saturated": 606,
+      "trans-fat": 605,
+      "poly-unsaturated": 646,
+      "mono-unsaturated": 645,
+      "total": 204
+    },
+    "protein": 203
+  },
+  "micros": {
+    "fat": {
+      "poly-unsaturated": {
+
+      },
+      "mono-unsaturated": {
+
+      }
+    },
+    "protein": {
+      "essential-amino-acids": {
+        "histidine": 512,
+        "isoleucine": 503,
+        "leucine":  504,
+        "lysine": 505,
+        "methionine": 506,
+        "phenylalanine": 508,
+        "threonine":  502,
+        "tryptophan": 501,
+        "valine": 510
+      },
+      "non-essential-amino-acids": {
+        "alanine": 513,
+        "asparagine": null,
+        "aspartic-acid": 514,
+        "glutamic-acid":  515
+      },
+      "conditional-amino-acids": {
+        "arginine": 511,
+        "cysteine": 507,
+        "glutamine": null,
+        "tyrosine": 509,
+        "glycine": 516,
+        "ornithine": null,
+        "proline": 517,
+        "serine": 518
+      }
+    },
+    "vitamins": {
+      "water-soluble": {
+        "vitamin-b1": 404,
+        "vitamin-b2": 405,
+        "vitamin-b3": 406,
+        "vitamin-b6": 410,
+        "vitamin-b7": 415,
+        "vitamin-b9-folate-dfe": 435,
+        "vitamin-b12": 418,
+        "vitamin-c": 401
+      },
+      "fat-soluble": {
+        "vitamin-a-iu": 318,
+        "vitamin-a-retinol": 319,
+        "vitamin-a-rae": 320,
+        "vitamin-d": 324,
+        "vitamin-e": 323,
+        "vitamin-k": {
+          "vitamin-k1": 429,
+          "vitamin-k2": 430,
+          "vitamin-k3": 428
+        }
+      }
+    },
+    "minerals": {
+      "macro-minerals": {
+        "calcium": 301,
+        "phosphorous": 305,
+        "magnesium": 304,
+        "sodium": 307,
+        "chloride": null,
+        "potassium": 306,
+        "sulfur": null
+      },
+      "trace-minerals": {
+        "iron": 303,
+        "manganese": 315,
+        "copper": 312,
+        "zinc": 309,
+        "iodine": null,
+        "fluoride": 313,
+        "selenium": 317
+      }
+    },
+    "others": {
+      "caffeine": 262,
+      "theobromine": 263,
+      "choline": 421
+    }
+  }
+}
