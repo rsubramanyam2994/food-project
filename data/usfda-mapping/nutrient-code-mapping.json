@@ -20,10 +20,15 @@
   "micros": {
     "fat": {
       "poly-unsaturated": {
+        "omega-3": {
 
+        },
+        "omega-6": {
+
+        }
       },
       "mono-unsaturated": {
-
+        "oleic-acid": "617"
       }
     },
     "protein": {
@@ -40,17 +45,17 @@
       },
       "non-essential-amino-acids": {
         "alanine": 513,
-        "asparagine": null,
+        "asparagine": "unavailable",
         "aspartic-acid": 514,
         "glutamic-acid":  515
       },
       "conditional-amino-acids": {
         "arginine": 511,
         "cysteine": 507,
-        "glutamine": null,
+        "glutamine": "unavailable",
         "tyrosine": 509,
         "glycine": 516,
-        "ornithine": null,
+        "ornithine": "unavailable",
         "proline": 517,
         "serine": 518
       }
@@ -85,16 +90,16 @@
         "phosphorous": 305,
         "magnesium": 304,
         "sodium": 307,
-        "chloride": null,
+        "chloride": "unavailable",
         "potassium": 306,
-        "sulfur": null
+        "sulfur": "unavailable"
       },
       "trace-minerals": {
         "iron": 303,
         "manganese": 315,
         "copper": 312,
         "zinc": 309,
-        "iodine": null,
+        "iodine": "unavailable",
         "fluoride": 313,
         "selenium": 317
       }

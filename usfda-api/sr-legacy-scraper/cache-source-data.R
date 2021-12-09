@@ -2,8 +2,7 @@ library(stringr)
 library(plyr)
 library(dplyr)
 
-
-sr_legacy_data <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
+sr_legacy_data <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/subbu/food-project/data/usfda/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
 
 metadata <- data.frame(
   s_no = seq(1:7793),
@@ -45,33 +44,22 @@ foundation_foods_flat_df <- ldply(sr_legacy_data$SRLegacyFoods$foodNutrients, fu
   return(x)
 })
 
-# a <- foundation_foods_flat_df %>% filter(ndb_number == "12152")
+saveRDS(foundation_foods_flat_df, "/Users/subramanyam/subbu/food-project/cache/sr_legacy_merged")
 
 unique_nutrients <- unique(foundation_foods_flat_df[c("nutrient_name", "nutrient_number")])
-
 nutrient_codes_to_extract_list <- jsonlite::fromJSON("/Users/subramanyam/subbu/food-project/data/usfda-mapping/nutrient-code-mapping.json") %>% unlist(., recursive = TRUE)
 
 nutrient_codes_df <- data.frame(nutrient_code = nutrient_codes_to_extract_list, row.names = NULL) %>% 
-  mutate(nutrient_name = names(nutrient_codes_to_extract_list))
+  mutate(nutrient_name = names(nutrient_codes_to_extract_list)) %>% filter(nutrient_code != "missing")
 
 
-food_ndb_mapping <- data.frame()
+saveRDS(nutrient_codes_df, "/Users/subramanyam/subbu/food-project/cache/nutrient_codes_df")
 
-for (x in c("fruits", "vegetables", "nuts")) {
-  food_ndb_mapping = rbind(food_ndb_mapping, read_food_ndb_mapping(x))
-}  
+unique_foods <- unique(foundation_foods_flat_df[c("food_category", "food_description", "ndb_number")])
+saveRDS(unique_foods, "/Users/subramanyam/subbu/food-project/cache/unique_foods")
 
-missing_summary <- ddply(food_ndb_mapping, "ndb_number", function(x) {
-  foundation_food = foundation_foods_flat_df %>% filter(ndb_number == x$ndb_number)
-  codes_present = foundation_food$nutrient_number
-  codes_required = nutrient_codes_df$nutrient_code
-  missing_codes_idx = which(!codes_required %in% codes_present)
-  missing_codes = codes_required[missing_codes_idx]
-  missing_nutrient_names_df = nutrient_codes_df %>% filter(nutrient_code %in% missing_codes)
-  missing_nutrient_names = missing_nutrient_names_df$nutrient_name %>% gsub(".*\\.","", .) %>% paste(., collapse = ",")
-  return(data.frame(food_name = x$food_name, missing_info = missing_nutrient_names))
+non_saturated_fat_micro_codes <- c("617", "618", "619", "621", "625", "626", "629", "631", "687", "697", "672", "685", "689", "620", "627", "628", "630", "673", "858", "671", "857", "851", "853", "670", "674", "675", "676", "852", "856", "666", "855", "859")
 
-})
+non_saturated_fats <- unique_nutrients %>% filter(nutrient_number %in% non_saturated_fat_micro_codes) %>% arrange(nutrient_number)
 
-
-
+non_saturated_fats_common_name_mapping <- 
