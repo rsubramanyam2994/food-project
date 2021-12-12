@@ -21,14 +21,17 @@
     "fat": {
       "poly-unsaturated": {
         "omega-3": {
-
+          "ALA": 619,
+          "EPA": 629,
+          "DHA": 621,
+          "DPA": 631
         },
         "omega-6": {
-
+          "LA": 618
         }
       },
       "mono-unsaturated": {
-        "oleic-acid": "617"
+        "oleic-acid": 617
       }
     },
     "protein": {
@@ -90,7 +93,7 @@
         "phosphorous": 305,
         "magnesium": 304,
         "sodium": 307,
-        "chloride": "unavailable",
+        "chloride": 100001,
         "potassium": 306,
         "sulfur": "unavailable"
       },

@@ -1,160 +1,3 @@
-library(stringr)
-
-clean_colnames <- function (df) {
-  clean_colnames <- tolower(colnames(df)) %>% str_replace_all(., "\\.", "_")
-  colnames(df) <- clean_colnames
-  return(df)
-}
-
-get_nutrient_code_value <- function(df, code) {
-  a <- df %>% filter(nutrient_code == as.character(code)) %>% slice(1)
-  if (nrow(a) == 0) {
-    return(NULL)
-  }
-  return(a$nutrient_value %>% as.numeric)
-}
-
-populate_macros <- function(merged_df, food_ndb_mapping, soluble_fiber_to_total_ratio, file_path_prefix) {
-  
-
-  for (i in seq(1: nrow(food_ndb_mapping))) {
-    
-    id = food_ndb_mapping[i, ]$food_name
-    
-    print(str_interp("Creating ${id}"))
-  
-    food_info <- merged_df %>% filter(ingredient_code == food_ndb_mapping[i, ]$ndb_number)
-    total_fiber = get_nutrient_code_value(food_info, 291)
-
-    natural_sugars <- 
-    total_carbs <- get_nutrient_code_value(food_info, 205)
-
-    total_protein <- get_nutrient_code_value(food_info, 203)
-    total_cals <- get_nutrient_code_value(food_info, 208)
-
-    total_fat <- get_nutrient_code_value(food_info, 204)
-
-    soluble_fiber_fraction <- (soluble_fiber_to_total_ratio %>% filter(food_name == id))$ratio
-    
-    macrocontents <- list(
-      id = id,
-      fat = list(
-        "saturated-fat" = get_nutrient_code_value(food_info, 606),
-        "mono-unsaturated" = get_nutrient_code_value(food_info, 645),
-        "poly-unsaturated" = get_nutrient_code_value(food_info, 646),
-        "total" = total_fat
-      ),
-      protein = total_protein,
-      carbohydrates = list(
-        "natural-sugars" = get_nutrient_code_value(food_info, 269),
-        "added-sugars" = 0,
-        "starch" = total_carbs - natural_sugars,
-        "fiber" = list(
-          "soluble-fiber" = soluble_fiber_fraction * total_fiber,
-          "insoluble-fiber" = (1 - soluble_fiber_fraction) * total_fiber
-        ),
-        "total" = total_carbs
-      ),
-      cholesterol = get_nutrient_code_value(food_info, 601),
-      calories = total_cals
-    )
-
-    fileConn <- file(paste0("./data/macros/", file_path_prefix, "/", id, ".json"))
-    writeLines(jsonlite::toJSON(macrocontents, pretty=TRUE, auto_unbox=TRUE), fileConn)
-    close(fileConn)
-    
-    # Note: Not including theobromine, caffeine, retinol, *carotene*, lycopene, lutein, zeaxanthin
-    # TODO: Find values for proteins and missing vitamins and minerals
-    # TODO: Classify omega-3 and omega-6 subdivisions for fat
-    
-    microcontents <- list(
-      id = id,
-      protein = list(
-        essential = list(
-          "histidine" = NULL, 
-          "isoleucine" = NULL, 
-          "leucine" = NULL, 
-          "lysine" = NULL, 
-          "methionine" = NULL, 
-          "phenylalanine" = NULL, 
-          "threonine" = NULL, 
-          "tryptophan" = NULL, 
-          "valine" = NULL
-        ),
-        "non-essential" = list(
-          "alanine" = NULL,
-          "asparagine" = NULL,
-          "aspartic-acid" = NULL,
-          "glutamic-acid" = NULL
-        ),
-        conditional = list(
-          "arginine" = NULL,
-          "cysteine" = NULL,
-          "glutamine" = NULL,
-          "tyrosine" = NULL,
-          "glycine" = NULL,
-          "ornithine" = NULL,
-          "proline" = NULL,
-          "serine" = NULL
-        )
-      ),
-      minerals = list(
-        macrominerals = list(
-          "calcium" = get_nutrient_code_value(food_info, 301),
-          "phosphorous" = get_nutrient_code_value(food_info, 305),
-          "magnesium" = get_nutrient_code_value(food_info, 304),
-          "sodium" = get_nutrient_code_value(food_info, 307),
-          "potassium" = get_nutrient_code_value(food_info, 306),
-          "chloride" = NULL,
-          "sulfur" = NULL
-        ),
-        traceminerals = list(
-          "iron" = get_nutrient_code_value(food_info, 303),
-          "manganese" = NULL,
-          "copper" = get_nutrient_code_value(food_info, 312),
-          "iodine" = NULL, 
-          "zinc" = get_nutrient_code_value(food_info, 309),
-          "cobalt" = NULL, 
-          "fluoride" = NULL,
-          "selenium" = get_nutrient_code_value(food_info, 317)
-        )
-      ),
-      others = list(
-        theobromine = get_nutrient_code_value(food_info, 263),
-        caffeine = get_nutrient_code_value(food_info, 262)
-      ),
-      vitamins = list(
-        "fat-soluble" = list(
-          "vitamin-A" = get_nutrient_code_value(food_info, 320),
-          "vitamin-D" = get_nutrient_code_value(food_info, 328),
-          "vitamin-E" = get_nutrient_code_value(food_info, 323),
-          "vitamin-K" = get_nutrient_code_value(food_info, 430)
-        ),
-        "water-soluble" = list(
-          "vitamin-C" = get_nutrient_code_value(food_info, 401),
-          "vitamin-B1" = get_nutrient_code_value(food_info, 404),
-          "vitamin-B2" = get_nutrient_code_value(food_info, 405),
-          "vitamin-B3" = get_nutrient_code_value(food_info, 406),
-          "vitamin-B6" = get_nutrient_code_value(food_info, 415),
-          "vitamin-B9" = get_nutrient_code_value(food_info, 417),
-          "vitamin-B12" = get_nutrient_code_value(food_info, 418),
-          "vitamin-B5" = NULL,
-          "vitamin-B7" = NULL
-        ),
-        others = list(
-          choline = get_nutrient_code_value(food_info, 421)
-        )
-      )
-    )
-    
-    
-    fileConn <- file(paste0("./data/micros/", file_path_prefix, "/", id, ".json"))
-    writeLines(jsonlite::toJSON(microcontents, pretty=TRUE, auto_unbox=TRUE), fileConn)
-    close(fileConn)
-
-  }
-}
-
 read_food_ndb_mapping <- function(string) {
   ndb_mapping_file <- jsonlite::fromJSON(readLines(paste0("./data/usfda-mapping/", string, "/ndb-mapping.json")))
   food_names <- names(ndb_mapping_file)
@@ -180,4 +23,129 @@ read_fiber_ratio_file <- function(string) {
 
   return(soluble_fiber_to_total_ratio)
 
+}
+
+get_missing_summary <- function(food_ndb_mapping) {
+  ddply(food_ndb_mapping, "ndb_number", function(x) {
+    foundation_food = foundation_foods_flat_df %>% filter(ndb_number == x$ndb_number)
+    codes_present = foundation_food$nutrient_number
+    codes_required = nutrient_codes_df$nutrient_code
+    missing_codes_idx = which(!codes_required %in% codes_present)
+    missing_codes = codes_required[missing_codes_idx]
+    missing_nutrient_names_df = nutrient_codes_df %>% filter(nutrient_code %in% missing_codes)
+    missing_nutrient_names = missing_nutrient_names_df$nutrient_name %>% gsub(".*\\.","", .) %>% paste(., collapse = ",")
+    return(data.frame(food_name = x$food_name, missing_info = missing_nutrient_names))
+  })
+  
+}
+
+get_food_portions <- function(sr_legacy_data, metadata) {
+  j <- 1
+  food_portions_usfda <- ldply(sr_legacy_data$SRLegacyFoods$foodPortions, function(x) {
+    
+    # print(j)
+    # x = sr_legacy_data$SRLegacyFoods$foodPortions[[96]]
+    df = NA
+    if ("measureUnit" %in% names(x)) {
+      df = x %>% select(-measureUnit) %>% cbind(x$measureUnit)
+    } else {
+      df = x
+    }
+    
+    if(nrow(df) == 0) {
+      df = data.frame(food_description = metadata$food_description[j], ndb_number = metadata$ndb_number[j],
+                      food_category = metadata$food_category[j], missing = TRUE)
+      j <<- j + 1
+      return(df)
+    }
+    
+    df$food_description = metadata$food_description[j]
+    df$ndb_number = metadata$ndb_number[j]
+    df$food_category = metadata$food_category[j]
+    df$missing = FALSE
+    
+    j <<- j + 1
+    
+    return(df)
+    
+  }) %>% select(food_category, food_description, ndb_number, modifier, gram_weight = gramWeight)
+  
+  food_portions_custom <- jsonlite::fromJSON(readLines("./data/custom-gathered-data/portions.json"))
+  
+  return(rbind(food_portions_usfda, food_portions_custom))
+}
+
+get_food_ndb_mapping <- function(food_types) {
+  food_ndb_mapping <- data.frame()
+  
+  for (x in food_types) {
+    food_ndb_mapping = rbind(food_ndb_mapping, read_food_ndb_mapping(x))
+  }  
+  
+  return(food_ndb_mapping)
+
+}
+
+get_metadata <- function(sr_legacy_data) {
+  data.frame(
+    food_category = sr_legacy_data$SRLegacyFoods$foodCategory$description,
+    ndb_number = sr_legacy_data$SRLegacyFoods$ndbNumber,
+    food_description = sr_legacy_data$SRLegacyFoods$description
+  )
+}
+
+
+get_conversion_factors <- function(sr_legacy_data) {
+  
+  i <- 0
+  
+  output <- ldply(sr_legacy_data$SRLegacyFoods$nutrientConversionFactors, function(x) {
+    i <<- i + 1
+
+    if (nrow(x) == 0) {
+      return(data.frame(s_no = i, proteinValue = NA))
+    }
+
+    conv_factor_df <- x %>% filter(type == ".CalorieConversionFactor")
+
+    if (nrow(conv_factor_df) == 0) {
+      return(data.frame(foo = NA))
+    }
+
+    return(conv_factor_df)
+
+  })
+  
+}
+
+read_foundation_food_data <- function(usfda_data) {
+  
+  custom_data <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.json")) %>% ldply %>% select(-.id) %>% 
+    mutate()
+  
+  metadata <- get_metadata(source_json)
+  
+  i <- 1
+  usfda_foundation_foods <- ldply(usfda_data$SRLegacyFoods$foodNutrients, function(x) {
+    x <- metadata[i, ] %>% cbind(
+      data.frame(nutrient_number = x$nutrient$number,
+                 nutrient_name = x$nutrient$name,
+                 unit = x$nutrient$unitName,
+                 amount = x$amount))
+    i <<- i + 1
+    return(x)
+  })
+  
+  return(rbind(usfda_foundation_foods, custom_data))
+  
+}
+
+
+get_measured_nutrients <- function() {
+  nutrient_codes_to_extract_list <- jsonlite::fromJSON("/Users/subramanyam/subbu/food-project/data/usfda-mapping/nutrient-code-mapping.json") %>% unlist(., recursive = TRUE)
+  nutrient_codes_df <- data.frame(nutrient_code = nutrient_codes_to_extract_list, row.names = NULL) %>% 
+    mutate(nutrient_name = names(nutrient_codes_to_extract_list)) %>% filter(nutrient_code != "missing")
+  
+  return(nutrient_codes_df)
+  
 }
