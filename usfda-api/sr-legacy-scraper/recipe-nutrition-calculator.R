@@ -1,34 +1,14 @@
-ingredient_portions <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_portions") %>% rename(gram_weight = gramWeight)
+ingredient_portions <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_portions")
 ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_ndb_mapping") 
-ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/sr_legacy_merged")
+ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
 
-
-# read custom gathered data -> portions, ingredients info and mapping, rbind to above caches
-
-recipe_1 <- data.frame(
+poha <- data.frame(
   ingredient = c("sugar", "salt", "turmeric", "white-rice", "lemon-juice", "groundnut-oil", "potato", "groundnut"),
-  quantity = c("1 tsp", "0.5 tsp", "0.25 tsp", "1 cup", "1 tbsp", "50 grams", "1 tbsp")
+  quantity = c("1 tsp", "0.5 tsp", "0.25 tsp", "1 cup", "1 tbsp", "2 tsp", "50 grams", "1 tbsp")
 )
 
-get_gram_multiplication_factor()
+recipe_with_ndb_mapping = merge(poha, ingredient_ndb_mapping, by.x = "ingredient", by.y = "food_name") %>% split_quantity
+gram_multiplication_factors <- get_gram_multiplication_factor(recipe_with_ndb_mapping, ingredient_portions)
 
-
-recipe_2 <- data.frame(
-  ingredient = c("sugar", "milk"),
-  quantity = c("0.75 tsp", "80 ml")
-)
-
-
-
-# read food to ndb number mapping
-
-# read recipe, split quantity into units and weights in recipe, get ndb_number mapping for each food description, replace recipe with ndb_numbers
-
-# filter for given ndb numbers from foundation_food, get_conversion_factor per ndb_number, write helpers for cross unit conversion to eventually get grams. output -> ndb_number, gram multiplication factor
-
-# ddply, group by ndb_number, multiply above factor
-
-# macro summary, use unit column to show units
-
-# micro summary, use unit column to show units
-
+# filter for relevant ndb_numbers in ingredient_nutrition_info, merge based on ndb_number, multiply amount by mult_factor
+# group by nutrient_codes, nutrient_name, merge with measureable_nutrients <- get_measured_nutrients(), filter for macros / micros using search to see summary

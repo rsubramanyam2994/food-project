@@ -72,7 +72,7 @@ get_food_portions <- function(sr_legacy_data, metadata) {
   
   food_portions_custom <- jsonlite::fromJSON(readLines("./data/custom-gathered-data/portions.json"))
   
-  return(rbind(food_portions_usfda, food_portions_custom))
+  return(rbind(food_portions_usfda, food_portions_custom) %>% mutate(gram_weight = str_trim(gram_weight, "both") %>% as.numeric))
 }
 
 get_food_ndb_mapping <- function(food_types) {
@@ -147,5 +147,44 @@ get_measured_nutrients <- function() {
     mutate(nutrient_name = names(nutrient_codes_to_extract_list)) %>% filter(nutrient_code != "missing")
   
   return(nutrient_codes_df)
+  
+}
+
+split_quantity <- function(df) {
+  unit <- str_replace(df$quantity, "(.*?)\\s", "") %>% str_trim(., "both") 
+  amount <- str_replace(df$quantity, "\\s(.*)", "") %>% str_trim(., "both") %>% as.numeric
+  
+  df %>% select(-quantity) %>% mutate(amount = amount, unit = unit)
+}
+
+get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_portions) {
+  relevant_food_portions <- ingredient_portions %>% filter(ndb_number %in% recipe_with_ndb_mapping$ndb_number)
+  
+  ddply(recipe_with_ndb_mapping, c("ndb_number"), function(df) {
+    browser()
+    
+    from_unit = df$unit
+    from_amount = df$amount
+    
+    conversion_factor = NA
+    
+    if (from_unit == "g" || from_unit == "grams" || from_unit == "gram") {
+      return(data.frame(ndb_number = df$ndb_number, mult_factor = from_amount / 100))
+    }
+    
+    if (from_unit == "tsp") {
+      # if tsp is available in rhs, return corresponding gram_weight / 100
+      # if tbsp is available, return corresponding gram_weight / 100 * (tbsp / tsp conversion factor)
+      # if cup is available, return corresponding gram_weight / 100 * (cup / tsp conversion factor)
+      
+      # unavailable
+      
+    }
+    
+    # same for tbsp and cup
+    
+    
+    
+  })
   
 }

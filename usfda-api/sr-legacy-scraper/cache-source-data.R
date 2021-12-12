@@ -23,4 +23,3 @@ saveRDS(food_portions, "/Users/subramanyam/subbu/food-project/cache/food_portion
 
 unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number")])
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
-measureable_nutrients <- get_measured_nutrients()
