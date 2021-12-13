@@ -19,7 +19,9 @@ food_portions = get_food_portions(source_json, metadata) %>% filter(ndb_number %
   mutate(modifier = str_replace(modifier, "tablespoon", "tbsp"))
 saveRDS(food_portions, "/Users/subramanyam/subbu/food-project/cache/food_portions")
 
-# conversion_factors <- get_conversion_factors(source_json)
+conversion_factors <- get_conversion_factors(source_json)
+saveRDS(conversion_factors, "/Users/subramanyam/subbu/food-project/cache/conversion_factors")
+
 
 unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number")])
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])

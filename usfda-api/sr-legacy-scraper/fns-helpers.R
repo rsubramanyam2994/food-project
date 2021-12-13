@@ -96,6 +96,7 @@ get_metadata <- function(sr_legacy_data) {
 
 
 get_conversion_factors <- function(sr_legacy_data) {
+  metadata <- get_metadata(sr_legacy_data)
   
   i <- 0
   
@@ -103,16 +104,21 @@ get_conversion_factors <- function(sr_legacy_data) {
     i <<- i + 1
 
     if (nrow(x) == 0) {
-      return(data.frame(s_no = i, proteinValue = NA))
+      return(metadata[i, ])
     }
 
     conv_factor_df <- x %>% filter(type == ".CalorieConversionFactor")
 
     if (nrow(conv_factor_df) == 0) {
-      return(data.frame(foo = NA))
+      return(cbind(metadata[i, ]))
+    }
+    
+    if (nrow(conv_factor_df) != 1) {
+      print(conv_factor_df)
+      stop("which case is this")
     }
 
-    return(conv_factor_df)
+    return(conv_factor_df %>% cbind(metadata[i, ]))
 
   })
   
@@ -189,7 +195,7 @@ get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_p
         return(data.frame(ndb_number = df$ndb_number, mult_factor = mult_factor))
       }
       
-      stop(str_interp("No available to unit for ${df$ingredient}"))
+      stop(str_interp("No available to_unit for ${df$ingredient}"))
     }
     
     if (from_unit == "tbsp") {
@@ -208,7 +214,7 @@ get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_p
         return(data.frame(ndb_number = df$ndb_number, mult_factor = mult_factor))
       }
       
-      stop(str_interp("No available to unit for ${df$ingredient}"))
+      stop(str_interp("No available to_unit for ${df$ingredient}"))
     }
     
     if (from_unit == "cup") {
@@ -227,7 +233,7 @@ get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_p
         return(data.frame(ndb_number = df$ndb_number, mult_factor = mult_factor))
       }
       
-      stop(str_interp("No available to unit for ${df$ingredient}"))
+      stop(str_interp("No available to_unit for ${df$ingredient}"))
     }
     
     stop("Invalid from unit for ${df$ingredient}")
@@ -237,6 +243,55 @@ get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_p
   })
   
 
-  return(output)
+  return(output %>% merge(recipe_with_ndb_mapping))
+  
+}
+
+check_if_all_ingredients_has_mapping <- function(df1, df2) {
+  if (nrow(df1) != nrow(df2)) {
+    stop("Recipe has ingredients that aren't mapped")
+  }
+  
+  return(df1)
+}
+
+read_recipe <- function(file_path, ingredient_ndb_mapping) {
+  recipe_file <- jsonlite::fromJSON(readLines(file_path))
+  recipe <- recipe_file$ingredients %>% transmute(ingredient = id, quantity = quantity)
+  
+  recipe_with_ndb_mapping = merge(recipe, ingredient_ndb_mapping, by.x = "ingredient", by.y = "food_name") %>% split_quantity %>% check_if_all_ingredients_has_mapping(., recipe)
+  
+  recipe_file["ingredients"] = NULL
+  
+  return(list(ingredients_df = recipe_with_ndb_mapping, metadata = recipe_file))
+}
+
+get_high_level_summary <- function(gram_multiplication_factors, ingredient_nutrition_info, measureable_nutrients, recipe) {
+  ingredient_nutrition_info %>% filter(ndb_number %in% gram_multiplication_factors$ndb_number) %>% merge(., gram_multiplication_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
+    transmute(name = ingredient, nutrient = nutrient_name.x, path = nutrient_name.y, amount = round(amount * mult_factor / recipe$metadata$numberOfPeopleWhoCanBeServed, 2), unit = unit)
+}
+
+
+get_macros_summary <- function(high_level_summary, conversion_factors, recipe_df) {
+  
+  # TODO: Use conversion factor numbers to compute ratio instead of 4:4:9
+  # conversion_factor <- conversion_factors %>% filter(ndb_number %in% recipe_df$ndb_number)
+  
+  conversion_factor_df <- data.frame(nutrient = c("carbohydrates", "protein", "fat"), factor = c(4, 4, 9))
+  
+  recipe_summary <- high_level_summary %>% filter(str_detect(path, "macros|calories")) %>% group_by(nutrient, path) %>% summarise(amount = sum(amount), unit = unit[1]) %>% mutate(nutrient = str_replace_all(path, "macros.", "")) %>% 
+    filter(!(nutrient %in% c("carbohydrates.sugar", "carbohydrates.starch"))) %>% as.data.frame
+  
+  macro_analysis <- recipe_summary %>% filter(str_detect(nutrient, "total|protein")) %>% 
+    mutate(nutrient = str_replace(nutrient, ".total", "")) %>% merge(conversion_factor_df) %>% 
+    mutate(calories = amount * factor) %>% 
+    mutate(perc = 100 * (calories / sum(calories)) %>% round(., 2)) %>% select(-c(path)) %>% 
+    mutate(recipe_name = recipe$metadata$name)
+  
+  fat_analysis <- recipe_summary %>% filter(str_detect(nutrient, "fat")) %>% filter(!(nutrient %in% c("fat.total", "fat.trans-fat"))) %>% mutate(perc = 100 * (amount / sum(amount)) %>% round(., 2)) %>% 
+    mutate(nutrient = str_replace(nutrient, "fat.", "")) %>% select(-path) %>% mutate(analysis = "fat_analysis") %>% 
+    mutate(recipe_name = recipe$metadata$name)
+  
+  return(list(macro_analysis = macro_analysis, fat_analysis = fat_analysis))
   
 }
