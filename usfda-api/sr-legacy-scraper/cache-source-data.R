@@ -10,7 +10,7 @@ source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads
 foundation_foods_df <- read_foundation_food_data(source_json)
 saveRDS(foundation_foods_df, "/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
 
-food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "custom"))
+food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "custom"))
 saveRDS(food_ndb_mapping, "/Users/subramanyam/subbu/food-project/cache/food_ndb_mapping") 
 
 metadata <- get_metadata(source_json)

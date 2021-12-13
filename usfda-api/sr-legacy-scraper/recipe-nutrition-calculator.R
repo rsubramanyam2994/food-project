@@ -14,6 +14,7 @@ recipe <- data.frame(
 )
 
 recipe_with_ndb_mapping = merge(recipe, ingredient_ndb_mapping, by.x = "ingredient", by.y = "food_name") %>% split_quantity
+
 gram_multiplication_factors <- get_gram_multiplication_factor(recipe_with_ndb_mapping, ingredient_portions) %>% merge(., recipe_with_ndb_mapping, by = c("ndb_number"))
 
 recipe_nutrition_info <- ingredient_nutrition_info %>% filter(ndb_number %in% gram_multiplication_factors$ndb_number) %>% merge(., gram_multiplication_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
