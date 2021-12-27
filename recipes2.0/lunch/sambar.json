@@ -1,0 +1,47 @@
+{
+  "ingredients": [
+    {
+      "id": "beetroot",
+      "amount": "175 g"
+    },
+    {
+      "id": "onion",
+      "amount": "30 g"
+    },
+    {
+      "id": "drumstick",
+      "amount": "63 g",
+      "approxDescription": "11 pieces of regular cut"
+    },
+    {
+      "id": "salt",
+      "amount": "7 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "amount": "1 tbsp"
+    }
+  ],
+  "approxIngredients": [
+    "water",
+    "tamarind"
+  ],
+  "negligibleIngredientsForTaste": [
+    "coriander powder",
+    "chilli powder",
+    "sambhar powder",
+    "turmeric"
+  ],
+  "totalWeightInGrams": 960,
+  "oneCupWeightInGramsAfterCooking": 240,
+  "numberOfPeopleWhoCanBeServed": 4,
+  "instructions": [
+    "Boil paruppu, a ball of tamarind in water along with it",
+    "Add oil, veggies, mustard seeds, fenugreek, after splutter, add veggies, add flavor powders to coat, add water, bring to a boil, wait until veggies are cooked",
+    "Add tamarind water, bring to a boil",
+    "Add parupu, bring to a boil, adjust consistency, flavor powders, salt"
+  ],
+  "tags": []
+}
+
+

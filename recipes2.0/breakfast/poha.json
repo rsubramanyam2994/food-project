@@ -1,0 +1,59 @@
+{
+  "ingredients": [
+    {
+      "id": "flattened-white-rice",
+      "amount": "156 g"
+    },
+    {
+      "id": "salt",
+      "amount": "1.125 tsp"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "amount": "2 tsp"
+    },
+    {
+      "id": "potato",
+      "amount": "50 g",
+      "approxAmountDescription": "1 medium sized peeled"
+    },
+    {
+      "id": "onion",
+      "amount": "80 g",
+      "approxAmountDescription": "1 large sized peeled"
+    },
+    {
+      "id": "ginger",
+      "amount": "5 g"
+    },
+    {
+      "id": "green-chilli",
+      "amount": "5 g"
+    },
+    {
+      "id": "lemon-juice",
+      "amount": "5 g",
+      "approxAmountDescription": "Half a lemon"
+    },
+    {
+      "id": "groundnut",
+      "amount": "10 g",
+      "approxAmountDescription": "1 tbsp"
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "asafoetida"
+  ],
+  "totalWeightInGrams": 560,
+  "oneCupWeightInGramsAfterCooking": 146,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": []
+}
+
+

@@ -1,0 +1,100 @@
+{
+  "ingredients": [
+    {
+      "id": "moong-dal",
+      "ingredients": [
+        {
+          "id": "moong-dal",
+          "amount": "0.5 cup"
+        },
+        {
+          "id": "water",
+          "amount": "2 cup"
+        }
+
+      ]
+    },
+    {
+      "id": "paste",
+      "ingredients": [
+        {
+          "id": "coconut",
+          "amount": "25 g",
+          "approxAmountDescription": "0.25 cup"
+        },
+        {
+          "id": "jeera",
+          "amount": "1 tsp"
+        },
+        {
+          "id": "red-chilli",
+          "amount": "3"
+        },
+        {
+          "id": "pepper",
+          "amount": "0.5 tsp"
+        },
+        {
+          "id": "water",
+          "amount": "0.5 cup"
+        }
+      ]
+    },
+    {
+      "id": "tempering",
+      "ingredients": [
+        {
+          "id": "groundnut-oil",
+          "amount": "2 tsp"
+        },
+        {
+          "id": "mustard-seeds",
+          "amount": "0.5 tsp"
+        },
+        {
+          "id": "urad-dal",
+          "amount": "0.5 tsp"
+        },
+        {
+          "id": "asafoetida",
+          "amount": "dash"
+        }
+      ]
+    },
+    {
+      "id": "main-dish",
+      "ingredients": [
+        {
+          "id": "arai-keerai",
+          "amount": "70 g"
+        },
+        {
+          "id": "water",
+          "amount": "2 cups"
+        },
+        {
+          "id": "salt",
+          "amount": "0.75 tsp"
+        }
+      ]
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water",
+      "note": "Sprinkle"
+    }
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 706,
+  "oneCupWeightInGramsAfterCooking": 200,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": [],
+  "notes": "Can add 0.25 - 0.5 more tsp of salt for better taste."
+}
+
+

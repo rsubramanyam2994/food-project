@@ -1,14 +1,6 @@
 [
   {
     "id": "salt",
-    "grams": 1
-  },
-  {
-    "id": "sugar",
-    "grams": 1
-  },
-  {
-    "id": "tamarind",
-    "grams": 1
+    "grams": "4"
   }
 ]

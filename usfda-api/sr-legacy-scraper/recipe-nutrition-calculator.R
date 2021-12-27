@@ -7,7 +7,7 @@ library(dplyr)
 ingredient_portions <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_portions")
 ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_ndb_mapping") 
 ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
-conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
+# conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 
 recipe <- read_recipe("/Users/subramanyam/subbu/food-project/data/recipes/breakfast/pearl-millet-semiya.json", ingredient_ndb_mapping)
 

@@ -1,0 +1,65 @@
+{
+  "ingredients": [
+    {
+      "id": "wheat-vermicelli",
+      "quantity": "100 g",
+      "approxAmountDescription": "1 cup",
+      "notes": "Use 2.25 cup of water to boil 1 cup of semiya"
+    },
+    {
+      "id": "green-capsicum",
+      "quantity": "",
+      "optional": true
+    },
+    {
+      "id": "onion",
+      "quantity": "60 g",
+      "approxAmountDescription": "1 medium sized onion"
+    },
+    {
+      "id": "ginger",
+      "quantity": "2 g"
+    },
+    {
+      "id": "green-chilli",
+      "quantity": "4 g",
+      "approxAmountDescription": "4 green chillis"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "1 tbsp"
+    },
+    {
+      "id": "carrot",
+      "optional": true,
+      "quantity": ""
+    },
+    {
+      "id": "cashew",
+      "quantity": "",
+      "optional": true
+    },
+    {
+      "id": "peas",
+      "quantity": "30 g",
+      "approxAmountDescription": "3 tbsp"
+    }
+  ],
+  "approxIngredients": [
+    "water",
+    "chana-dal"
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 477,
+  "oneCupWeightInGramsAfterCooking": 160,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": [],
+  "name": "semolina-semiya"
+}

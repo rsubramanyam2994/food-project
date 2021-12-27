@@ -1,0 +1,32 @@
+{
+  "ingredients": [
+    {
+      "id": "beetroot",
+      "amount": "256 g"
+    },
+    {
+      "id": "salt",
+      "amount": "0.75 tsp"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "amount": "2 tsp"
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water",
+      "note": "Sprinkle"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 383,
+  "oneCupWeightInGramsAfterCooking": 180 ,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": []
+}
+
+

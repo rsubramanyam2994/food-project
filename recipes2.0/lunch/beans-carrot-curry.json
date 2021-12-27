@@ -1,0 +1,38 @@
+{
+  "ingredients": [
+    {
+      "id": "carrot",
+      "amount": "230 g",
+      "approxAmountDescription": "1 cup diced is 130 grams"
+    },
+    {
+      "id": "beans",
+      "amount": "75 g",
+      "approxAmountDescription": "1 cup diced is 120 grams"
+    },
+    {
+      "id": "salt",
+      "amount": "2 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "amount": "1 tbsp"
+    }
+  ],
+  "approxIngredients": [
+    {
+      "item": "water",
+      "note": "enough to cook beans and carrot"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": ,
+  "oneCupWeightInGramsAfterCooking": ,
+  "numberOfPeopleWhoCanBeServed": ,
+  "instructions": [],
+  "tags": []
+}
+
+
