@@ -1,0 +1,37 @@
+{
+  "ingredients": [
+    {
+      "id": "onion",
+      "amount": "106 g",
+      "approxAmountDescription": "2 medium sized"
+    },
+    {
+      "id": "tomato",
+      "amount": "120 g",
+      "approxAmountDescription": "2 medium sized"
+    },
+    {
+      "id": "salt",
+      "amount": "3 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "amount": "1 tbsp"
+    }
+  ],
+  "approxIngredients": [
+    "water"
+  ],
+  "negligibleIngredientsForTaste": [
+    "chilli powder",
+    "red-chilli",
+    "urad-dal"
+  ],
+  "totalWeightInGrams": 232,
+  "oneCupWeightInGramsAfterCooking": 320,
+  "numberOfPeopleWhoCanBeServed": 4,
+  "instructions": [],
+  "tags": []
+}
+
+

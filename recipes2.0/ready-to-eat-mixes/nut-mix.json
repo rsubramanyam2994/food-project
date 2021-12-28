@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    {
+      "id": "cashew",
+      "amount": "5 g"
+    },
+    {
+      "id": "badam",
+      "amount": "5 g"
+    },
+    {
+      "id": "pista",
+      "amount": "5 g"
+    },
+    {
+      "id": "walnut",
+      "amount": "5 g"
+    }
+  ],
+  "totalWeightInGrams": 20,
+  "numberOfPeopleWhoCanBeServed": 1
+}
+
+

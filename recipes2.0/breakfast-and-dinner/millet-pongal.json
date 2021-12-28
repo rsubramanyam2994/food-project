@@ -1,0 +1,45 @@
+{
+  "ingredients": [
+    {
+      "id": "millet",
+      "quantity": "0.33 cup"
+    },
+    {
+      "id": "moong-dal",
+      "quantity": "0.33 cup"
+    },
+    {
+      "id": "cashew",
+      "quantity": "20 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "2 tsp"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "3 tsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "4 g"
+    }
+  ],
+  "approxIngredients": [
+    "water",
+    "pepper",
+    "jeera",
+    "ginger",
+    "green-chilli"
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 490,
+  "oneCupWeightInGramsAfterCooking": 190,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": [],
+  "notes": "Use 1:4 ratio to boil moong dal and millet",
+  "name": "semolina-semiya"
+}

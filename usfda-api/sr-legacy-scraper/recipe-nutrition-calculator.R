@@ -9,6 +9,18 @@ ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/f
 ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
 # conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 
+daily_diet = data.frame(
+  time = c(),
+  recipe = c(""),
+  servings = c("1 cup", "")
+)
+
+
+# summary per recipe
+# summary per meal time
+# level 1 summary - all types of fat, protein, carb, sodium, fiber, carbohydrates
+# micro summary
+
 recipe <- read_recipe("/Users/subramanyam/subbu/food-project/data/recipes/breakfast/pearl-millet-semiya.json", ingredient_ndb_mapping)
 
 gram_multiplication_factors <- get_gram_multiplication_factor(recipe$ingredients_df, ingredient_portions)

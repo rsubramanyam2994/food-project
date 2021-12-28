@@ -12,7 +12,7 @@
     },
     {
       "id": "salt",
-      "amount": "2 g"
+      "amount": "3 g"
     },
     {
       "id": "extra-virgin-olive-oil",
@@ -28,9 +28,9 @@
   "negligibleIngredientsForTaste": [
     "spice powder"
   ],
-  "totalWeightInGrams": ,
-  "oneCupWeightInGramsAfterCooking": ,
-  "numberOfPeopleWhoCanBeServed": ,
+  "totalWeightInGrams": 356,
+  "oneCupWeightInGramsAfterCooking": 190,
+  "numberOfPeopleWhoCanBeServed": 2,
   "instructions": [],
   "tags": []
 }
