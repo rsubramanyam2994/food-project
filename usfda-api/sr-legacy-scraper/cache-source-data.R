@@ -23,5 +23,5 @@ conversion_factors <- get_conversion_factors(source_json)
 saveRDS(conversion_factors, "/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 
 
-unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number")])
-unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
+unique_nutrients <- unique(ingredient_nutrition_info[c("nutrient_name", "nutrient_number")])
+unique_foods <- unique(ingredient_nutrition_info[c("food_category", "food_description", "ndb_number")])

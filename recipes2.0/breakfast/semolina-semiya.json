@@ -1,15 +1,10 @@
 {
   "ingredients": [
     {
-      "id": "wheat-vermicelli",
+      "id": "semolina-vermicelli",
       "quantity": "100 g",
       "approxAmountDescription": "1 cup",
       "notes": "Use 2.25 cup of water to boil 1 cup of semiya"
-    },
-    {
-      "id": "green-capsicum",
-      "quantity": "",
-      "optional": true
     },
     {
       "id": "onion",
@@ -21,7 +16,7 @@
       "quantity": "2 g"
     },
     {
-      "id": "green-chilli",
+      "id": "green-chili",
       "quantity": "4 g",
       "approxAmountDescription": "4 green chillis"
     },
@@ -34,17 +29,7 @@
       "quantity": "1 tbsp"
     },
     {
-      "id": "carrot",
-      "optional": true,
-      "quantity": ""
-    },
-    {
-      "id": "cashew",
-      "quantity": "",
-      "optional": true
-    },
-    {
-      "id": "peas",
+      "id": "green-peas",
       "quantity": "30 g",
       "approxAmountDescription": "3 tbsp"
     }

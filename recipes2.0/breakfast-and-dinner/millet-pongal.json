@@ -1,7 +1,7 @@
 {
   "ingredients": [
     {
-      "id": "millet",
+      "id": "foxtail-millet",
       "quantity": "0.33 cup"
     },
     {
@@ -30,7 +30,7 @@
     "pepper",
     "jeera",
     "ginger",
-    "green-chilli"
+    "green-chili"
   ],
   "negligibleIngredientsForTaste": [
     "spice powder"

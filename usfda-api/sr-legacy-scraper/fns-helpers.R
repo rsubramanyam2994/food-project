@@ -295,3 +295,30 @@ get_macros_summary <- function(high_level_summary, conversion_factors, recipe_df
   return(list(macro_analysis = macro_analysis, fat_analysis = fat_analysis))
   
 }
+
+get_nutrition_info <- function(diet) {
+  
+  a <- ddply(diet, c("time", "recipe"), function(meal) {
+    
+    if(nrow(meal) != 1) {
+      stop("time cross meals rows greater than 1, please combine the inputs into one")
+    }
+    
+    recipe_name <- meal$recipe
+    
+    return(meal)
+    
+    recipe <- read_recipe("/Users/subramanyam/subbu/food-project/data/recipes/breakfast/pearl-millet-semiya.json", ingredient_ndb_mapping)
+    
+    gram_multiplication_factors <- get_gram_multiplication_factor(recipe$ingredients_df, ingredient_portions)
+    
+    high_level_summary <- get_high_level_summary(gram_multiplication_factors, ingredient_nutrition_info, get_measured_nutrients(), recipe)
+    
+    recipe_macros <- (get_macros_summary(high_level_summary, conversion_factors, recipe))$macro_analysis
+    recipe_fat <- (get_macros_summary(high_level_summary, conversion_factors, recipe))$fat_analysis
+    
+    
+  })
+  
+  
+}

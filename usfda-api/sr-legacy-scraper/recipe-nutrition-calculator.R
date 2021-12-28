@@ -9,17 +9,33 @@ ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/f
 ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
 # conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 
-daily_diet = data.frame(
-  time = c(),
-  recipe = c(""),
-  servings = c("1 cup", "")
+till_lunch = data.frame(
+  time = c("breakfast", "breakfast", "breakfast", "morning-snack", "lunch", "lunch", "lunch", "lunch", "lunch"),
+  recipe = c("milk", "semolina-semiya", "sambar", "apple-without-skin", "white-rice", "sambar", "beans-carrot-curry", "curd", "my-dal-mix"),
+  servings = c("0.33 cup", "1 cup", "0.75 cup", 1, "4 tbsp", "0.75 cup", "0.75 cup", "0.33 cup", 1)
 )
+
+after_lunch = data.frame(
+  time = c("evening-snack", "evening-snack", "evening-snack", "evening-snack", "dinner", "dinner", "dinner"),
+  recipe = c("milk", "my-nut-berry-mix", "banana", "pomegranate", "millet-pongal", "tomato-onion-chutney", "curd"),
+  servings = c("0.33 cup", 1, 1, "50 g", "1.25 cup", "2 tbsp", "0.33 cup")
+)
+
+daily_diet = rbind(till_lunch, after_lunch)
+nutrition_info_per_recipe = get_nutrition_info(daily_diet)
+
 
 
 # summary per recipe
 # summary per meal time
-# level 1 summary - all types of fat, protein, carb, sodium, fiber, carbohydrates
+# day summary
+
+# Types of summary
+# level 1 summary - all types of fat, protein, carb, sodium, fiber, carbohydrates, calories
+# TODO: Add required fat in level in summary  
+  
 # micro summary
+# TODO: Add antioxidants to micro summary  
 
 recipe <- read_recipe("/Users/subramanyam/subbu/food-project/data/recipes/breakfast/pearl-millet-semiya.json", ingredient_ndb_mapping)
 

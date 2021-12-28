@@ -12,7 +12,7 @@
   "eggplant": "11209",
   "ladies-finger": "11278",
   "onion": "11282",
-  "peas": "11304",
+  "green-peas": "11304",
   "white-pumpkin": "11593",
   "yellow-pumpkin": "11422",
   "radish": "11429",
@@ -32,5 +32,8 @@
   "celery": "11143",
   "coriander": "11165",
   "drumstick": "11620",
-  "garlic": "11215"
+  "garlic": "11215",
+  "ginger": "11216",
+  "green-chili": "11670",
+  "red-chili": "11819"
 }

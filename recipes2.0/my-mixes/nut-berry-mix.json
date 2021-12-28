@@ -15,10 +15,17 @@
     {
       "id": "walnut",
       "amount": "5 g"
+    },
+    {
+      "id": "blueberry",
+      "amount": "10 g"
+    },
+    {
+      "id": "strawberry",
+      "amount": "10 g"
     }
   ],
-  "totalWeightInGrams": 20,
-  "numberOfPeopleWhoCanBeServed": 1
+  "discrete": true
 }
 
 
