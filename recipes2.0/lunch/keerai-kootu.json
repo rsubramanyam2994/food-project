@@ -5,11 +5,11 @@
       "ingredients": [
         {
           "id": "moong-dal",
-          "amount": "0.5 cup"
+          "quantity": "0.5 cup"
         },
         {
           "id": "water",
-          "amount": "2 cup"
+          "quantity": "2 cup"
         }
 
       ]
@@ -19,24 +19,24 @@
       "ingredients": [
         {
           "id": "coconut",
-          "amount": "25 g",
+          "quantity": "25 g",
           "approxAmountDescription": "0.25 cup"
         },
         {
           "id": "jeera",
-          "amount": "1 tsp"
+          "quantity": "1 tsp"
         },
         {
           "id": "red-chilli",
-          "amount": "3"
+          "quantity": "3"
         },
         {
           "id": "pepper",
-          "amount": "0.5 tsp"
+          "quantity": "0.5 tsp"
         },
         {
           "id": "water",
-          "amount": "0.5 cup"
+          "quantity": "0.5 cup"
         }
       ]
     },
@@ -45,19 +45,19 @@
       "ingredients": [
         {
           "id": "groundnut-oil",
-          "amount": "2 tsp"
+          "quantity": "2 tsp"
         },
         {
           "id": "mustard-seeds",
-          "amount": "0.5 tsp"
+          "quantity": "0.5 tsp"
         },
         {
           "id": "urad-dal",
-          "amount": "0.5 tsp"
+          "quantity": "0.5 tsp"
         },
         {
           "id": "asafoetida",
-          "amount": "dash"
+          "quantity": "dash"
         }
       ]
     },
@@ -66,15 +66,15 @@
       "ingredients": [
         {
           "id": "arai-keerai",
-          "amount": "70 g"
+          "quantity": "70 g"
         },
         {
           "id": "water",
-          "amount": "2 cups"
+          "quantity": "2 cups"
         },
         {
           "id": "salt",
-          "amount": "0.75 tsp"
+          "quantity": "0.75 tsp"
         }
       ]
     }

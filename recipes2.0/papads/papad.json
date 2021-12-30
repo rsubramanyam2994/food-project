@@ -2,12 +2,10 @@
   "ingredients": [
     {
       "id": "sunflower-oil",
-      "amount": "3 g"
+      "quantity": "3 g"
     }
   ],
-  "discrete": true,
-  "instructions": [],
-  "tags": []
+  "discrete": true
 }
 
 

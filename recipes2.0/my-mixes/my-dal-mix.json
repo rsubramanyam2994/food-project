@@ -1,0 +1,15 @@
+{
+  "ingredients": [
+    {
+      "id": "toor-dal",
+      "quantity": "0.33 cup"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.5 g"
+    }
+  ],
+  "discrete": true
+}
+
+

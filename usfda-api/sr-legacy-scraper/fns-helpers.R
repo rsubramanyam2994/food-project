@@ -163,10 +163,36 @@ split_quantity <- function(df) {
   df %>% select(-quantity) %>% mutate(amount = amount, unit = unit)
 }
 
+
+
+convert_to_cups <- function(diet) {
+  
+  ddply(diet, c("time", "food_name"), function(df) {
+    
+    if (df$unit == 1) {
+      return(df %>% mutate(time = df$time, food_name = df$food_name, unit = "discrete"))
+    }
+    
+    if (df$unit == "cup") {
+      return(df %>% mutate(time = df$time, food_name = df$food_name))
+    }
+    
+    if(df$unit == "tbsp") {
+      return(df %>% mutate(time = df$time, food_name = df$food_name, amount = amount / 16, unit = "cup") )
+    }
+    
+    if(df$unit == "tsp") {
+      return(df %>% mutate(time = df$time, food_name = df$food_name, amount = amount / 48, unit = "cup"))
+    }
+    
+  })
+  
+}
+
 get_gram_multiplication_factor <- function(recipe_with_ndb_mapping, ingredient_portions) {
   relevant_food_portions <- ingredient_portions %>% filter(ndb_number %in% recipe_with_ndb_mapping$ndb_number)
   
-  output <- ddply(recipe_with_ndb_mapping, c("ndb_number"), function(df) {
+  output <- ddply(recipe_with_ndb_mapping, c("ingredient", "time", "ndb_number"), function(df) {
 
     print(str_interp("Computing factor for ${df$ingredient}"))
     
@@ -255,7 +281,18 @@ check_if_all_ingredients_has_mapping <- function(df1, df2) {
   return(df1)
 }
 
-read_recipe <- function(file_path, ingredient_ndb_mapping) {
+read_recipe <- function(recipe_name, ingredient_ndb_mapping) {
+  
+  available_recipes <- list.files("/Users/subramanyam/subbu/food-project/recipes2.0", recursive = T, full.names = T)
+  index = available_recipes %>% str_detect(., recipe_name) %>% which
+  
+  if (length(index) == 0) {
+    stop(str_interp("${recipe_name} not found"))
+  }
+  
+  # if discrete, oneCupWeightInGrams, totalWeightInGrams can be null, numberOfPeopleWhoCanBeServed = 1
+  # handle as recipe
+  file_path <- available_recipes[index]
   recipe_file <- jsonlite::fromJSON(readLines(file_path))
   recipe <- recipe_file$ingredients %>% transmute(ingredient = id, quantity = quantity)
   
@@ -269,56 +306,94 @@ read_recipe <- function(file_path, ingredient_ndb_mapping) {
 get_high_level_summary <- function(gram_multiplication_factors, ingredient_nutrition_info, measureable_nutrients, recipe) {
   ingredient_nutrition_info %>% filter(ndb_number %in% gram_multiplication_factors$ndb_number) %>% merge(., gram_multiplication_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
     transmute(name = ingredient, nutrient = nutrient_name.x, path = nutrient_name.y, amount = round(amount * mult_factor / recipe$metadata$numberOfPeopleWhoCanBeServed, 2), unit = unit)
+  # instead of using recipe$metadata$numberOfPeopleWhoCanBeServed, use the one from diet
+  # 
 }
 
+get_high_level_summary_raw <- function(mult_factors, ingredient_nutrition_info, measureable_nutrients) {
+  
+  ingredient_nutrition_info %>% filter(ndb_number %in% mult_factors$ndb_number) %>% merge(., mult_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
+    transmute(time = time, recipe = recipe, ingredient = ingredient, nutrient = nutrient_name.x, path = nutrient_name.y, amount = round(amount * mult_factor, 2), unit = unit, ndb_number = ndb_number, portion_factor = 1, mult_factor = mult_factor)
+}
 
-get_macros_summary <- function(high_level_summary, conversion_factors, recipe_df) {
+get_high_level_summary_recipe <- function(mult_factors, ingredient_nutrition_info, measureable_nutrients, portion_factor) {
+  ingredient_nutrition_info %>% filter(ndb_number %in% mult_factors$ndb_number) %>% merge(., mult_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
+    transmute(time = time, recipe = recipe, ingredient = ingredient, nutrient = nutrient_name.x, path = nutrient_name.y, amount = round(amount * mult_factor * portion_factor, 2), unit = unit, ndb_number = ndb_number, 
+              portion_factor = portion_factor, mult_factor = mult_factor) 
+}
+
+get_macros_summary <- function(high_level_summary) {
   
   # TODO: Use conversion factor numbers to compute ratio instead of 4:4:9
   # conversion_factor <- conversion_factors %>% filter(ndb_number %in% recipe_df$ndb_number)
   
-  conversion_factor_df <- data.frame(nutrient = c("carbohydrates", "protein", "fat"), factor = c(4, 4, 9))
+  conversion_factor_df <- data.frame(nutrient = c("carbohydrates.fiber", "carbohydrates", "protein", "fat"), factor = c(2, 4, 4, 9))
   
   recipe_summary <- high_level_summary %>% filter(str_detect(path, "macros|calories")) %>% group_by(nutrient, path) %>% summarise(amount = sum(amount), unit = unit[1]) %>% mutate(nutrient = str_replace_all(path, "macros.", "")) %>% 
     filter(!(nutrient %in% c("carbohydrates.sugar", "carbohydrates.starch"))) %>% as.data.frame
   
-  macro_analysis <- recipe_summary %>% filter(str_detect(nutrient, "total|protein")) %>% 
+  macro_analysis <- recipe_summary %>% filter(str_detect(nutrient, "total|protein|fiber")) %>% 
     mutate(nutrient = str_replace(nutrient, ".total", "")) %>% merge(conversion_factor_df) %>% 
     mutate(calories = amount * factor) %>% 
-    mutate(perc = 100 * (calories / sum(calories)) %>% round(., 2)) %>% select(-c(path)) %>% 
-    mutate(recipe_name = recipe$metadata$name)
+    mutate(perc = 100 * (calories / sum(calories)) %>% round(., 2)) %>% select(-c(path))
   
   fat_analysis <- recipe_summary %>% filter(str_detect(nutrient, "fat")) %>% filter(!(nutrient %in% c("fat.total", "fat.trans-fat"))) %>% mutate(perc = 100 * (amount / sum(amount)) %>% round(., 2)) %>% 
-    mutate(nutrient = str_replace(nutrient, "fat.", "")) %>% select(-path) %>% mutate(analysis = "fat_analysis") %>% 
-    mutate(recipe_name = recipe$metadata$name)
+    mutate(nutrient = str_replace(nutrient, "fat.", "")) %>% select(-path) %>% mutate(analysis = "fat_analysis")
   
   return(list(macro_analysis = macro_analysis, fat_analysis = fat_analysis))
   
 }
 
-get_nutrition_info <- function(diet) {
+get_raw_summary <- function(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info) {
+  eaten_raw <- diet %>% filter(food_name %in% ingredient_ndb_mapping$food_name) %>% merge(., ingredient_ndb_mapping, by.x = "food_name", by.y = "food_name") %>% mutate(recipe = food_name, ingredient = food_name) %>% select(-food_name)
   
-  a <- ddply(diet, c("time", "recipe"), function(meal) {
+  mult_factors <- get_gram_multiplication_factor(eaten_raw, ingredient_portions)
+  
+  get_high_level_summary_raw(mult_factors, ingredient_nutrition_info, get_measured_nutrients())
+}
+
+
+get_portion_factor <- function(recipe, meal) {
+  if (is.null(recipe$metadata$discrete)) {
+    return((recipe$metadata$oneCupWeightInGramsAfterCooking / recipe$metadata$totalWeightInGrams) * meal$amount)
+  }
+  
+  if (recipe$metadata$discrete == TRUE) {
+    return(1)
+  }
+  
+  stop("discrete error")
+}
+
+get_recipes_summary <- function(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info) {
+  made_from_recipes <- diet %>% filter(!(food_name %in% ingredient_ndb_mapping$food_name)) %>% convert_to_cups
+  
+  ddply(made_from_recipes, c("time", "food_name"), function(meal) {
     
+    print(str_interp("Processing ${meal$food_name}"))
+    
+    recipe <- read_recipe(meal$food_name, ingredient_ndb_mapping)
+    recipe$ingredients_df = recipe$ingredients_df %>% mutate(time = meal$time, recipe = meal$food_name)
+    mult_factors <- get_gram_multiplication_factor(recipe$ingredients_df, ingredient_portions)
+    recipe_high_level_summary <- get_high_level_summary_recipe(mult_factors, ingredient_nutrition_info, get_measured_nutrients(), get_portion_factor(recipe, meal))
+    
+    return(recipe_high_level_summary)
+  }) %>% select(-food_name)
+}
+
+get_nutrition_info <- function(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info) {
+  
+  ddply(diet, c("time", "food_name"), function(meal) {
     if(nrow(meal) != 1) {
       stop("time cross meals rows greater than 1, please combine the inputs into one")
     }
-    
-    recipe_name <- meal$recipe
-    
-    return(meal)
-    
-    recipe <- read_recipe("/Users/subramanyam/subbu/food-project/data/recipes/breakfast/pearl-millet-semiya.json", ingredient_ndb_mapping)
-    
-    gram_multiplication_factors <- get_gram_multiplication_factor(recipe$ingredients_df, ingredient_portions)
-    
-    high_level_summary <- get_high_level_summary(gram_multiplication_factors, ingredient_nutrition_info, get_measured_nutrients(), recipe)
-    
-    recipe_macros <- (get_macros_summary(high_level_summary, conversion_factors, recipe))$macro_analysis
-    recipe_fat <- (get_macros_summary(high_level_summary, conversion_factors, recipe))$fat_analysis
-    
-    
   })
   
+  raw_summary <- get_raw_summary(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info)
+  recipes_summary <- get_recipes_summary(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info)
   
+  total_summary <- rbind(raw_summary, recipes_summary)
+  
+  return(total_summary)
+
 }

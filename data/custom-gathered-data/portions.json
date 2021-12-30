@@ -19,5 +19,12 @@
     "ndb_number": "000003",
     "modifier": "cup",
     "gram_weight": 100
+  },
+  {
+    "food_category": "custom",
+    "food_description": "curd",
+    "ndb_number": "1116",
+    "modifier": "cup",
+    "gram_weight": 245
   }
 ]

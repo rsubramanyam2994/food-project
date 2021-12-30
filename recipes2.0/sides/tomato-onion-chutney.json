@@ -2,21 +2,21 @@
   "ingredients": [
     {
       "id": "onion",
-      "amount": "106 g",
+      "quantity": "212 g",
       "approxAmountDescription": "2 medium sized"
     },
     {
-      "id": "tomato",
-      "amount": "120 g",
+      "id": "red-tomato",
+      "quantity": "240 g",
       "approxAmountDescription": "2 medium sized"
     },
     {
       "id": "salt",
-      "amount": "3 g"
+      "quantity": "6 g"
     },
     {
       "id": "extra-virgin-olive-oil",
-      "amount": "1 tbsp"
+      "quantity": "2 tbsp"
     }
   ],
   "approxIngredients": [
@@ -27,11 +27,9 @@
     "red-chilli",
     "urad-dal"
   ],
-  "totalWeightInGrams": 232,
+  "totalWeightInGrams": 480,
   "oneCupWeightInGramsAfterCooking": 320,
-  "numberOfPeopleWhoCanBeServed": 4,
+  "numberOfPeopleWhoCanBeServed": 8,
   "instructions": [],
   "tags": []
 }
-
-

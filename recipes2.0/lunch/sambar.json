@@ -2,24 +2,24 @@
   "ingredients": [
     {
       "id": "beetroot",
-      "amount": "175 g"
+      "quantity": "175 g"
     },
     {
       "id": "onion",
-      "amount": "30 g"
+      "quantity": "30 g"
     },
     {
       "id": "drumstick",
-      "amount": "63 g",
+      "quantity": "63 g",
       "approxDescription": "11 pieces of regular cut"
     },
     {
       "id": "salt",
-      "amount": "7 g"
+      "quantity": "7 g"
     },
     {
       "id": "groundnut-oil",
-      "amount": "1 tbsp"
+      "quantity": "1 tbsp"
     }
   ],
   "approxIngredients": [
