@@ -11,9 +11,8 @@ ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cach
 # conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 measureable_nutrients = get_measured_nutrients()
 
-diet = rbind(till_lunch, after_lunch) %>% split_quantity
+diet = get_sample_diet()
 high_level_summary = get_nutrition_info(diet, ingredient_ndb_mapping, ingredient_portions, ingredient_nutrition_info)
-
 
 recipe_macros <- (get_macros_summary(high_level_summary))$macro_analysis
 recipe_fat <- (get_macros_summary(high_level_summary))$fat_analysis

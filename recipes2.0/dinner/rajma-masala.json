@@ -1,0 +1,40 @@
+{
+  "ingredients": [
+    {
+      "id": "moong-dal",
+      "quantity": "1 cup"
+    },
+    {
+      "id": "tomato",
+      "quantity": "50 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "2 tsp"
+    },
+    {
+      "id": "onion",
+      "quantity": "50 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    }
+  ],
+  "approxIngredients": [
+    "water",
+    "pepper",
+    "jeera",
+    "ginger",
+    "green-chili"
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 312,
+  "oneCupWeightInGramsAfterCooking": 160,
+  "instructions": [],
+  "tags": [],
+  "notes": "Use 1:4 ratio to boil moong dal and millet",
+  "name": "semolina-semiya"
+}
