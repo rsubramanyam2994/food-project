@@ -25,6 +25,10 @@ convert_to_cups <- function(menu) {
     if(df$unit == "tsp") {
       return(df %>% mutate(time = df$time, food_name = df$food_name, amount = amount / 48, unit = "cup"))
     }
+    
+    if (df$unit == "g") {
+      return(df)
+    }
   })
 }
 

@@ -6,8 +6,8 @@
       "food_description": "salt",
       "nutrient_number": "100001",
       "nutrient_name": "Chloride",
-      "unit": "g",
-      "amount": 61.242
+      "unit": "mg",
+      "amount": 61242
     },
     {
       "food_category": "custom",
@@ -15,8 +15,8 @@
       "food_description": "salt",
       "nutrient_number": "307",
       "nutrient_name": "Sodium, Na",
-      "unit": "g",
-      "amount": 38.758
+      "unit": "mg",
+      "amount": 38758
     }
   ],
   "sugar": [

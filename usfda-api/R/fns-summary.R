@@ -70,3 +70,16 @@ get_macros_summary <- function(high_level_summary) {
   return(list(macro_analysis = macro_analysis, fat_analysis = fat_analysis))
   
 }
+
+get_minerals_summary <- function(high_level_summary) {
+  minerals <- high_level_summary %>% filter(str_detect(path, "minerals"))
+  
+  mineral_names <- lapply(str_split(minerals$path, "\\."), function(x) {
+    return(x[4])
+  }) %>% unlist
+  
+  mineral_summary <- minerals %>% transmute(mineral = mineral_names,
+                                            amount = amount) %>% group_by(mineral) %>% summarise(total = sum(amount)) %>% 
+    tidyr::spread(., mineral, total)
+}
+
