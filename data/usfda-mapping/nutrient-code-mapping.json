@@ -103,6 +103,7 @@
         "copper": 312,
         "zinc": 309,
         "iodine": "unavailable",
+        "chromium": "unavailable",
         "fluoride": 313,
         "selenium": 317
       }
@@ -110,7 +111,8 @@
     "others": {
       "caffeine": 262,
       "theobromine": 263,
-      "choline": 421
+      "choline": 421,
+      "anthocyanin": 1
     }
   }
 }

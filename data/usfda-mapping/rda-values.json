@@ -1,0 +1,269 @@
+{
+  "calories": 208,
+  "macros": {
+    "cholesterol": 601,
+    "carbohydrates" : {
+      "total": 205,
+      "fiber": 291,
+      "sugar": 269,
+      "starch": 209
+    },
+    "fat": {
+      "saturated": 606,
+      "trans-fat": 605,
+      "poly-unsaturated": 646,
+      "mono-unsaturated": 645,
+      "total": 204
+    },
+    "protein": 203
+  },
+  "micros": {
+    "fat": {
+      "poly-unsaturated": {
+        "omega-3": {
+          "ALA": {
+            "rda": 2,
+            "unit": "g"
+          },
+          "EPA": {
+            "rda": 250,
+            "unit": "mg"
+          },
+          "DHA": {
+            "rda": 250,
+            "unit": "mg"
+          },
+          "DPA": 631
+        },
+        "omega-6": {
+          "LA": {
+            "ai": 10,
+            "unit": "g"
+          }
+        }
+      },
+      "mono-unsaturated": {
+        "oleic-acid": "unavailable"
+      }
+    },
+    "protein": {
+      "essential-amino-acids": {
+        "histidine": {
+          "rda": 14,
+          "unit": "mg"
+        },
+        "isoleucine": {
+          "rda": 19,
+          "unit": "mg"
+        },
+        "leucine": {
+          "rda": 42,
+          "unit": "mg"
+        },
+        "lysine": {
+          "rda": 38,
+          "unit": "mg"
+        },
+        "methionine": {
+          "rda": 19,
+          "unit": "mg"
+        },
+        "phenylalanine": {
+          "rda": 33,
+          "unit": "mg"
+        },
+        "threonine":  {
+          "rda": 20,
+          "unit": "mg"
+        },
+        "tryptophan": {
+          "rda": 5,
+          "unit": "mg"
+        },
+        "valine": {
+          "rda": 24,
+          "unit": "mg"
+        }
+      },
+      "non-essential-amino-acids": {
+        "alanine": 513,
+        "asparagine": "unavailable",
+        "aspartic-acid": 514,
+        "glutamic-acid":  515
+      },
+      "conditional-amino-acids": {
+        "arginine": 511,
+        "cysteine": 507,
+        "glutamine": "unavailable",
+        "tyrosine": 509,
+        "glycine": 516,
+        "ornithine": "unavailable",
+        "proline": 517,
+        "serine": 518
+      }
+    },
+    "vitamins": {
+      "water-soluble": {
+        "vitamin-b1": {
+          "rda": 1.2,
+          "unit": "mg"
+        },
+        "vitamin-b2": {
+          "rda": 1.3,
+          "unit": "mg"
+        },
+        "vitamin-b3": {
+          "rda": 16,
+          "unit": "mg",
+          "ul": 35
+        },
+        "vitamin-b6": {
+          "rda": 1.3,
+          "unit": "mg",
+          "ul": 100
+        },
+        "vitamin-b7": {
+          "ai": 30,
+          "unit": "mcg"
+        },
+        "vitamin-b5": {
+          "ai": 5,
+          "unit": "mg"
+        },
+        "vitamin-b9-folate-dfe": {
+          "rda": 400,
+          "unit": "mcg",
+          "ul": 1000
+        },
+        "vitamin-b12": {
+          "rda": 2.4,
+          "unit": "mcg"
+        },
+        "vitamin-c": {
+          "rda": 90,
+          "unit": "mg",
+          "ul": 2000
+        }
+      },
+      "fat-soluble": {
+        "vitamin-a": {
+          "rda": 900,
+          "unit": "mcg",
+          "ul": 3000
+        },
+        "vitamin-d": {
+          "rda": 15,
+          "unit": "mcg",
+          "ul": 100
+        },
+        "vitamin-e": {
+          "rda": 15,
+          "unit": "mg",
+          "ul": 1000
+        },
+        "vitamin-k": {
+          "ai": 120,
+          "unit": "mcg"
+        }
+      }
+    },
+    "minerals": {
+      "macro-minerals": {
+        "calcium": {
+          "rda": 1000,
+          "unit": "mg",
+          "ul": 2000
+        },
+        "phosphorous": {
+          "rda": 700,
+          "unit": "mg",
+          "ul": 4000
+        },
+        "magnesium": {
+          "rda": 350,
+          "unit": "mg",
+          "ul": 350
+        },
+        "sodium": {
+          "ai": 1500,
+          "unit": "mg",
+          "ul": 2300
+        },
+        "chloride": {
+          "ai": 2300,
+          "unit": "mg",
+          "ul": 3600
+        },
+        "potassium": {
+          "ai": 3500,
+          "unit": "mg",
+          "ul": 4700
+        },
+        "sulfur": "unavailable"
+      },
+      "trace-minerals": {
+        "boron": {
+          "ul": 20,
+          "unit": "mg"
+        },
+        "nickel": {
+          "ul": 1,
+          "unit": "mg"
+        },
+        "iron": {
+          "rda": 8,
+          "unit": "mg",
+          "ul": 45
+        },
+        "manganese": {
+          "ai": 2.3,
+          "unit": "mg",
+          "ul": 11
+        },
+        "copper": {
+          "rda": 900,
+          "unit": "mcg",
+          "ul": 10000
+        },
+        "zinc": {
+          "rda": 11,
+          "unit": "mg",
+          "ul": 40
+        },
+        "iodine": {
+          "rda": 150,
+          "unit": "mcg",
+          "ul": 1100
+        },
+        "fluoride": {
+          "ai": 4,
+          "unit": "mg",
+          "ul": 10
+        },
+        "selenium": {
+          "rda": 55,
+          "unit": "mcg",
+          "ul": 400
+        },
+        "chromium": {
+          "ai": 35,
+          "unit": "mcg"
+        },
+        "molybdenum": {
+          "rda": 45,
+          "unit": "mcg",
+          "ul": 2000
+        }
+      }
+    },
+    "others": {
+      "caffeine": 262,
+      "theobromine": 263,
+      "choline": {
+        "ai": 550,
+        "unit": "mg",
+        "ul": 3500
+      }
+    }
+  }
+}
