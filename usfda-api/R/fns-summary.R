@@ -28,7 +28,7 @@ get_macro_perc <- function(df) {
 }
 
 
-get_summary_per_recipe <- function(high_level_summary) {
+get_macro_summary_per_recipe <- function(high_level_summary) {
   
   ddply(high_level_summary, c("time", "recipe"), function(df) {
     return(get_macro_perc(df))
@@ -37,7 +37,7 @@ get_summary_per_recipe <- function(high_level_summary) {
 }
 
 
-get_summary_per_meal_time <- function(high_level_summary) {
+get_macro_summary_per_meal_time <- function(high_level_summary) {
   ddply(high_level_summary, c("time"), function(df) {
     return(get_macro_perc(df))
   }) %>% rbind(get_overall_summary(high_level_summary) %>% mutate(time = "overall"))

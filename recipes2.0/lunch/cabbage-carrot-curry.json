@@ -1,0 +1,30 @@
+{
+  "ingredients": [
+    {
+      "id": "carrot",
+      "quantity": "40 g"
+    },
+    {
+      "id": "cabbage",
+      "quantity": "190 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "2 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "2 tsp"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 220,
+  "oneCupWeightInGramsAfterCooking": 180,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": []
+}
+
+
