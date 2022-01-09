@@ -68,8 +68,9 @@
         "vitamin-b1": 404,
         "vitamin-b2": 405,
         "vitamin-b3": 406,
-        "vitamin-b6": 410,
-        "vitamin-b7": 415,
+        "vitamin-b5": 410,
+        "vitamin-b6": 415,
+        "vitamin-b7": "unavailable",
         "vitamin-b9-folate-dfe": 435,
         "vitamin-b12": 418,
         "vitamin-c": 401

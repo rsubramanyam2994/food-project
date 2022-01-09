@@ -26,14 +26,14 @@
             "unit": "g"
           },
           "EPA": {
-            "rda": 250,
-            "unit": "mg"
+            "rda": 0.25,
+            "unit": "g"
           },
           "DHA": {
-            "rda": 250,
-            "unit": "mg"
+            "rda": 0.25,
+            "unit": "g"
           },
-          "DPA": 631
+          "DPA": {}
         },
         "omega-6": {
           "LA": {
@@ -43,46 +43,46 @@
         }
       },
       "mono-unsaturated": {
-        "oleic-acid": "unavailable"
+        "oleic-acid": {}
       }
     },
     "protein": {
       "essential-amino-acids": {
         "histidine": {
-          "rda": 14,
-          "unit": "mg"
+          "rda": 0.014,
+          "unit": "g"
         },
         "isoleucine": {
-          "rda": 19,
-          "unit": "mg"
+          "rda": 0.019,
+          "unit": "g"
         },
         "leucine": {
-          "rda": 42,
-          "unit": "mg"
+          "rda": 0.042,
+          "unit": "g"
         },
         "lysine": {
-          "rda": 38,
-          "unit": "mg"
+          "rda": 0.038,
+          "unit": "g"
         },
         "methionine": {
-          "rda": 19,
-          "unit": "mg"
+          "rda": 0.019,
+          "unit": "g"
         },
         "phenylalanine": {
-          "rda": 33,
-          "unit": "mg"
+          "rda": 0.033,
+          "unit": "g"
         },
         "threonine":  {
-          "rda": 20,
-          "unit": "mg"
+          "rda": 0.02,
+          "unit": "g"
         },
         "tryptophan": {
-          "rda": 5,
-          "unit": "mg"
+          "rda": 0.005,
+          "unit": "g"
         },
         "valine": {
-          "rda": 24,
-          "unit": "mg"
+          "rda": 0.024,
+          "unit": "g"
         }
       },
       "non-essential-amino-acids": {
@@ -117,6 +117,10 @@
           "unit": "mg",
           "ul": 35
         },
+        "vitamin-b5": {
+          "ai": 5,
+          "unit": "mg"
+        },
         "vitamin-b6": {
           "rda": 1.3,
           "unit": "mg",
@@ -125,10 +129,6 @@
         "vitamin-b7": {
           "ai": 30,
           "unit": "mcg"
-        },
-        "vitamin-b5": {
-          "ai": 5,
-          "unit": "mg"
         },
         "vitamin-b9-folate-dfe": {
           "rda": 400,
@@ -146,15 +146,15 @@
         }
       },
       "fat-soluble": {
-        "vitamin-a": {
+        "vitamin-a-retinol": {
           "rda": 900,
           "unit": "mcg",
           "ul": 3000
         },
         "vitamin-d": {
-          "rda": 15,
-          "unit": "mcg",
-          "ul": 100
+          "rda": 600,
+          "unit": "IU",
+          "ul": 4000
         },
         "vitamin-e": {
           "rda": 15,
@@ -199,7 +199,7 @@
           "unit": "mg",
           "ul": 4700
         },
-        "sulfur": "unavailable"
+        "sulfur": {}
       },
       "trace-minerals": {
         "boron": {
@@ -221,9 +221,9 @@
           "ul": 11
         },
         "copper": {
-          "rda": 900,
-          "unit": "mcg",
-          "ul": 10000
+          "rda": 0.9,
+          "unit": "mg",
+          "ul": 10
         },
         "zinc": {
           "rda": 11,
@@ -236,9 +236,9 @@
           "ul": 1100
         },
         "fluoride": {
-          "ai": 4,
-          "unit": "mg",
-          "ul": 10
+          "ai": 4000,
+          "unit": "mcg",
+          "ul": 10000
         },
         "selenium": {
           "rda": 55,

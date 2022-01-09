@@ -78,8 +78,29 @@ get_minerals_summary <- function(high_level_summary) {
     return(x[4])
   }) %>% unlist
   
-  mineral_summary <- minerals %>% transmute(mineral = mineral_names,
-                                            amount = amount) %>% group_by(mineral) %>% summarise(total = sum(amount)) %>% 
-    tidyr::spread(., mineral, total)
+  
+  minerals_rda_file_path <- paste0(getwd(), "/data/usfda-mapping/rda-values.json")
+  
+  macro_minerals_rda <- (jsonlite::fromJSON(minerals_rda_file_path))$micros$minerals$`macro-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
+  
+  trace_minerals_rda <- (jsonlite::fromJSON(minerals_rda_file_path))$micros$minerals$`trace-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
+  
+  minerals_rda <- rbind(macro_minerals_rda, trace_minerals_rda) %>% 
+    mutate(rda = as.numeric(rda), ul = as.numeric(ul)) %>% 
+    mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
+    mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>% 
+    filter(!is.na(required_amount)) %>% 
+    transmute(mineral = .id,
+              rda = required_amount,
+              ul = upper_limit)
+  
+  minerals_summary <- minerals %>% mutate(mineral = mineral_names) %>% 
+    group_by(mineral, unit) %>% 
+    summarise(actual_consumed = sum(amount)) %>% merge(minerals_rda) %>% 
+    mutate(actual_consumed = paste0(actual_consumed, " ", unit),
+           rda = paste0(rda, " ", unit),
+           ul = paste0(ul, " ", unit)) %>% select(-unit)
+  
+  return(minerals_summary)
 }
 
