@@ -16,10 +16,10 @@ macros_summary <- get_macros_summary(high_level_summary)
 
 fat_micros_summary <- get_fat_micros_summary(high_level_summary)
 minerals_summary <- get_minerals_summary(high_level_summary)
+vitamins_summary <- get_vitamins_summary(high_level_summary)
 
-micros_summary <- rbind.fill(fat_micros_summary, minerals_summary)
+micros_summary <- rbind.fill(fat_micros_summary, minerals_summary, vitamins_summary)
 
 # TODO:
-# Vitamins summary
 # Protein micros summary
 # Antioxidants RDA analysis

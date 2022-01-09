@@ -81,11 +81,9 @@
         "vitamin-a-rae": 320,
         "vitamin-d": 324,
         "vitamin-e": 323,
-        "vitamin-k": {
-          "vitamin-k1": 429,
-          "vitamin-k2": 430,
-          "vitamin-k3": 428
-        }
+        "vitamin-k": 428,
+        "vitamin-k": 429,
+        "vitamin-k": 430
       }
     },
     "minerals": {

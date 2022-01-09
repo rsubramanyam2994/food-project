@@ -26,11 +26,12 @@ get_macro_perc <- function(df) {
   carbs_calories_perc = round(100 * carbs * 4 / total_calories, 2)
   mufa_calories_perc = round(100 * mufa * 9 / total_calories, 2)
   pufa_calories_perc = round(100 * pufa * 9 / total_calories, 2)
+  saturated_fat_calories_perc = round(100 * saturated_fat * 9 / total_calories, 2)
   
   return(data.frame(protein = protein, protein_calories_perc = protein_calories_perc, 
                     carbs = carbs, carbs_calories_perc = carbs_calories_perc, fiber = fiber, 
                     fat = total_fat, fat_calories_perc = fat_calories_perc, 
-                    saturated_fat = saturated_fat, 
+                    saturated_fat = saturated_fat, saturated_fat_calories_perc = saturated_fat_calories_perc,
                     mufa = mufa, mufa_calories_perc = mufa_calories_perc, 
                     pufa = pufa, pufa_calories_perc = pufa_calories_perc,
                     calories = calories))
@@ -58,6 +59,37 @@ get_overall_summary <- function(high_level_summary) {
   
 }
 
+
+get_vitamins_summary <- function(high_level_summary) {
+  vitamins <- high_level_summary %>% filter(str_detect(path, "vitamins"))
+  
+  vitamin_names <- lapply(str_split(vitamins$path, "\\."), function(x) {
+    return(x[4])
+  }) %>% unlist
+  
+  fat_soluble_vitamins_rdas <- (jsonlite::fromJSON(rdas_file_path))$micros$vitamins$`fat-soluble` %>% Filter(length, .) %>% ldply(., data.frame)
+  
+  water_soluble_vitamins_rdas <- (jsonlite::fromJSON(rdas_file_path))$micros$vitamins$`water-soluble` %>% Filter(length, .) %>% ldply(., data.frame)
+  
+  vitamins_rda <- rbind(fat_soluble_vitamins_rdas, water_soluble_vitamins_rdas) %>% 
+    mutate(rda = as.numeric(rda), ul = as.numeric(ul), ai = as.numeric(ai)) %>% 
+    mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
+    mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>% 
+    filter(!is.na(required_amount)) %>% 
+    transmute(element = .id,
+              rda = required_amount,
+              ul = upper_limit)
+  
+  vitamins_summary <- vitamins %>% mutate(element = vitamin_names) %>% 
+    group_by(element, unit) %>% 
+    summarise(actual_consumed = sum(amount)) %>% merge(vitamins_rda) %>% 
+    mutate(actual_consumed = paste0(actual_consumed, " ", unit),
+           rda = paste0(rda, " ", unit),
+           ul = paste0(ul, " ", unit)) %>% select(-unit)
+  
+  return(vitamins_summary)
+
+}
 
 get_fat_micros_summary <- function(high_level_summary) {
   fat_micros <- high_level_summary %>% filter(str_detect(path, "micros.fat.poly"))
@@ -122,9 +154,9 @@ get_minerals_summary <- function(high_level_summary) {
 
 get_macros_rda <- function() {
   return(data.frame(
-    macro = c("protein", "carbohydrate", "fat", "saturated-fat", "mufa", "pufa", "fiber"),
-    lower_limit = c("10%", "50%", "20%",  "0 %", "10%", "10%", "30 g"),
-    upper_limit = c("20%", "60%", "30%", "10 g", "15%", "15%", "38 g")
+    macro = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
+    lower_limit = c("10%", "50%", "20%", "0 %", "0 g", "5%", "5%", "30 g"),
+    upper_limit = c("20%", "60%", "30%", "5 %", "10 g", "15%", "15%", "38 g")
   ))
 }
 
@@ -132,15 +164,16 @@ get_macros_summary <- function(high_level_summary) {
   
   macros_perc <- get_macro_perc(high_level_summary)
   actual_consumed <- data.frame(
-    macro = c("protein", "carbohydrate", "saturated-fat", "mufa", "pufa", "fiber"),
+    macro = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
     actual_consumed = c(macros_perc$protein_calories_perc, macros_perc$carbs_calories_perc, 
+                        macros_perc$fat_calories_perc, macros_perc$saturated_fat_calories_perc,
                         paste0(macros_perc$saturated_fat, " g"), macros_perc$mufa_calories_perc,
                         macros_perc$pufa_calories_perc, paste0(macros_perc$fiber, " g")),
     stringsAsFactors = FALSE
   ) %>% mutate(actual_consumed = 
                  if_else(str_detect(actual_consumed, "g"), actual_consumed, paste0(actual_consumed, " %")))
   
-  output <- merge(actual_consumed, get_macros_rda())
+  output <- merge(actual_consumed, get_macros_rda()) %>% arrange(macro)
   
   return(output)
 }
