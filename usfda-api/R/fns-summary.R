@@ -1,3 +1,4 @@
+
 get_nutrient_amount <- function(df, nutrient_code) {
   
   nutrient_df <- df %>% filter(nutrient_number == nutrient_code)
@@ -57,26 +58,35 @@ get_overall_summary <- function(high_level_summary) {
   
 }
 
-get_macros_summary_to_be_deleted <- function(high_level_summary) {
+
+get_fat_micros_summary <- function(high_level_summary) {
+  fat_micros <- high_level_summary %>% filter(str_detect(path, "micros.fat.poly"))
   
-  # TODO: Use conversion factor numbers to compute ratio instead of 4:4:9
-  # conversion_factor <- conversion_factors %>% filter(ndb_number %in% recipe_df$ndb_number)
+  omega_3_rdas <- (jsonlite::fromJSON(rdas_file_path))$micros$fat$`poly-unsaturated`$`omega-3` %>% ldply(., function(l) {
+    data.frame(l)
+  }) %>% mutate(.id = paste0("omega-3.", .id))
   
-  conversion_factor_df <- data.frame(nutrient = c("carbohydrates.fiber", "carbohydrates", "protein", "fat"), factor = c(2, 4, 4, 9))
+  omega_6_rdas <- (jsonlite::fromJSON(rdas_file_path))$micros$fat$`poly-unsaturated`$`omega-6` %>% ldply(., function(l) {
+    data.frame(l)
+  }) %>% mutate(.id = paste0("omega-6.", .id))
   
-  recipe_summary <- high_level_summary %>% filter(str_detect(path, "macros|calories")) %>% group_by(nutrient, path) %>% summarise(amount = sum(amount), unit = unit[1]) %>% mutate(nutrient = str_replace_all(path, "macros.", "")) %>% 
-    filter(!(nutrient %in% c("carbohydrates.sugar", "carbohydrates.starch"))) %>% as.data.frame
+  fat_micro_rdas <- rbind.fill(omega_3_rdas, omega_6_rdas) %>% 
+    mutate(rda = as.numeric(rda), ai = as.numeric(ai)) %>% 
+    mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
+    transmute(element = .id,
+              rda = required_amount)
   
-  macro_analysis <- recipe_summary %>% filter(str_detect(nutrient, "total|protein|fiber")) %>% 
-    mutate(nutrient = str_replace(nutrient, ".total", "")) %>% merge(conversion_factor_df) %>% 
-    mutate(calories = amount * factor) %>% 
-    mutate(perc = 100 * (calories / sum(calories)) %>% round(., 2)) %>% select(-c(path))
+  micro_fat_names <- lapply(str_split(fat_micros$path, "\\."), function(x) {
+    return(paste0(x[4], ".", x[5]))
+  }) %>% unlist
   
-  fat_analysis <- recipe_summary %>% filter(str_detect(nutrient, "fat")) %>% filter(!(nutrient %in% c("fat.total", "fat.trans-fat"))) %>% mutate(perc = 100 * (amount / sum(amount)) %>% round(., 2)) %>% 
-    mutate(nutrient = str_replace(nutrient, "fat.", "")) %>% select(-path) %>% mutate(analysis = "fat_analysis")
+  updated_fat_micros <- fat_micros %>% mutate(element = micro_fat_names) %>% 
+    group_by(element, unit) %>% 
+    summarise(actual_consumed = sum(amount)) %>% merge(fat_micro_rdas) %>% 
+    mutate(actual_consumed = paste0(actual_consumed, " ", unit),
+           rda = paste0(rda, " ", unit)) %>% select(-unit)
   
-  return(list(macro_analysis = macro_analysis, fat_analysis = fat_analysis))
-  
+  return(updated_fat_micros)
 }
 
 get_minerals_summary <- function(high_level_summary) {
@@ -86,24 +96,21 @@ get_minerals_summary <- function(high_level_summary) {
     return(x[4])
   }) %>% unlist
   
+  macro_minerals_rda <- (jsonlite::fromJSON(rdas_file_path))$micros$minerals$`macro-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
   
-  minerals_rda_file_path <- paste0(getwd(), "/data/usfda-mapping/rda-values.json")
-  
-  macro_minerals_rda <- (jsonlite::fromJSON(minerals_rda_file_path))$micros$minerals$`macro-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
-  
-  trace_minerals_rda <- (jsonlite::fromJSON(minerals_rda_file_path))$micros$minerals$`trace-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
+  trace_minerals_rda <- (jsonlite::fromJSON(rdas_file_path))$micros$minerals$`trace-minerals` %>% Filter(length, .) %>% ldply(., data.frame)
   
   minerals_rda <- rbind(macro_minerals_rda, trace_minerals_rda) %>% 
     mutate(rda = as.numeric(rda), ul = as.numeric(ul)) %>% 
     mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
     mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>% 
     filter(!is.na(required_amount)) %>% 
-    transmute(mineral = .id,
+    transmute(element = .id,
               rda = required_amount,
               ul = upper_limit)
   
-  minerals_summary <- minerals %>% mutate(mineral = mineral_names) %>% 
-    group_by(mineral, unit) %>% 
+  minerals_summary <- minerals %>% mutate(element = mineral_names) %>% 
+    group_by(element, unit) %>% 
     summarise(actual_consumed = sum(amount)) %>% merge(minerals_rda) %>% 
     mutate(actual_consumed = paste0(actual_consumed, " ", unit),
            rda = paste0(rda, " ", unit),
@@ -116,7 +123,7 @@ get_minerals_summary <- function(high_level_summary) {
 get_macros_rda <- function() {
   return(data.frame(
     macro = c("protein", "carbohydrate", "fat", "saturated-fat", "mufa", "pufa", "fiber"),
-    lower_limit = c("10%", "50%", "20%",  "0", "10%", "10%", "30 g"),
+    lower_limit = c("10%", "50%", "20%",  "0 %", "10%", "10%", "30 g"),
     upper_limit = c("20%", "60%", "30%", "10 g", "15%", "15%", "38 g")
   ))
 }
@@ -128,8 +135,10 @@ get_macros_summary <- function(high_level_summary) {
     macro = c("protein", "carbohydrate", "saturated-fat", "mufa", "pufa", "fiber"),
     actual_consumed = c(macros_perc$protein_calories_perc, macros_perc$carbs_calories_perc, 
                         paste0(macros_perc$saturated_fat, " g"), macros_perc$mufa_calories_perc,
-                        macros_perc$pufa_calories_perc, paste0(macros_perc$fiber, " g"))
-  )
+                        macros_perc$pufa_calories_perc, paste0(macros_perc$fiber, " g")),
+    stringsAsFactors = FALSE
+  ) %>% mutate(actual_consumed = 
+                 if_else(str_detect(actual_consumed, "g"), actual_consumed, paste0(actual_consumed, " %")))
   
   output <- merge(actual_consumed, get_macros_rda())
   

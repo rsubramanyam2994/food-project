@@ -12,5 +12,7 @@ measureable_nutrients = get_measured_nutrients()
 ingredient_portions <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_portions")
 ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_ndb_mapping") 
 ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
+
+rdas_file_path <- paste0(getwd(), "/data/usfda-mapping/rda-values.json")
 # conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 
