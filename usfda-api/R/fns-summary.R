@@ -178,9 +178,9 @@ get_minerals_summary <- function(high_level_summary) {
 
 get_macros_rda <- function() {
   return(data.frame(
-    macro = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
-    lower_limit = c("10%", "50%", "20%", "0 %", "0 g", "5%", "5%", "30 g"),
-    upper_limit = c("20%", "60%", "30%", "5 %", "10 g", "15%", "15%", "38 g")
+    element = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
+    lower_limit = c("10 %", "50 %", "20 %", "0 %", "0 g", "5 %", "5 %", "30 g"),
+    upper_limit = c("20 %", "60 %", "30 %", "5 %", "10 g", "15 %", "15 %", "38 g")
   ))
 }
 
@@ -188,7 +188,7 @@ get_macros_summary <- function(high_level_summary) {
   
   macros_perc <- get_macro_perc(high_level_summary)
   actual_consumed <- data.frame(
-    macro = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
+    element = c("protein", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
     actual_consumed = c(macros_perc$protein_calories_perc, macros_perc$carbs_calories_perc, 
                         macros_perc$fat_calories_perc, macros_perc$saturated_fat_calories_perc,
                         paste0(macros_perc$saturated_fat, " g"), macros_perc$mufa_calories_perc,
@@ -197,7 +197,30 @@ get_macros_summary <- function(high_level_summary) {
   ) %>% mutate(actual_consumed = 
                  if_else(str_detect(actual_consumed, "g"), actual_consumed, paste0(actual_consumed, " %")))
   
-  output <- merge(actual_consumed, get_macros_rda()) %>% arrange(macro)
+  output <- merge(actual_consumed, get_macros_rda())
   
   return(output)
+}
+
+
+extract_num <- function(l) {
+  str_split(as.character(l), " ") %>% lapply(., function(l) {
+    return(l[1])
+  }) %>% unlist %>% as.numeric
+}
+
+
+extract_num_df <- function(df) {
+  foo <- lapply(df %>% select(-element), extract_num) %>% data.frame()
+  colnames(foo) <- paste0(colnames(foo), "_num")
+  cbind(df, foo)
+}
+
+get_macros_deficiency_stats <- function(macros_summary) {
+  foo <- extract_num_df(macros_summary)
+}
+
+
+get_micros_deficiency_stats <- function(micros_summary) {
+  foo <- extract_num_df(micros_summary)
 }
