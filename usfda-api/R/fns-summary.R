@@ -16,15 +16,23 @@ get_macro_perc <- function(df) {
   pufa <- get_nutrient_amount(df, "646")
   total_fat <- saturated_fat + mufa + pufa
   
-  total_macros <- protein + carbs + total_fat
-  
-  protein_perc = round(100 * protein / total_macros, 2)
-  fat_perc = round(100 * total_fat / total_macros, 2)
-  carbs_perc = round(100 * carbs / total_macros, 2)
-  
   calories <- get_nutrient_amount(df, "208")
   
-  return(data.frame(protein = protein, protein_perc = protein_perc, carbs = carbs, carbs_perc = carbs_perc, fiber = fiber, fat = total_fat, fat_perc = fat_perc, saturated_fat = saturated_fat, mufa = mufa, pufa = pufa, calories = calories))
+  total_calories <- protein * 4 + total_fat * 9 + carbs * 4
+  
+  protein_calories_perc = round(100 * protein * 4 / total_calories, 2)
+  fat_calories_perc = round(100 * total_fat * 9 / total_calories, 2)
+  carbs_calories_perc = round(100 * carbs * 4 / total_calories, 2)
+  mufa_calories_perc = round(100 * mufa * 9 / total_calories, 2)
+  pufa_calories_perc = round(100 * pufa * 9 / total_calories, 2)
+  
+  return(data.frame(protein = protein, protein_calories_perc = protein_calories_perc, 
+                    carbs = carbs, carbs_calories_perc = carbs_calories_perc, fiber = fiber, 
+                    fat = total_fat, fat_calories_perc = fat_calories_perc, 
+                    saturated_fat = saturated_fat, 
+                    mufa = mufa, mufa_calories_perc = mufa_calories_perc, 
+                    pufa = pufa, pufa_calories_perc = pufa_calories_perc,
+                    calories = calories))
 }
 
 
@@ -49,7 +57,7 @@ get_overall_summary <- function(high_level_summary) {
   
 }
 
-get_macros_summary <- function(high_level_summary) {
+get_macros_summary_to_be_deleted <- function(high_level_summary) {
   
   # TODO: Use conversion factor numbers to compute ratio instead of 4:4:9
   # conversion_factor <- conversion_factors %>% filter(ndb_number %in% recipe_df$ndb_number)
@@ -104,3 +112,26 @@ get_minerals_summary <- function(high_level_summary) {
   return(minerals_summary)
 }
 
+
+get_macros_rda <- function() {
+  return(data.frame(
+    macro = c("protein", "carbohydrate", "fat", "saturated-fat", "mufa", "pufa", "fiber"),
+    lower_limit = c("10%", "50%", "20%",  "0", "10%", "10%", "30 g"),
+    upper_limit = c("20%", "60%", "30%", "10 g", "15%", "15%", "38 g")
+  ))
+}
+
+get_macros_summary <- function(high_level_summary) {
+  
+  macros_perc <- get_macro_perc(high_level_summary)
+  actual_consumed <- data.frame(
+    macro = c("protein", "carbohydrate", "saturated-fat", "mufa", "pufa", "fiber"),
+    actual_consumed = c(macros_perc$protein_calories_perc, macros_perc$carbs_calories_perc, 
+                        paste0(macros_perc$saturated_fat, " g"), macros_perc$mufa_calories_perc,
+                        macros_perc$pufa_calories_perc, paste0(macros_perc$fiber, " g"))
+  )
+  
+  output <- merge(actual_consumed, get_macros_rda())
+  
+  return(output)
+}

@@ -1,0 +1,19 @@
+time,food_name,quantity
+breakfast,blue-milk,0.33 cup
+breakfast,semolina-semiya,1 cup
+breakfast,sambar,0.75 cup
+morning-snack,apple-without-skin,200 g
+lunch,white-rice,4 tbsp
+lunch,sambar,0.75 cup
+lunch,beans-carrot-curry,0.75 cup
+lunch,curd,0.33 cup
+lunch,my-dal-mix,1 discrete
+lunch,papad,1 discrete
+evening-snack,blue-milk,0.33 cup
+evening-snack,my-nut-berry-mix,1 discrete
+evening-snack,banana,80 g
+evening-snack,pomegranate,50 g
+dinner,millet-pongal,1.25 cup
+dinner,tomato-onion-chutney,2 tbsp
+dinner,curd,0.33 cup
+dinner,papad,1 discrete
