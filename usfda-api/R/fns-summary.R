@@ -56,7 +56,31 @@ get_macro_summary_per_meal_time <- function(high_level_summary) {
 
 get_overall_summary <- function(high_level_summary) {
   return(get_macro_perc(high_level_summary))
+}
+
+get_proteins_summary <- function(high_level_summary, daily_protein_requirement) {
+
+  essential_amino_acids_rdas <- (jsonlite::fromJSON(rdas_file_path))$micros$protein$`essential-amino-acids` %>% ldply(., data.frame) %>% mutate(rda = rda * daily_protein_requirement)
   
+  proteins <- high_level_summary %>% filter(str_detect(path, "essential-amino")) %>% 
+    filter(!str_detect(path, "non-essential-amino"))
+  
+  protein_names <- lapply(str_split(proteins$path, "\\."), function(x) {
+    return(x[4])
+  }) %>% unlist
+  
+  essential_amino_acids_rdas <- essential_amino_acids_rdas %>% 
+    mutate(rda = as.numeric(rda)) %>% 
+    transmute(element = .id,
+              rda = rda)
+  
+  proteins_summary <- proteins %>% mutate(element = protein_names) %>% 
+    group_by(element, unit) %>% 
+    summarise(actual_consumed = sum(amount)) %>% merge(essential_amino_acids_rdas) %>% 
+    mutate(actual_consumed = paste0(actual_consumed, " ", unit),
+           rda = paste0(rda, " ", unit)) %>% select(-unit)
+  
+  return(proteins_summary)
 }
 
 
