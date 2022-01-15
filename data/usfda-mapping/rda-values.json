@@ -145,7 +145,7 @@
         }
       },
       "fat-soluble": {
-        "vitamin-a-retinol": {
+        "vitamin-a-rae": {
           "rda": 900,
           "unit": "mcg",
           "ul": 3000

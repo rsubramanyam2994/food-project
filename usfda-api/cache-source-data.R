@@ -31,3 +31,35 @@ saveRDS(unique_nutrients, paste0(wd, "unique_nutrients"))
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
 saveRDS(unique_foods, paste0(wd, "unique_foods"))
 
+
+required_categories <- c("Cereal Grains and Pasta", "Dairy and Egg Products", "Fats and Oils", "Fruits and Fruit Juices", "Legumes and Legume Products", "Nut and Seed Products", "Spices and Herbs", "Vegetables and Vegetable Products")
+
+ingredient_nutrition_info <- ingredient_nutrition_info %>% filter(food_category %in% required_categories)
+
+vitamin_a <- ingredient_nutrition_info %>% filter(nutrient_number == "320") %>% filter(amount > 0) %>% 
+  arrange(desc(amount))
+
+vitamin_d <- ingredient_nutrition_info %>% filter(nutrient_number == "324") %>% filter(amount > 0) %>% 
+  arrange(desc(amount))
+
+vitamin_e <- ingredient_nutrition_info %>% filter(nutrient_number == "323") %>% filter(amount > 0) %>% 
+  arrange(desc(amount))
+
+vitamin_k <- ingredient_nutrition_info %>% filter(nutrient_number %in% c("428", "429", "430")) %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_1 <- ingredient_nutrition_info %>% filter(nutrient_number == "404") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_2 <- ingredient_nutrition_info %>% filter(nutrient_number == "405") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_3 <- ingredient_nutrition_info %>% filter(nutrient_number == "406") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_5 <- ingredient_nutrition_info %>% filter(nutrient_number == "410") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_6 <- ingredient_nutrition_info %>% filter(nutrient_number == "415") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_b_12 <- ingredient_nutrition_info %>% filter(nutrient_number == "418") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+vitamin_c <- ingredient_nutrition_info %>% filter(nutrient_number == "401") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+
+a <- ingredient_nutrition_info %>% filter(ndb_number == "9286")
