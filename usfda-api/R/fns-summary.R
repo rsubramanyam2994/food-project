@@ -178,9 +178,9 @@ get_minerals_summary <- function(high_level_summary) {
 
 get_macros_rda <- function(body_weight = 70) {
   return(data.frame(
-    element = c("protein", "protein-grams", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
-    lower_limit = c("10 %", paste0(0.8 * body_weight, " g"), "50 %", "20 %", "0 %", "0 g", "5 %", "5 %", "30 g"),
-    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", "30 %", "5 %", "10 g", "15 %", "15 %", "38 g")
+    element = c("protein", "protein-grams", "carbohydrate", "carb-grams", "fat", "fat-grams", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber", "calories"),
+    lower_limit = c("10 %", paste0(0.8 * body_weight, " g"), "50 %", NA, "20 %", NA, "0 %", "0 g", "5 %", "5 %", "30 g", NA),
+    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", NA, "30 %", NA, "5 %", "10 g", "15 %", "15 %", "38 g", NA)
   ))
 }
 
@@ -188,16 +188,17 @@ get_macros_summary <- function(high_level_summary, body_weight) {
   
   macros_perc <- get_macro_perc(high_level_summary)
   actual_consumed <- data.frame(
-    element = c("protein", "protein-grams", "carbohydrate", "fat", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
+    element = c("protein", "protein-grams", "carbohydrate", "carb-grams", "fat", "fat-grams", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber"),
     actual_consumed = c(macros_perc$protein_calories_perc, paste0(macros_perc$protein, " g"),
-                        macros_perc$carbs_calories_perc,
-                        macros_perc$fat_calories_perc,
+                        macros_perc$carbs_calories_perc, paste0(macros_perc$carbs, " g"),
+                        macros_perc$fat_calories_perc, paste0(macros_perc$fat, " g"),
                         macros_perc$saturated_fat_calories_perc,
                         paste0(macros_perc$saturated_fat, " g"), macros_perc$mufa_calories_perc,
                         macros_perc$pufa_calories_perc, paste0(macros_perc$fiber, " g")),
     stringsAsFactors = FALSE
   ) %>% mutate(actual_consumed = 
-                 if_else(str_detect(actual_consumed, "g"), actual_consumed, paste0(actual_consumed, " %")))
+                 if_else(str_detect(actual_consumed, "g"), actual_consumed, paste0(actual_consumed, " %"))) %>% 
+    rbind.fill(data.frame(element = "calories", actual_consumed = paste0(macros_perc$calories, " kcal")))
   
   output <- merge(actual_consumed, get_macros_rda(body_weight))
   
