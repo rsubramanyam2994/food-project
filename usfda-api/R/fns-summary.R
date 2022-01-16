@@ -98,7 +98,7 @@ get_vitamins_summary <- function(high_level_summary) {
   vitamins_rda <- rbind(fat_soluble_vitamins_rdas, water_soluble_vitamins_rdas) %>% 
     mutate(rda = as.numeric(rda), ul = as.numeric(ul), ai = as.numeric(ai)) %>% 
     mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
-    mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>% 
+    mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>%
     filter(!is.na(required_amount)) %>% 
     transmute(element = .id,
               rda = required_amount,
@@ -224,5 +224,11 @@ get_macros_deficiency_stats <- function(macros_summary) {
 
 
 get_micros_deficiency_stats <- function(micros_summary) {
-  foo <- extract_num_df(micros_summary)
+  extract_num_df(micros_summary) %>% 
+    # mutate(ul_num = if_else(is.na(ul_num), rda_num, ul_num)) %>% 
+    mutate(consumption_status = "adequate") %>% 
+    mutate(consumption_status = if_else(actual_consumed_num < 0.9 * rda_num, "deficient", consumption_status)) %>% 
+    mutate(consumption_status = if_else(actual_consumed_num > 1.1 * ul_num, "excess", consumption_status)) %>% 
+    mutate(consumption_status = if_else(is.na(ul_num), "adequate", consumption_status)) %>%
+    select(-matches('num'))
 }

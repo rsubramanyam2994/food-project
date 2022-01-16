@@ -7,13 +7,15 @@ library(dplyr)
 
 wd = paste0(getwd(), "/cache/")
 
-source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
-saveRDS(source_json, paste0(wd, "source_json"))
+# source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
+# saveRDS(source_json, paste0(wd, "source_json"))
+
+source_json <- readRDS(paste0(wd, "source_json"))
 
 foundation_foods_df <- read_foundation_food_data(source_json)
 saveRDS(foundation_foods_df, paste0(wd, "foundation_foods_df"))
 
-food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "custom"))
+food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "spices", "custom"))
 saveRDS(food_ndb_mapping, paste0(wd, "food_ndb_mapping")) 
 
 metadata <- get_metadata(source_json)
@@ -60,6 +62,27 @@ vitamin_b_6 <- ingredient_nutrition_info %>% filter(nutrient_number == "415") %>
 vitamin_b_12 <- ingredient_nutrition_info %>% filter(nutrient_number == "418") %>% filter(amount > 0) %>% arrange(desc(amount))
 
 vitamin_c <- ingredient_nutrition_info %>% filter(nutrient_number == "401") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+calcium <- ingredient_nutrition_info %>% filter(nutrient_number == "301") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+potassium <- ingredient_nutrition_info %>% filter(nutrient_number == "306") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+magnesium <- ingredient_nutrition_info %>% filter(nutrient_number == "304") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+phosphorous <- ingredient_nutrition_info %>% filter(nutrient_number == "305") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+zinc <- ingredient_nutrition_info %>% filter(nutrient_number == "309") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+copper <- ingredient_nutrition_info %>% filter(nutrient_number == "312") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+manganese <- ingredient_nutrition_info %>% filter(nutrient_number == "315") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+iron <- ingredient_nutrition_info %>% filter(nutrient_number == "303") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+fluoride <- ingredient_nutrition_info %>% filter(nutrient_number == "313") %>% filter(amount > 0) %>% arrange(desc(amount))
+
+selenium <- ingredient_nutrition_info %>% filter(nutrient_number == "317") %>% filter(amount > 0) %>% arrange(desc(amount))
+
 
 
 a <- ingredient_nutrition_info %>% filter(ndb_number == "9286")

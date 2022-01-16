@@ -15,14 +15,6 @@
     {
       "id": "walnut",
       "quantity": "5 g"
-    },
-    {
-      "id": "blueberry",
-      "quantity": "10 g"
-    },
-    {
-      "id": "strawberry",
-      "quantity": "10 g"
     }
   ],
   "discrete": true

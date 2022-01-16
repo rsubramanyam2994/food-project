@@ -5,7 +5,7 @@
       "quantity": "1 cup"
     },
     {
-      "id": "tomato",
+      "id": "red-tomato",
       "quantity": "50 g"
     },
     {
@@ -34,7 +34,5 @@
   "totalWeightInGrams": 312,
   "oneCupWeightInGramsAfterCooking": 104,
   "instructions": [],
-  "tags": [],
-  "notes": "Use 1:4 ratio to boil moong dal and millet",
-  "name": "semolina-semiya"
+  "tags": []
 }

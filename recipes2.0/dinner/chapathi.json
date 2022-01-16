@@ -1,0 +1,15 @@
+{
+  "ingredients": [
+    {
+      "id": "wheat-flour",
+      "quantity": "25 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "0.75 tsp"
+    }
+  ],
+  "discrete": true
+}
+
+

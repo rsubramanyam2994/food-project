@@ -35,7 +35,7 @@ convert_to_cups <- function(menu) {
 
 check_if_all_ingredients_has_mapping <- function(df1, df2) {
   if (nrow(df1) != nrow(df2)) {
-    stop("Recipe has ingredients that aren't mapped")
+    stop(str_interp("Recipe has ingredients that aren't mapped - ${df2$ingredient[which(!df2$ingredient %in% df1$ingredient)]}"))
   }
   
   return(df1)

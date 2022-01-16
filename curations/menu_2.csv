@@ -1,0 +1,22 @@
+time,food_name,quantity
+breakfast,oats-upma,0.75 cup
+breakfast,blue-milk,0.33 cup
+breakfast,radish-sambar,0.33 cup
+breakfast,sugar,6 g
+morning-snack,banana,80 g
+morning-snack,flaxseed,10 g
+morning-snack,strawberry,20 g
+lunch,my-dal-mix,1 discrete
+lunch,papad,1 discrete
+lunch,radish-sambar,0.33 cup
+lunch,white-rice,4 tbsp
+lunch,beetroot-carrot-curry,0.75 cup
+lunch,pudina-thogayal,1 cup
+lunch,curd,0.5 cup
+evening-snack,guava,100 g
+evening-snack,my-nut-berry-mix,1 discrete
+evening-snack,blue-milk,0.33 cup
+evening-snack,sugar,6 g
+dinner,dal-tadka,0.5 cup
+dinner,chapathi,2 discrete
+dinner,curd,0.33 cup

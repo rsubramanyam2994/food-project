@@ -1,0 +1,27 @@
+{
+  "ingredients": [
+    {
+      "id": "beetroot",
+      "quantity": "150 g"
+    },
+    {
+      "id": "carrot",
+      "quantity": "150 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "1 tbsp"
+    }
+  ],
+  "totalWeightInGrams": 318,
+  "oneCupWeightInGramsAfterCooking": 159,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": []
+}
+
+

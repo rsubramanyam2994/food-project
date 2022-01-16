@@ -1,0 +1,56 @@
+{
+  "ingredients": [
+    {
+      "id": "oats",
+      "quantity": "300 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "2 tsp"
+    },
+    {
+      "id": "carrot",
+      "quantity": "50 g"
+    },
+    {
+      "id": "onion",
+      "quantity": "50 g"
+    },
+    {
+      "id": "beans",
+      "quantity": "20 g"
+    },
+    {
+      "id": "ginger",
+      "quantity": "5 g"
+    },
+    {
+      "id": "green-chili",
+      "quantity": "5 g"
+    },
+    {
+      "id": "lemon-juice",
+      "quantity": "5 g"
+    },
+    {
+      "id": "coriander",
+      "quantity": "5 g"
+    },
+    {
+      "id": "green-peas",
+      "quantity": "20 g"
+    }
+  ],
+
+  "totalWeightInGrams": 472,
+  "oneCupWeightInGramsAfterCooking": 157,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": []
+}
+
+
