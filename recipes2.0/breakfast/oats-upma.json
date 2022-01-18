@@ -2,14 +2,15 @@
   "ingredients": [
     {
       "id": "oats",
-      "quantity": "300 g"
+      "quantity": "240 g",
+      "approxAmountDescription": "2 cup"
     },
     {
       "id": "salt",
-      "quantity": "3 g"
+      "quantity": "4 g"
     },
     {
-      "id": "extra-virgin-olive-oil",
+      "id": "groundnut-oil",
       "quantity": "2 tsp"
     },
     {
@@ -18,11 +19,11 @@
     },
     {
       "id": "onion",
-      "quantity": "50 g"
+      "quantity": "90 g"
     },
     {
       "id": "beans",
-      "quantity": "20 g"
+      "quantity": "30 g"
     },
     {
       "id": "ginger",
@@ -46,9 +47,9 @@
     }
   ],
 
-  "totalWeightInGrams": 472,
-  "oneCupWeightInGramsAfterCooking": 157,
-  "numberOfPeopleWhoCanBeServed": 3,
+  "totalWeightInGrams": 1081,
+  "oneCupWeightInGramsAfterCooking": 260,
+  "numberOfPeopleWhoCanBeServed": 4,
   "instructions": [],
   "tags": []
 }

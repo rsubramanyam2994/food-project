@@ -2,11 +2,11 @@
   "ingredients": [
     {
       "id": "beetroot",
-      "quantity": "150 g"
+      "quantity": "228 g"
     },
     {
       "id": "carrot",
-      "quantity": "150 g"
+      "quantity": "140 g"
     },
     {
       "id": "salt",
@@ -17,9 +17,9 @@
       "quantity": "2 tsp"
     }
   ],
-  "totalWeightInGrams": 318,
-  "oneCupWeightInGramsAfterCooking": 159,
-  "numberOfPeopleWhoCanBeServed": 2,
+  "totalWeightInGrams": 390,
+  "oneCupWeightInGramsAfterCooking": 210,
+  "numberOfPeopleWhoCanBeServed": 3,
   "instructions": [],
   "tags": []
 }

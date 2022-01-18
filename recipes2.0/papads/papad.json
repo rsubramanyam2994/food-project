@@ -3,6 +3,10 @@
     {
       "id": "sunflower-oil",
       "quantity": "3 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.35 g"
     }
   ],
   "discrete": true

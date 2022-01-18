@@ -2,7 +2,15 @@
   "ingredients": [
     {
       "id": "wheat-flour",
-      "quantity": "25 g"
+      "quantity": "18 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.4 g"
+    },
+    {
+      "id": "ghee",
+      "quantity": "0.5 g"
     },
     {
       "id": "groundnut-oil",

@@ -2,7 +2,7 @@
   "ingredients": [
     {
       "id": "radish",
-      "quantity": "200 g"
+      "quantity": "215 g"
     },
     {
       "id": "toor-dal",
@@ -14,19 +14,20 @@
     },
     {
       "id": "onion",
-      "quantity": "30 g"
+      "quantity": "44 g",
+      "approxAmountDescription": "1 medium sized onion"
     },
     {
       "id": "salt",
-      "quantity": "7 g"
+      "quantity": "8 g"
     },
     {
       "id": "groundnut-oil",
-      "quantity": "1 tbsp"
+      "quantity": "2 tsp"
     }
   ],
-  "totalWeightInGrams": 400,
-  "oneCupWeightInGramsAfterCooking": 100,
+  "totalWeightInGrams": 1067,
+  "oneCupWeightInGramsAfterCooking": 250,
   "numberOfPeopleWhoCanBeServed": 4,
   "instructions": [],
   "tags": []

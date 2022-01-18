@@ -15,6 +15,10 @@
     {
       "id": "walnut",
       "quantity": "5 g"
+    },
+    {
+      "id": "groundnut",
+      "quantity": "5 g"
     }
   ],
   "discrete": true
