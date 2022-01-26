@@ -1,0 +1,42 @@
+{
+  "ingredients": [
+    {
+      "id": "coconut-meat",
+      "quantity": "60 g"
+    },
+    {
+      "id": "green-chili",
+      "quantity": "1 g",
+      "approxAmountDescription": "2 medium sized"
+    },
+    {
+      "id": "salt",
+      "quantity": "2 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "3 tsp"
+    },
+    {
+      "id": "mustard-seeds",
+      "quantity": "2 g"
+    },
+    {
+      "id": "urad-dal",
+      "quantity": "2 g"
+    }
+  ],
+  "approxIngredients": [
+    "water"
+  ],
+  "negligibleIngredientsForTaste": [
+    "chilli powder",
+    "red-chilli",
+    "urad-dal"
+  ],
+  "totalWeightInGrams": 175,
+  "oneCupWeightInGramsAfterCooking": 208,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": []
+}

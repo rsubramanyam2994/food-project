@@ -66,6 +66,7 @@ read_recipe <- function(recipe_name) {
 
 
 get_high_level_recipe_summary <- function(menu) {
+  
   made_from_recipes <- menu %>% filter(!(food_name %in% ingredient_ndb_mapping$food_name)) %>% convert_to_cups
   
   ddply(made_from_recipes, c("time", "food_name"), function(meal) {
@@ -88,7 +89,12 @@ get_high_level_recipe_summary <- function(menu) {
 
 
 get_high_level_raw_foods_summary <- function(menu) {
+  
   eaten_raw <- menu %>% filter(food_name %in% ingredient_ndb_mapping$food_name) %>% merge(., ingredient_ndb_mapping, by.x = "food_name", by.y = "food_name") %>% mutate(recipe = food_name, ingredient = food_name) %>% select(-food_name)
+  
+  if (nrow(eaten_raw) == 0) {
+    return(data.frame())
+  }
   
   mult_factors <- get_gram_multiplication_factor(eaten_raw)
   

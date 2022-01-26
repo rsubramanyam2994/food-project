@@ -1,0 +1,30 @@
+{
+  "ingredients": [
+    {
+      "id": "green-peas",
+      "quantity": "20 g"
+    },
+    {
+      "id": "cabbage",
+      "quantity": "255 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "2 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "2 tsp"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 980 - tindalium pathram,
+  "oneCupWeightInGramsAfterCooking": 170,
+  "numberOfPeopleWhoCanBeServed": 3,
+  "instructions": [],
+  "tags": []
+}
+
+

@@ -1,0 +1,46 @@
+{
+  "ingredients": [
+    {
+      "id": "tomato",
+      "quantity": "80 g",
+      "approxDescription": "1 medium sized"
+    },
+    {
+      "id": "toor-dal",
+      "quantity": "4 tsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "7 cup"
+    },
+    {
+      "id": "tamarind",
+      "quantity": "20 g"
+    },
+    {
+      "id": "ghee",
+      "quantity": "1 tsp"
+    },
+    {
+      "id": "mustard-seeds",
+      "quantity": "5 g"
+    }
+  ],
+  "approxIngredients": [
+    "water",
+    "tamarind"
+  ],
+  "negligibleIngredientsForTaste": [
+    "coriander powder",
+    "chilli powder",
+    "sambhar powder",
+    "turmeric"
+  ],
+  "totalWeightInGrams": 1193 - daal pathram,
+  "oneCupWeightInGramsAfterCooking": 220,
+  "numberOfPeopleWhoCanBeServed": 4,
+  "instructions": [],
+  "tags": []
+}
+
+
