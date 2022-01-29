@@ -180,7 +180,7 @@ get_macros_rda <- function(body_weight = 70) {
   return(data.frame(
     element = c("protein", "protein-grams", "carbohydrate", "carb-grams", "fat", "fat-grams", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber", "calories"),
     lower_limit = c("10 %", paste0(0.8 * body_weight, " g"), "50 %", NA, "20 %", NA, "0 %", "0 g", "5 %", "5 %", "30 g", NA),
-    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", NA, "30 %", NA, "5 %", "10 g", "15 %", "15 %", "38 g", NA)
+    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", NA, "30 %", NA, "5 %", "13 g", "15 %", "15 %", "38 g", NA)
   ))
 }
 
@@ -226,10 +226,10 @@ get_macros_deficiency_stats <- function(macros_summary) {
 
 get_micros_deficiency_stats <- function(micros_summary) {
   extract_num_df(micros_summary) %>% 
-    # mutate(ul_num = if_else(is.na(ul_num), rda_num, ul_num)) %>% 
+    mutate(ul_num = if_else(is.na(ul_num), 3 * rda_num, ul_num)) %>%
     mutate(consumption_status = "adequate") %>% 
     mutate(consumption_status = if_else(actual_consumed_num < 0.9 * rda_num, "deficient", consumption_status)) %>% 
     mutate(consumption_status = if_else(actual_consumed_num > 1.1 * ul_num, "excess", consumption_status)) %>% 
     mutate(consumption_status = if_else(is.na(ul_num), "adequate", consumption_status)) %>%
-    select(-matches('num'))
-}
+    select(-matches('num')) %>% filter(!(element %in% c("fluoride", "vitamin-d", "omega-3.DHA", "omega-3.EPA")))
+} 

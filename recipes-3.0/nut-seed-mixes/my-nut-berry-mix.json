@@ -1,0 +1,27 @@
+{
+  "ingredients": [
+    {
+      "id": "almond",
+      "quantity": "5 g"
+    },
+    {
+      "id": "pista",
+      "quantity": "5 g"
+    },
+    {
+      "id": "chia-seeds",
+      "quantity": "10 g"
+    },
+    {
+      "id": "flaxseed",
+      "quantity": "10 g"
+    },
+    {
+      "id": "blueberry",
+      "quantity": "20 g"
+    }
+  ],
+  "discrete": true
+}
+
+

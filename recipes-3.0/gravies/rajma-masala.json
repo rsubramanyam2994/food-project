@@ -1,0 +1,25 @@
+{
+  "ingredients": [
+    {
+      "id": "rajma",
+      "quantity": "60 g"
+    },
+    {
+      "id": "red-tomato",
+      "quantity": "30 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    },
+    {
+      "id": "onion",
+      "quantity": "30 g"
+    }
+  ],
+  "totalWeightInGrams": 124.5,
+  "oneCupWeightInGramsAfterCooking": 124.5,
+  "instructions": [],
+  "tags": ["protein-gravy", "side"],
+  "baseItems": ["roti", "jeera-rice"]
+}

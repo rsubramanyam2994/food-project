@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "id": "yellow-pumpkin",
+      "quantity": "100 g"
+    },
+    {
+      "id": "moong-dal",
+      "quantity": "1 tbsp"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "totalWeightInGrams": 116.5,
+  "oneCupWeightInGramsAfterCooking": 116.5,
+  "numberOfPeopleWhoCanBeServed": 1,
+  "instructions": [],
+  "tags": ["vitamin-a", "lunch-kootu"]
+}
+
+

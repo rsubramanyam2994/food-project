@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "id": "beetroot",
+      "quantity": "30 g"
+    },
+    {
+      "id": "carrot",
+      "quantity": "60 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "totalWeightInGrams": 94.5,
+  "oneCupWeightInGramsAfterCooking": 94.5,
+  "numberOfPeopleWhoCanBeServed": 1,
+  "instructions": [],
+  "tags": ["vitamin-a", "lunch-dry-vegetable"]
+}
+
+

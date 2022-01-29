@@ -1,0 +1,19 @@
+time,food_name,quantity
+breakfast,banana,60 g
+breakfast,pomegranate,100 g
+breakfast,blue-milk,0.33 cup
+breakfast,sugar,6 g
+lunch,my-dal-mix,1 discrete
+lunch,papad,1 discrete
+lunch,radish-sambar,0.5 cup
+lunch,white-rice,5 tbsp
+lunch,beans-carrot-curry,0.75 cup
+lunch,curd,0.33 cup
+evening-snack,flaxseed,10 g
+evening-snack,strawberry,30 g
+evening-snack,my-nut-mix,1 discrete
+evening-snack,blue-milk,0.33 cup
+evening-snack,sugar,6 g
+dinner,dal-tadka,0.75 cup
+dinner,chapathi,2 discrete
+dinner,curd,0.33 cup

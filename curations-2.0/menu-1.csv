@@ -1,0 +1,19 @@
+time,food_name,quantity
+breakfast,blue-milk,0.33 cup
+breakfast,wheat-bread,50 g
+breakfast,apple-with-skin,100 g
+breakfast,kiwi,50 g
+breakfast,guava,50 g
+breakfast,sugar,6 g
+lunch,pumpkin-kootu,1 cup
+lunch,beetroot-carrot-curry,1 cup
+lunch,curd,0.33 cup
+lunch,papad,2 discrete
+lunch,white-rice,4 tbsp
+lunch,toor-dal,0.33 cup
+evening-snack,my-nut-berry-mix,1 discrete
+evening-snack,blue-milk,0.33 cup
+evening-snack,sugar,6 g
+dinner,chapathi,3 discrete
+dinner,channa-masala,1 cup
+dinner,curd,0.33 cup

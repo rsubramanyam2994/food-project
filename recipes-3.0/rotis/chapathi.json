@@ -1,0 +1,16 @@
+{
+  "ingredients": [
+    {
+      "id": "wheat-flour",
+      "quantity": "18 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "0.25 tsp"
+    }
+  ],
+  "discrete": true,
+  "tags": ["lunch-base", "dinner-base", "roti"]
+}
+
+
