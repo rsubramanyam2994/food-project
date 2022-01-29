@@ -1,0 +1,28 @@
+{
+  "ingredients": [
+    {
+      "id": "wheat-flour",
+      "quantity": "7 g"
+    },
+    {
+      "id": "rice-flour",
+      "quantity": "9.42 g"
+    },
+    {
+      "id": "rava",
+      "quantity": "9.8 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.57 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "discrete": true,
+  "tags": ["breakfast-base", "dinner-base"]
+}
+
+

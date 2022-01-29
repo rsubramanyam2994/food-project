@@ -1,0 +1,55 @@
+{
+  "ingredients": [
+    {
+      "id": "basmati-rice",
+      "quantity": "0.33 cup"
+    },
+    {
+      "id": "carrot",
+      "quantity": "56 g"
+    },
+    {
+      "id": "beans",
+      "quantity": "48 g"
+    },
+    {
+      "id": "green-peas",
+      "quantity": "15 g"
+    },
+    {
+      "id": "pudina",
+      "quantity": "22 g"
+    },
+    {
+      "id": "coriander",
+      "quantity": "4 g"
+    },
+    {
+      "id": "onion",
+      "quantity": "83g"
+    },
+    {
+      "id": "red-tomato",
+      "quantity": "65 g"
+    },
+    {
+      "id": "soya",
+      "quantity": "10 g"
+    },
+    {
+      "id": "ghee",
+      "quantity": "1 tbsp"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "1 tbsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "7 g"
+    }
+  ],
+  "totalWeightInGrams": 1786 - cooker,
+  "oneCupWeightInGramsAfterCooking": 150,
+  "tags": []
+}

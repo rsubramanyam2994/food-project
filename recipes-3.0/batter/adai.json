@@ -1,0 +1,36 @@
+{
+  "ingredients": [
+    {
+      "id": "toor-dal",
+      "quantity": "8.3 g"
+    },
+    {
+      "id": "chana-dal",
+      "quantity": "5 g"
+    },
+    {
+      "id": "urad-dal",
+      "quantity": "1.1 g"
+    },
+    {
+      "id": "moong-dal",
+      "quantity": "1.1 g"
+    },
+    {
+      "id": "white-rice",
+      "quantity": "16 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.41 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "discrete": true,
+  "tags": ["breakfast-base", "dinner-base"]
+}
+
+

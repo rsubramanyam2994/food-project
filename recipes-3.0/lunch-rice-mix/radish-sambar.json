@@ -30,7 +30,8 @@
   "oneCupWeightInGramsAfterCooking": 250,
   "numberOfPeopleWhoCanBeServed": 4,
   "instructions": [],
-  "tags": []
+  "tags": [],
+  "baseItems": ["rice", "dosai", "idli", "vadai"]
 }
 
 

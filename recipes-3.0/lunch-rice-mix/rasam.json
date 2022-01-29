@@ -11,7 +11,7 @@
     },
     {
       "id": "salt",
-      "quantity": "7 cup"
+      "quantity": "7 g"
     },
     {
       "id": "tamarind",
@@ -36,7 +36,7 @@
     "sambhar powder",
     "turmeric"
   ],
-  "totalWeightInGrams": 1193 - daal pathram,
+  "totalWeightInGrams": 953,
   "oneCupWeightInGramsAfterCooking": 220,
   "numberOfPeopleWhoCanBeServed": 4,
   "instructions": [],

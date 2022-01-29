@@ -1,0 +1,25 @@
+{
+  "ingredients": [
+    {
+      "id": "wheat-flour",
+      "quantity": "16 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "0.25 tsp"
+    },
+    {
+      "id": "ghee",
+      "quantity": "0.1 tsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.4 g"
+    }
+  ],
+  "discrete": true,
+  "tags": ["dinner-base", "roti"],
+  "notes": "5 inches diameter"
+}
+
+
