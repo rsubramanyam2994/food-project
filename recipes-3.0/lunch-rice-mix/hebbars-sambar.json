@@ -1,0 +1,30 @@
+{
+  "ingredients": [
+    {
+      "id": "drumstick",
+      "quantity": "100 g"
+    },
+    {
+      "id": "toor-dal",
+      "quantity": "0.5 cup"
+    },
+    {
+      "id": "carrot",
+      "quantity": "100 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "4 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "4 tsp"
+    }
+  ],
+  "totalWeightInGrams": 428,
+  "oneCupWeightInGramsAfterCooking": 214,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": []
+}
+
+

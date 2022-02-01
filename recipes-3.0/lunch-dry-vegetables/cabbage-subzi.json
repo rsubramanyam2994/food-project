@@ -1,0 +1,34 @@
+{
+  "ingredients": [
+    {
+      "id": "green-cabbage",
+      "quantity": "150 g"
+    },
+    {
+      "id": "potato",
+      "quantity": "50 g"
+    },
+    {
+      "id": "onion",
+      "quantity": "50 g"
+    },
+    {
+      "id": "green-peas",
+      "quantity": "30 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "2 tsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    }
+  ],
+  "totalWeightInGrams": 293,
+  "oneCupWeightInGramsAfterCooking": 146.5,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": []
+}
+
+

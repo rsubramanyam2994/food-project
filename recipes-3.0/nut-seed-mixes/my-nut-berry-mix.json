@@ -9,8 +9,8 @@
       "quantity": "5 g"
     },
     {
-      "id": "chia-seeds",
-      "quantity": "10 g"
+      "id": "walnut",
+      "quantity": "5 g"
     },
     {
       "id": "flaxseed",
@@ -18,7 +18,7 @@
     },
     {
       "id": "blueberry",
-      "quantity": "20 g"
+      "quantity": "30 g"
     }
   ],
   "discrete": true

@@ -1,0 +1,9 @@
+{
+  "ingredients": [
+    {
+      "id": "salt",
+      "quantity": "0.35 g"
+    }
+  ],
+  "discrete": true
+}

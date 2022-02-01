@@ -1,0 +1,40 @@
+{
+  "ingredients": [
+    {
+      "id": "couscous",
+      "quantity": "180 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "2 tsp"
+    },
+    {
+      "id": "carrot",
+      "quantity": "50 g"
+    },
+    {
+      "id": "onion",
+      "quantity": "50 g"
+    },
+    {
+      "id": "red-tomato",
+      "quantity": "50 g"
+    },
+    {
+      "id": "green-peas",
+      "quantity": "20 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "5 g"
+    }
+  ],
+
+  "totalWeightInGrams": 364,
+  "oneCupWeightInGramsAfterCooking": 91,
+  "numberOfPeopleWhoCanBeServed": 4,
+  "instructions": [],
+  "tags": []
+}
+
+

@@ -13,12 +13,8 @@
       "quantity": "20 g"
     },
     {
-      "id": "extra-virgin-olive-oil",
-      "quantity": "2 tsp"
-    },
-    {
       "id": "groundnut-oil",
-      "quantity": "3 tsp"
+      "quantity": "4 tsp"
     },
     {
       "id": "salt",
@@ -40,6 +36,5 @@
   "numberOfPeopleWhoCanBeServed": 2,
   "instructions": [],
   "tags": [],
-  "notes": "Use 1:4 ratio to boil moong dal and millet",
-  "name": "semolina-semiya"
+  "notes": "Use 1:4 ratio to boil moong dal and millet"
 }
