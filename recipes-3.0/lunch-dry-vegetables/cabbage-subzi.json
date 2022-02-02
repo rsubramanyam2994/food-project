@@ -9,6 +9,10 @@
       "quantity": "50 g"
     },
     {
+      "id": "red-tomato",
+      "quantity": "50 g"
+    },
+    {
       "id": "onion",
       "quantity": "50 g"
     },
@@ -25,8 +29,8 @@
       "quantity": "3 g"
     }
   ],
-  "totalWeightInGrams": 293,
-  "oneCupWeightInGramsAfterCooking": 146.5,
+  "totalWeightInGrams": 342,
+  "oneCupWeightInGramsAfterCooking": 171,
   "numberOfPeopleWhoCanBeServed": 2,
   "instructions": []
 }
