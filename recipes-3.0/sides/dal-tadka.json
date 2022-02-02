@@ -2,7 +2,11 @@
   "ingredients": [
     {
       "id": "moong-dal",
-      "quantity": "1 cup"
+      "quantity": "0.5 cup"
+    },
+    {
+      "id": "toor-dal",
+      "quantity": "0.5 cup"
     },
     {
       "id": "red-tomato",
@@ -31,8 +35,8 @@
   "negligibleIngredientsForTaste": [
     "spice powder"
   ],
-  "totalWeightInGrams": 312,
-  "oneCupWeightInGramsAfterCooking": 104,
+  "totalWeightInGrams": 317,
+  "oneCupWeightInGramsAfterCooking": 158.5,
   "instructions": [],
   "tags": []
 }

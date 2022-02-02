@@ -2,15 +2,23 @@
   "ingredients": [
     {
       "id": "wheat-flour",
-      "quantity": "18 g"
+      "quantity": "25 g"
     },
     {
       "id": "groundnut-oil",
-      "quantity": "0.25 tsp"
+      "quantity": "0.5 tsp"
     },
     {
       "id": "salt",
       "quantity": "0.4 g"
+    },
+    {
+      "id": "potato",
+      "quantity": "15 g"
+    },
+    {
+      "id": "spinach",
+      "quantity": "5 g"
     }
   ],
   "discrete": true

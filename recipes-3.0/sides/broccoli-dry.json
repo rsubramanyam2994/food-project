@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "id": "broccoli",
+      "quantity": "200 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "3 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "2 tsp"
+    }
+  ],
+  "totalWeightInGrams": 212,
+  "oneCupWeightInGramsAfterCooking": 70,
+  "tags": []
+}
