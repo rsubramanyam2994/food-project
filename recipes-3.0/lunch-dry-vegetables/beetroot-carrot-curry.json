@@ -11,6 +11,10 @@
     {
       "id": "groundnut-oil",
       "quantity": "1 tsp"
+    },
+    {
+      "id": "salt",
+      "quantity": "1 g"
     }
   ],
   "totalWeightInGrams": 79.5,

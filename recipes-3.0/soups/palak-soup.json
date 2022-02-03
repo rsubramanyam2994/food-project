@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "id": "spinach",
+      "quantity": "50 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "1 g"
+    },
+    {
+      "id": "extra-virgin-olive-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "totalWeightInGrams": 55.5,
+  "oneCupWeightInGramsAfterCooking": 55.5,
+  "tags": []
+}

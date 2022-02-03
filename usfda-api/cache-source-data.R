@@ -34,9 +34,9 @@ unique_foods <- unique(foundation_foods_df[c("food_category", "food_description"
 saveRDS(unique_foods, paste0(wd, "unique_foods"))
 
 
-required_categories <- c("Cereal Grains and Pasta", "Dairy and Egg Products", "Fats and Oils", "Fruits and Fruit Juices", "Legumes and Legume Products", "Nut and Seed Products", "Spices and Herbs", "Vegetables and Vegetable Products")
+required_categories <- c("Cereal Grains and Pasta", "Fats and Oils", "Fruits and Fruit Juices", "Legumes and Legume Products", "Nut and Seed Products", "Spices and Herbs", "Vegetables and Vegetable Products")
 
-ingredient_nutrition_info <- ingredient_nutrition_info %>% filter(food_category %in% required_categories)
+ingredient_nutrition_info <- foundation_foods_df %>% filter(food_category %in% required_categories)
 
 vitamin_a <- ingredient_nutrition_info %>% filter(nutrient_number == "320") %>% filter(amount > 0) %>% 
   arrange(desc(amount))

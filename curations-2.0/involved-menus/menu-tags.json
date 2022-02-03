@@ -1,6 +1,6 @@
 {
   "menu-1": {
-    "missing": ["vitamin-k", "calcium"]
+    "missing": ["vitamin-k", "calcium", "zinc", "vitamin-b12", "vitamin-b3", "vitamin-e"]
   },
   "menu-2": {
     "missing": ["calcium", "zinc", "vitamin-a", "vitamin-b12", "vitamin-b3", "vitamin-e"]

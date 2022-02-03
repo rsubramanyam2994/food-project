@@ -10,7 +10,7 @@
     },
     {
       "id": "red-tomato",
-      "quantity": "50 g"
+      "quantity": "100 g"
     },
     {
       "id": "groundnut-oil",
@@ -18,11 +18,11 @@
     },
     {
       "id": "onion",
-      "quantity": "50 g"
+      "quantity": "100 g"
     },
     {
       "id": "salt",
-      "quantity": "3 g"
+      "quantity": "4 g"
     }
   ],
   "approxIngredients": [
@@ -35,8 +35,8 @@
   "negligibleIngredientsForTaste": [
     "spice powder"
   ],
-  "totalWeightInGrams": 317,
-  "oneCupWeightInGramsAfterCooking": 158.5,
+  "totalWeightInGrams": 418,
+  "oneCupWeightInGramsAfterCooking": 139,
   "instructions": [],
   "tags": []
 }

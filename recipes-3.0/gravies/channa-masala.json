@@ -15,6 +15,10 @@
     {
       "id": "onion",
       "quantity": "30 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "2 g"
     }
   ],
   "totalWeightInGrams": 124.5,
