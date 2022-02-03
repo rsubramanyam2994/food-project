@@ -15,7 +15,7 @@ source_json <- readRDS(paste0(wd, "source_json"))
 foundation_foods_df <- read_foundation_food_data(source_json)
 saveRDS(foundation_foods_df, paste0(wd, "foundation_foods_df"))
 
-food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "spices", "custom"))
+food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "spices", "custom", "supplements"))
 saveRDS(food_ndb_mapping, paste0(wd, "food_ndb_mapping")) 
 
 metadata <- get_metadata(source_json)

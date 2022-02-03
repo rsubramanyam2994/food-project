@@ -1,0 +1,27 @@
+{
+  "ingredients": [
+    {
+      "id": "carrot",
+      "quantity": "80 g",
+      "approxAmountDescription": "1 cup diced is 130 grams"
+    },
+    {
+      "id": "salt",
+      "quantity": "1 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "negligibleIngredientsForTaste": [
+    "spice powder"
+  ],
+  "totalWeightInGrams": 84.5,
+  "oneCupWeightInGramsAfterCooking": 84.5,
+  "numberOfPeopleWhoCanBeServed": 1,
+  "instructions": [],
+  "tags": []
+}
+
+

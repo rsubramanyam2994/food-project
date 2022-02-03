@@ -32,7 +32,7 @@
     },
     {
       "id": "oil-absorption",
-      "amount": 45,r
+      "amount": 45,
       "unit": "gram"
     },
     {
@@ -40,7 +40,6 @@
       "amount": 80,
       "unit": "gram"
     }
-    ]
   ],
   "approxIngredients": [],
   "negligibleIngredientsForTaste": [

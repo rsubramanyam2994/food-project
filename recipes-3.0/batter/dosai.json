@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    {
+      "id": "urad-dal",
+      "quantity": "6 g"
+    },
+    {
+      "id": "white-rice",
+      "quantity": "26 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "0.25 g"
+    },
+    {
+      "id": "sesame-oil",
+      "quantity": "1 tsp"
+    }
+  ],
+  "discrete": true,
+  "tags": ["breakfast-base", "dinner-base"]
+}
+
+

@@ -1,0 +1,31 @@
+{
+  "ingredients": [
+    {
+      "id": "cauliflower",
+      "quantity": "100 g"
+    },
+    {
+      "id": "sunflower-oil",
+      "quantity": "12 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "2 g"
+    },
+    {
+      "id": "corn-flour",
+      "quantity": "10 g"
+    },
+    {
+      "id": "white-flour",
+      "quantity": "20 g"
+    }
+  ],
+  "totalWeightInGrams": 144,
+  "oneCupWeightInGramsAfterCooking": 144,
+  "numberOfPeopleWhoCanBeServed": 1,
+  "instructions": [],
+  "tags": []
+}
+
+

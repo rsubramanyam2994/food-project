@@ -1,7 +1,7 @@
 {
   "ingredients": [
     {
-      "id": "tomato",
+      "id": "red-tomato",
       "quantity": "80 g",
       "approxDescription": "1 medium sized"
     },
@@ -14,12 +14,8 @@
       "quantity": "7 g"
     },
     {
-      "id": "tamarind",
-      "quantity": "20 g"
-    },
-    {
       "id": "ghee",
-      "quantity": "1 tsp"
+      "quantity": "5 g"
     },
     {
       "id": "mustard-seeds",
@@ -36,7 +32,7 @@
     "sambhar powder",
     "turmeric"
   ],
-  "totalWeightInGrams": 953,
+  "totalWeightInGrams": 933,
   "oneCupWeightInGramsAfterCooking": 220,
   "numberOfPeopleWhoCanBeServed": 4,
   "instructions": [],

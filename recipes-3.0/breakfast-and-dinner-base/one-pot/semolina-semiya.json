@@ -32,6 +32,10 @@
       "id": "green-peas",
       "quantity": "30 g",
       "approxAmountDescription": "3 tbsp"
+    },
+    {
+      "id": "carrot",
+      "quantity": "50 g"
     }
   ],
   "approxIngredients": [
@@ -41,8 +45,8 @@
   "negligibleIngredientsForTaste": [
     "spice powder"
   ],
-  "totalWeightInGrams": 477,
-  "oneCupWeightInGramsAfterCooking": 160,
+  "totalWeightInGrams": 263,
+  "oneCupWeightInGramsAfterCooking": 131.5,
   "numberOfPeopleWhoCanBeServed": 2,
   "instructions": [],
   "tags": [],
