@@ -1,0 +1,31 @@
+{
+  "ingredients": [
+    {
+      "id": "chayote",
+      "quantity": "160 g"
+    },
+    {
+      "id": "carrot",
+      "quantity": "80 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "4 g"
+    },
+    {
+      "id": "toor-dal",
+      "quantity": "0.25 cup"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "2 tsp"
+    }
+  ],
+  "totalWeightInGrams": 294,
+  "oneCupWeightInGramsAfterCooking": 147,
+  "numberOfPeopleWhoCanBeServed": 2,
+  "instructions": [],
+  "tags": ["vitamin-a", "lunch-kootu"]
+}
+
+
