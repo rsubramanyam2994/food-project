@@ -12,7 +12,9 @@ get_gram_multiplication_factor <- function(recipe_with_ndb_mapping) {
       return(data.frame(ndb_number = df$ndb_number, mult_factor = from_amount / 100))
     }
     
-    available_to_units = relevant_food_portions %>% filter(ndb_number == df$ndb_number)
+
+    available_to_units = relevant_food_portions %>% filter(ndb_number == df$ndb_number) %>% group_by(modifier) %>% 
+      slice(n()) %>% ungroup() %>% data.frame()
     
     if (from_unit == "tsp") {
       if ("tsp" %in% available_to_units$modifier) {

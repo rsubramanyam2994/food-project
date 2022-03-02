@@ -1,12 +1,13 @@
-read_foundation_food_data <- function(usfda_data) {
+read_foundation_food_data <- function(source_json) {
   
-  custom_data <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.json")) %>% ldply %>% select(-.id) %>% 
-    mutate()
+  custom_data <- read.csv("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.csv") %>% mutate(ndb_number = as.integer(ndb_number), amount = as.numeric(amount))
+  
+  # custom_data <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.json")) %>% ldply %>% select(-.id)
   
   metadata <- get_metadata(source_json)
   
   i <- 1
-  usfda_foundation_foods <- ldply(usfda_data$SRLegacyFoods$foodNutrients, function(x) {
+  usfda_foundation_foods <- ldply(source_json$SRLegacyFoods$foodNutrients, function(x) {
     x <- metadata[i, ] %>% cbind(
       data.frame(nutrient_number = x$nutrient$number,
                  nutrient_name = x$nutrient$name,
@@ -54,9 +55,9 @@ get_food_ndb_mapping <- function(food_types) {
   return(food_ndb_mapping)
 }
 
-get_food_portions <- function(sr_legacy_data, metadata) {
+get_food_portions <- function(source_json, metadata) {
   j <- 1
-  food_portions_usfda <- ldply(sr_legacy_data$SRLegacyFoods$foodPortions, function(x) {
+  food_portions_usfda <- ldply(source_json$SRLegacyFoods$foodPortions, function(x) {
     
     # print(j)
     # x = sr_legacy_data$SRLegacyFoods$foodPortions[[96]]

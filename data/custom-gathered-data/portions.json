@@ -2,23 +2,16 @@
   {
     "food_category": "custom",
     "food_description": "salt",
-    "ndb_number": "000001",
+    "ndb_number": "10000001",
     "modifier": "tsp",
     "gram_weight": 6
   },
   {
     "food_category": "custom",
     "food_description": "sugar",
-    "ndb_number": "000002",
+    "ndb_number": "10000002",
     "modifier": "tsp",
     "gram_weight": 4.2
-  },
-  {
-    "food_category": "custom",
-    "food_description": "semolina-vermicelli",
-    "ndb_number": "000003",
-    "modifier": "cup",
-    "gram_weight": 100
   },
   {
     "food_category": "custom",
@@ -26,5 +19,12 @@
     "ndb_number": "1116",
     "modifier": "cup",
     "gram_weight": 245
+  },
+  {
+    "food_category": "custom",
+    "food_description": "semolina-vermicelli",
+    "ndb_number": "20466",
+    "modifier": "cup",
+    "gram_weight": 100
   }
 ]

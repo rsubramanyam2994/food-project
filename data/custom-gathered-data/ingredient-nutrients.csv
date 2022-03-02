@@ -1,0 +1,4 @@
+food_category,ndb_number,food_description,nutrient_number,nutrient_name,unit,amount
+custom,10000001,salt,100001,Chloride,mg,61242
+custom,10000001,salt,307,"Sodium, Na",mg,38758
+custom,10000002,sugar,269,"Sugars, total including NLEA",g,100
