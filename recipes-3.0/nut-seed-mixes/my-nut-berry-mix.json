@@ -13,12 +13,20 @@
       "quantity": "5 g"
     },
     {
+      "id": "cashew",
+      "quantity": "5 g"
+    },
+    {
       "id": "flaxseed",
       "quantity": "10 g"
     },
     {
       "id": "blueberry",
-      "quantity": "30 g"
+      "quantity": "20 g"
+    },
+    {
+      "id": "strawberry",
+      "quantity": "40 g"
     }
   ],
   "discrete": true

@@ -1,0 +1,27 @@
+{
+  "ingredients": [
+    {
+      "id": "cauliflower",
+      "quantity": "50 g"
+    },
+    {
+      "id": "salt",
+      "quantity": "1 g"
+    },
+    {
+      "id": "groundnut-oil",
+      "quantity": "1 tsp"
+    },
+    {
+      "id": "broccoli",
+      "quantity": "50 g"
+    }
+  ],
+  "totalWeightInGrams": 104.5,
+  "oneCupWeightInGramsAfterCooking": 104.5,
+  "numberOfPeopleWhoCanBeServed": 1,
+  "instructions": [],
+  "tags": []
+}
+
+

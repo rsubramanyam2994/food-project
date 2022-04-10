@@ -1,0 +1,19 @@
+time,food_name,quantity
+breakfast,blue-milk,0.33 cup
+breakfast,sugar,3 g
+breakfast,dosai,2 discrete
+breakfast,radish-sambar,0.5 cup
+breakfast,apple-with-skin,100 g
+breakfast,banana,80 g
+morning-snack,my-nut-berry-mix,1 discrete
+lunch,chowchow-carrot-kootu,0.75 cup
+lunch,broccoli-cauliflower-curry,1 cup
+lunch,curd,0.33 cup
+lunch,baked-papad,2 discrete
+lunch,white-rice,4 tbsp
+lunch,toor-dal,0.33 cup
+evening-snack,blue-milk,0.33 cup
+evening-snack,sugar,3 g
+evening-snack,coconut-water,250 g
+dinner,millet-pongal,1.25 cup
+dinner,coconut-chutney,2 tbsp
