@@ -14,11 +14,11 @@ per_recipe_macros_summary <- get_macro_summary_per_recipe(high_level_summary)
 per_meal_macros_summary <- get_macro_summary_per_meal_time(high_level_summary)
 
 body_weight <- 70
-macros_summary <- get_macros_summary(high_level_summary, body_weight)
+macros_summary <- get_macros_summary(high_level_summary)
 
 fat_micros_summary <- get_fat_micros_summary(high_level_summary)
 minerals_summary <- get_minerals_summary(high_level_summary)
-vitamins_summary <- get_vitamins_summary(high_level_summary)
+vitamins_summary <- get_vitamins_summary(high_level_summary, body_weight)
 
 protein_grams_daily_requirement <- 60
 proteins_summary <- get_proteins_summary(high_level_summary, protein_grams_daily_requirement)

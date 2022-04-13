@@ -84,7 +84,7 @@ get_proteins_summary <- function(high_level_summary, daily_protein_requirement) 
 }
 
 
-get_vitamins_summary <- function(high_level_summary) {
+get_vitamins_summary <- function(high_level_summary, body_weight) {
   vitamins <- high_level_summary %>% filter(str_detect(path, "vitamins"))
   
   vitamin_names <- lapply(str_split(vitamins$path, "\\."), function(x) {
@@ -158,7 +158,7 @@ get_minerals_summary <- function(high_level_summary) {
   
   minerals_rda <- rbind(macro_minerals_rda, trace_minerals_rda) %>% 
     mutate(rda = as.numeric(rda), ul = as.numeric(ul)) %>% 
-    mutate(required_amount = if_else(!is.na(rda), rda, ai)) %>% 
+    mutate(required_amount = if_else(!is.na(rda), rda, as.numeric(ai))) %>% 
     mutate(upper_limit = if_else(!is.na(ul), ul, required_amount)) %>% 
     filter(!is.na(required_amount)) %>% 
     transmute(element = .id,
@@ -184,7 +184,7 @@ get_macros_rda <- function(body_weight = 70) {
   ))
 }
 
-get_macros_summary <- function(high_level_summary, body_weight) {
+get_macros_summary <- function(high_level_summary) {
   
   macros_perc <- get_macro_perc(high_level_summary)
   actual_consumed <- data.frame(
@@ -220,7 +220,7 @@ extract_num_df <- function(df) {
 }
 
 get_macros_deficiency_stats <- function(macros_summary) {
-  foo <- extract_num_df(macros_summary)
+  extract_num_df(macros_summary)
 }
 
 
@@ -228,8 +228,8 @@ get_micros_deficiency_stats <- function(micros_summary) {
   extract_num_df(micros_summary) %>% 
     mutate(ul_num = if_else(is.na(ul_num), 3 * rda_num, ul_num)) %>%
     mutate(consumption_status = "adequate") %>% 
-    mutate(consumption_status = if_else(actual_consumed_num < 0.9 * rda_num, "deficient", consumption_status)) %>% 
-    mutate(consumption_status = if_else(actual_consumed_num > 1.1 * ul_num, "excess", consumption_status)) %>% 
+    mutate(consumption_status = if_else(actual_consumed_num < 0.8 * rda_num, "deficient", consumption_status)) %>% 
+    mutate(consumption_status = if_else(actual_consumed_num > 1.2 * ul_num, "excess", consumption_status)) %>% 
     mutate(consumption_status = if_else(is.na(ul_num), "adequate", consumption_status)) %>%
     select(-matches('num')) %>% filter(!(element %in% c("fluoride", "vitamin-d", "omega-3.DHA", "omega-3.EPA")))
 } 
