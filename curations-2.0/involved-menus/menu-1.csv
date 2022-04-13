@@ -1,7 +1,7 @@
 time,food_name,quantity
 breakfast,blue-milk,0.33 cup
-breakfast,sugar,6 g
-breakfast,wheat-bread,50 g
+breakfast,sugar,4 g
+breakfast,oats-upma,1 cup
 breakfast,apple-with-skin,100 g
 breakfast,kiwi,50 g
 breakfast,guava,50 g
@@ -13,7 +13,7 @@ lunch,white-rice,4 tbsp
 lunch,toor-dal,0.33 cup
 evening-snack,my-nut-berry-mix,1 discrete
 evening-snack,blue-milk,0.33 cup
-evening-snack,sugar,6 g
+evening-snack,sugar,4 g
 evening-snack,coconut-water,250 g
 dinner,chapathi,3 discrete
 dinner,channa-masala,1 cup

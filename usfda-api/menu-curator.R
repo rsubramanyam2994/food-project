@@ -20,7 +20,7 @@ fat_micros_summary <- get_fat_micros_summary(high_level_summary)
 minerals_summary <- get_minerals_summary(high_level_summary)
 vitamins_summary <- get_vitamins_summary(high_level_summary)
 
-protein_grams_daily_requirement <- 50
+protein_grams_daily_requirement <- 60
 proteins_summary <- get_proteins_summary(high_level_summary, protein_grams_daily_requirement)
 
 micros_summary <- rbind.fill(fat_micros_summary, minerals_summary, vitamins_summary, proteins_summary)
