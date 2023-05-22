@@ -1,15 +1,15 @@
 time,food_name,quantity
 breakfast,blue-milk,0.33 cup
 breakfast,oats-upma,1 cup
+breakfast,coconut-water,1 cup
 morning-snack,apple-without-skin,100 g
 morning-snack,pomegranate,50 g
 lunch,white-rice,4 tbsp
 lunch,keerai-kootu,1 cup
 lunch,chowchow-carrot-kootu,1 cup
-lunch,papad,1 discrete
+lunch,fried-papad,1 discrete
 lunch,curd,0.33 cup
-lunch,white-rice,6 tbsp
-lunch,my-high-dal-mix,1 discrete
+lunch,my-dal-mix,1 discrete
 evening-snack,blue-milk,0.33 cup
 evening-snack,my-nut-mix,1 discrete
 evening-snack,green-gram-sprout,50 g

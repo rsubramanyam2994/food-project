@@ -22,20 +22,13 @@
       "quantity": "80 g"
     },
     {
-      "id": "beans",
-      "quantity": "10 g"
-    },
-    {
       "id": "green-peas",
       "quantity": "20 g"
     }
   ],
-
-  "totalWeightInGrams": 284,
-  "oneCupWeightInGramsAfterCooking": 95,
+  "totalWeightInGrams": 274,
+  "oneCupWeightInGramsAfterCooking": 91,
   "numberOfPeopleWhoCanBeServed": 3,
   "instructions": [],
   "tags": []
 }
-
-
