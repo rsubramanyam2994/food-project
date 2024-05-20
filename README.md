@@ -18,24 +18,24 @@ nutrient_number -> Unique number for a nutrient
 - EDA
   -- To understand top providers of specific nutrients
 
-# Adding custom recipes
+# Adding a recipe
 
-1. Create file in recipes/ and ensure to fill all fields. Refer cauliflower-curry.json as a sample file.
-2. Ensure all ingredients have an entry in one-cup-to-grams/ in one of the files, else add one.
-3. Create a file for the ingredient in macros.json and micros.json which will later be populated using scripts
+- Add file to top level `recipes/` folder
+- Use correct names to make up the recipe
+- Try to use portions in grams if possible, if not, ensure above portions includes an entry for the unit you're using
+- Mark discrete:true for recipes that has discrete items, like a roti or taco.
 
-How to measure a recipe which involves water absorption? (boiling, steaming, etc)
+# Adding a meal plan
 
-1. Do steps to add a regular recipe as above along with the additional steps below2
-2. Add a flag called waterAbsorption: true to the recipe (or can derive this by doing totalWeight - sum of ingredients)
+- Refer meal plans in the `meal-plans/` folder
 
-How to measure a recipe which involves deep frying?
+# Follow through menu curator
 
-1. Do steps to add a regular recipe as above along with the additional steps below
-2. Weigh oil before and after frying and compute oil absorption. Add that amount of oil as an ingredient.
-
+- From the menu, convert recipes into the ingredients that make them up and keep ingredients as is
+- Based on the amount consumed of each recipe / ingredient, I compute how much of each type of nutrient is received from every recipe / ingredient.
+- Once I have nutritional data per ingredient per recipe per meal time, I compute various summary statistics on the same
+- I have hard coded RDA values for an Indian adult using ICMR data in `data/custom-gathered-data/rda-values.json`. I compute summary nutrition stats against RDA to see whether it suffices or not
 
 # TODO:
 
-- Antioxidants RDA analysis
-
+- RDA for Anti-oxidants

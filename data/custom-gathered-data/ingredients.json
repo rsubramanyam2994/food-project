@@ -29,5 +29,71 @@
       "unit": "g",
       "amount": 100
     }
+  ],
+  "milky-mist-skyr-plain": [
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 203,
+      "nutrient_name": "Protein",
+      "unit": "g",
+      "amount": 11.0
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 606,
+      "nutrient_name": "Fatty acids, total saturated",
+      "unit": "g",
+      "amount": 0.5
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 646,
+      "nutrient_name": "Fatty acids, total polyunsaturated",
+      "unit": "g",
+      "amount": 1
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 208,
+      "nutrient_name": "Energy",
+      "unit": "kcal",
+      "amount": 495.5
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 205,
+      "nutrient_name": "Carbohydrate, by difference",
+      "unit": "g",
+      "amount": 9.5
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 307,
+      "nutrient_name": "Sodium, Na",
+      "unit": "mg",
+      "amount": 144
+    },
+    {
+      "food_category": "Dairy and Egg Products",
+      "ndb_number": 10000003,
+      "food_description": "MILKY MIST, SKYR, PLAIN",
+      "nutrient_number": 301,
+      "nutrient_name": "Calcium, Ca",
+      "unit": "mg",
+      "amount": 320
+    }
+    
   ]
 }

@@ -2,10 +2,10 @@ library(stringr)
 library(plyr)
 library(dplyr)
 
-source("./usfda-api/R/fns-load-env.R")
-source("./usfda-api/R/fns-core.R")
-source("./usfda-api/R/fns-recipe-nutrition.R")
-source("./usfda-api/R/fns-summary.R")
+source("./R/fns-load-env.R")
+source("./R/fns-core.R")
+source("./R/fns-recipe-nutrition.R")
+source("./R/fns-summary.R")
 
 menu_for_a_day <- read.csv(paste0(getwd(), "/meal-plans/daily-protein-intake.csv"), stringsAsFactors = F) %>% split_quantity
 high_level_summary <- get_high_level_summary(menu_for_a_day)

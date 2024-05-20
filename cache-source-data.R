@@ -1,4 +1,4 @@
-source("./usfda-api/R/fns-source-transform.R")
+source("./R/fns-source-transform.R")
 
 library(stringr)
 library(plyr)
