@@ -7,8 +7,8 @@ library(dplyr)
 
 wd = paste0(getwd(), "/cache/")
 
-# source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
-# saveRDS(source_json, paste0(wd, "source_json"))
+source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
+saveRDS(source_json, paste0(wd, "source_json"))
 
 source_json <- readRDS(paste0(wd, "source_json"))
 
@@ -24,15 +24,15 @@ food_portions = get_food_portions(source_json, metadata) %>% filter(ndb_number %
   mutate(modifier = str_replace(modifier, "tablespoon", "tbsp"))
 saveRDS(food_portions, paste0(wd, "food_portions"))
 
-conversion_factors <- get_conversion_factors(source_json)
-saveRDS(conversion_factors, paste0(wd, "conversion_factors"))
+# conversion_factors <- get_conversion_factors(source_json)
+# saveRDS(conversion_factors, paste0(wd, "conversion_factors"))
 
+## EDA
 unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number", "unit")])
-saveRDS(unique_nutrients, paste0(wd, "unique_nutrients"))
+# saveRDS(unique_nutrients, paste0(wd, "unique_nutrients"))
 
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
-saveRDS(unique_foods, paste0(wd, "unique_foods"))
-
+# saveRDS(unique_foods, paste0(wd, "unique_foods"))
 
 required_categories <- c("Cereal Grains and Pasta", "Fats and Oils", "Fruits and Fruit Juices", "Legumes and Legume Products", "Nut and Seed Products", "Spices and Herbs", "Vegetables and Vegetable Products")
 
@@ -82,8 +82,3 @@ iron <- ingredient_nutrition_info %>% filter(nutrient_number == "303") %>% filte
 fluoride <- ingredient_nutrition_info %>% filter(nutrient_number == "313") %>% filter(amount > 0) %>% arrange(desc(amount))
 
 selenium <- ingredient_nutrition_info %>% filter(nutrient_number == "317") %>% filter(amount > 0) %>% arrange(desc(amount))
-
-
-
-a <- ingredient_nutrition_info %>% filter(ndb_number == "20038")
-

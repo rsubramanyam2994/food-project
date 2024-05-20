@@ -5,7 +5,6 @@ split_quantity <- function(df) {
   df %>% select(-quantity) %>% mutate(amount = amount, unit = unit)
 }
 
-# TODO: Update signature to make it testable 
 convert_to_cups <- function(menu) {
   
   ddply(menu, c("time", "food_name"), function(df) {
@@ -44,7 +43,7 @@ check_if_all_ingredients_has_mapping <- function(df1, df2) {
 
 read_recipe <- function(recipe_name) {
   
-  available_recipes <- list.files("/Users/subramanyam/subbu/food-project/recipes-3.0", recursive = T, full.names = T)
+  available_recipes <- list.files("/Users/subramanyam/subbu/food-project/recipes", recursive = T, full.names = T)
   index = available_recipes %>% str_detect(., recipe_name) %>% which
   
   if (length(index) == 0) {

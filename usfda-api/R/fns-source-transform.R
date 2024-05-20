@@ -1,8 +1,5 @@
 read_foundation_food_data <- function(source_json) {
-  
-  custom_data <- read.csv("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.csv") %>% mutate(ndb_number = as.integer(ndb_number), amount = as.numeric(amount))
-  
-  # custom_data_2 <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredient-nutrients.json")) %>% ldply %>% select(-.id) %>% mutate(amount = as.numeric(amount))
+  custom_data <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredients.json")) %>% ldply %>% select(-.id) %>% mutate(amount = as.numeric(amount))
   
   metadata <- get_metadata(source_json)
   

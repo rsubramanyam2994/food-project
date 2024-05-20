@@ -1,3 +1,4 @@
+# To load data frames for recipe nutrition calculator
 get_measured_nutrients <- function() {
   nutrient_codes_to_extract_list <- jsonlite::fromJSON(paste0(getwd(), "/data/usfda-mapping/nutrient-code-mapping.json")) %>% unlist(., recursive = TRUE)
   nutrient_codes_df <- data.frame(nutrient_number = nutrient_codes_to_extract_list %>% as.character, row.names = NULL) %>% 
