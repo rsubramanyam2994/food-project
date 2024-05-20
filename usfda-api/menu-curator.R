@@ -7,13 +7,13 @@ source("./usfda-api/R/fns-core.R")
 source("./usfda-api/R/fns-recipe-nutrition.R")
 source("./usfda-api/R/fns-summary.R")
 
-menu_for_a_day <- read.csv(paste0(getwd(), "/curations-2.0/involved-menus/new-menu-1.csv"), stringsAsFactors = F) %>% split_quantity
+menu_for_a_day <- read.csv(paste0(getwd(), "/curations/daily-protein-intake.csv"), stringsAsFactors = F) %>% split_quantity
 high_level_summary <- get_high_level_summary(menu_for_a_day)
 
 per_recipe_macros_summary <- get_macro_summary_per_recipe(high_level_summary)
 per_meal_macros_summary <- get_macro_summary_per_meal_time(high_level_summary)
 
-body_weight <- 70
+body_weight <- 72
 macros_summary <- get_macros_summary(high_level_summary)
 
 fat_micros_summary <- get_fat_micros_summary(high_level_summary)

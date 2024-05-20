@@ -23,6 +23,10 @@
     {
       "id": "banana",
       "quantity": "50 g"
+    },
+    {
+      "id": "apple",
+      "quantity": "50 g"
     }
   ],
   "discrete": true

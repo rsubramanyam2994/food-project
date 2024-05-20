@@ -26,5 +26,12 @@
     "ndb_number": "20466",
     "modifier": "cup",
     "gram_weight": 100
+  },
+  {
+    "food_category": "custom",
+    "food_description": "semolina-vermicelli",
+    "ndb_number": "20466",
+    "modifier": "g",
+    "gram_weight": 100
   }
 ]

@@ -2,18 +2,18 @@
   "salt": [
     {
       "food_category": "custom",
-      "ndb_number": "000001",
+      "ndb_number": 10000001,
       "food_description": "salt",
-      "nutrient_number": "100001",
+      "nutrient_number": 100001,
       "nutrient_name": "Chloride",
       "unit": "mg",
       "amount": 61242
     },
     {
       "food_category": "custom",
-      "ndb_number": "000001",
+      "ndb_number": 10000001,
       "food_description": "salt",
-      "nutrient_number": "307",
+      "nutrient_number": 307,
       "nutrient_name": "Sodium, Na",
       "unit": "mg",
       "amount": 38758
@@ -22,9 +22,9 @@
   "sugar": [
     {
       "food_category": "custom",
-      "ndb_number": "000002",
+      "ndb_number": 10000002,
       "food_description": "sugar",
-      "nutrient_number": "269",
+      "nutrient_number": 269,
       "nutrient_name": "Sugars, total including NLEA",
       "unit": "g",
       "amount": 100

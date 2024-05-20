@@ -1,12 +1,8 @@
 {
   "ingredients": [
     {
-      "id": "banana",
-      "quantity": "80 g"
-    },
-    {
       "id": "almond",
-      "quantity": "5 g"
+      "quantity": "10 g"
     },
     {
       "id": "pista",
@@ -14,16 +10,8 @@
     },
     {
       "id": "walnut",
-      "quantity": "5 g"
-    },
-    {
-      "id": "cashew",
-      "quantity": "5 g"
-    },
-    {
-      "id": "flaxseed",
       "quantity": "10 g"
-    }
+    } 
   ],
   "discrete": true
 }

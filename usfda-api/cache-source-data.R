@@ -86,3 +86,4 @@ selenium <- ingredient_nutrition_info %>% filter(nutrient_number == "317") %>% f
 
 
 a <- ingredient_nutrition_info %>% filter(ndb_number == "20038")
+

@@ -98,6 +98,7 @@ get_high_level_raw_foods_summary <- function(menu) {
   
   mult_factors <- get_gram_multiplication_factor(eaten_raw)
   
+  
   ingredient_nutrition_info %>% filter(ndb_number %in% mult_factors$ndb_number) %>% merge(., mult_factors %>% select(-c(amount, unit)), by = c("ndb_number")) %>% mutate(nutrient_number = as.character(nutrient_number)) %>% merge(., measureable_nutrients, by = c("nutrient_number")) %>% 
     transmute(time = time, recipe = recipe, ingredient = ingredient, nutrient = nutrient_name.x, path = nutrient_name.y, nutrient_number = nutrient_number, amount = round(amount * mult_factor, 2), unit = unit, ndb_number = ndb_number, portion_factor = 1, mult_factor = mult_factor)
 }
