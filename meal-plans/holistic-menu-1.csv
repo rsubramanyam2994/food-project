@@ -1,0 +1,16 @@
+time,food_name,quantity
+breakfast,green-gram-sprout,50 g
+breakfast,milky-mist-skyr-plain,100 g
+breakfast,kiwi,100 g
+breakfast,apple-with-skin,100 g
+breakfast,oats,40 g
+lunch,carrot,100 g
+lunch,broccoli,100 g
+lunch,my-dal-mix,1 discrete
+lunch,white-rice,0.25 cup
+lunch,curd,0.5 cup
+evening,my-nut-mix,1 discrete
+evening,flaxseed,10 g
+evening,blue-milk,100 g
+dinner,chapathi,2 discrete
+dinner,curd,0.25 cup

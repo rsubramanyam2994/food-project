@@ -1,6 +1,7 @@
 # The Food Project
 
 Based on USFDA data available in - https://fdc.nal.usda.gov/download-datasets.html
+ICMR RDA - https://www.fssai.gov.in/upload/advisories/2020/01/5e159e0a809bbLetter_RDA_08_01_2020.pdf
 
 ndb_number -> Unique number for an ingredient
 nutrient_number -> Unique number for a nutrient
@@ -10,13 +11,21 @@ nutrient_number -> Unique number for a nutrient
 - Download data from above link and update path
 - Look at all ingredients and get an idea of the foods. This df might also have branded foods.
 - Ensure `food_ndb_mapping` has mappings for all of your ingredients. Add custom ingredients or add mapping for existing ingredients
-  -- Add custom ingredients to `data/custom-gathered-data/ingredients.json`. I've added salt and sugar alone here.
-  -- Add mapping between ndb_number to a standard name within the food project's terminology in `data/usfda-mapping/<category>/ndb-mapping.json`. I've added files for all the vegetarian ingredients I use.
+
+## Adding custom ingredinet
+
+- Add entries to `data/custom-gathered-data/ingredients.json`. I've added salt and sugar alone here.
+- Add mapping between ndb_number to a standard name within the food project's terminology in `data/usfda-mapping/<category>/ndb-mapping.json`. I've added files for all the vegetarian ingredients I use.
+
+## Adding portions info
+
 - Read food portions from usfda data
   -- Can extend this by adding portions to `data/custom-gathered-data/portions.json`
   -- This is to make writing recipes easier, else can always give grams
-- EDA
-  -- To understand top providers of specific nutrients
+
+## EDA
+
+- To understand top providers of specific nutrients
 
 # Adding a recipe
 
@@ -28,6 +37,7 @@ nutrient_number -> Unique number for a nutrient
 # Adding a meal plan
 
 - Refer meal plans in the `meal-plans/` folder
+- Eaten recipe quantities should be given in terms of cups if non-discrete or grams. Eaten raw ingredient quantities can be given in grams or in cups if conversion info is available
 
 # Follow through menu curator
 

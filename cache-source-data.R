@@ -39,15 +39,16 @@ required_categories <- c("Cereal Grains and Pasta", "Fats and Oils", "Fruits and
 ingredient_nutrition_info <- foundation_foods_df %>% filter(food_category %in% required_categories)
 
 vitamin_a <- ingredient_nutrition_info %>% filter(nutrient_number == "320") %>% filter(amount > 0) %>% 
-  arrange(desc(amount))
+  arrange(desc(amount)) %>% filter(food_category == "Vegetables and Vegetable Products") %>% filter(str_detect(food_description, "raw")) %>% select(food_description, amount)
 
 vitamin_d <- ingredient_nutrition_info %>% filter(nutrient_number == "324") %>% filter(amount > 0) %>% 
   arrange(desc(amount))
 
 vitamin_e <- ingredient_nutrition_info %>% filter(nutrient_number == "323") %>% filter(amount > 0) %>% 
-  arrange(desc(amount))
+  arrange(desc(amount)) %>% filter(food_category == "Nut and Seed Products")
 
-vitamin_k <- ingredient_nutrition_info %>% filter(nutrient_number %in% c("428", "429", "430")) %>% filter(amount > 0) %>% arrange(desc(amount))
+vitamin_k <- ingredient_nutrition_info %>% filter(nutrient_number %in% c("428", "429", "430")) %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
+  filter(food_category == "Vegetables and Vegetable Products") %>% filter(str_detect(food_description, "raw")) %>% select(food_description, amount)
 
 vitamin_b_1 <- ingredient_nutrition_info %>% filter(nutrient_number == "404") %>% filter(amount > 0) %>% arrange(desc(amount))
 
@@ -61,9 +62,18 @@ vitamin_b_6 <- ingredient_nutrition_info %>% filter(nutrient_number == "415") %>
 
 vitamin_b_12 <- ingredient_nutrition_info %>% filter(nutrient_number == "418") %>% filter(amount > 0) %>% arrange(desc(amount))
 
+folate_b9 <- ingredient_nutrition_info %>% filter(nutrient_number == "435") %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
+  filter(food_category %in% c("Vegetables and Vegetable Products", "Cereal Grains and Pasta", "Fruits and Fruit Juices", "Legumes and Legume Products")) %>% 
+  filter(str_detect(food_description, "raw")) %>% select(food_category, food_description, amount)
+
+fiber <- ingredient_nutrition_info %>% filter(nutrient_number == "291") %>% filter(amount > 0) %>% arrange(desc(amount))
+
 vitamin_c <- ingredient_nutrition_info %>% filter(nutrient_number == "401") %>% filter(amount > 0) %>% arrange(desc(amount))
 
-calcium <- ingredient_nutrition_info %>% filter(nutrient_number == "301") %>% filter(amount > 0) %>% arrange(desc(amount))
+calcium <- ingredient_nutrition_info %>% filter(nutrient_number == "301") %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
+  filter(food_category %in% c("Vegetables and Vegetable Products", "Cereal Grains and Pasta", "Fruits and Fruit Juices", "Legumes and Legume Products")) %>% 
+  filter(str_detect(food_description, "raw")) %>% select(food_category, food_description, amount)
+
 
 potassium <- ingredient_nutrition_info %>% filter(nutrient_number == "306") %>% filter(amount > 0) %>% arrange(desc(amount))
 
@@ -77,7 +87,8 @@ copper <- ingredient_nutrition_info %>% filter(nutrient_number == "312") %>% fil
 
 manganese <- ingredient_nutrition_info %>% filter(nutrient_number == "315") %>% filter(amount > 0) %>% arrange(desc(amount))
 
-iron <- ingredient_nutrition_info %>% filter(nutrient_number == "303") %>% filter(amount > 0) %>% arrange(desc(amount))
+iron <- ingredient_nutrition_info %>% filter(nutrient_number == "303") %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
+  select(food_category, food_description, amount)
 
 fluoride <- ingredient_nutrition_info %>% filter(nutrient_number == "313") %>% filter(amount > 0) %>% arrange(desc(amount))
 
