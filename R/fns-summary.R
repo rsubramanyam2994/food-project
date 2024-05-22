@@ -180,7 +180,7 @@ get_macros_rda <- function(body_weight = 70) {
   return(data.frame(
     element = c("protein", "protein-grams", "carbohydrate", "carb-grams", "fat", "fat-grams", "saturated-fat-perc", "saturated-fat-grams", "mufa", "pufa", "fiber", "calories"),
     lower_limit = c("10 %", paste0(0.8 * body_weight, " g"), "50 %", NA, "20 %", NA, "0 %", "0 g", "5 %", "5 %", "30 g", NA),
-    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", NA, "30 %", NA, "5 %", "13 g", "15 %", "15 %", "38 g", NA)
+    upper_limit = c("20 %", paste0(1.2 * body_weight, " g"),  "60 %", NA, "30 %", NA, "6 %", "13 g", "15 %", "15 %", "38 g", NA)
   ))
 }
 
