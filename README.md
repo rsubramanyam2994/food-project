@@ -1,16 +1,13 @@
 # The Food Project
 
-This project contains scripts to explore USFDA data and scripts to curate meal plans and recipes.
-
-Based on USFDA data available in - https://fdc.nal.usda.gov/download-datasets.html
-ICMR RDA - https://www.fssai.gov.in/upload/advisories/2020/01/5e159e0a809bbLetter_RDA_08_01_2020.pdf
+This project contains scripts to explore USFDA data and scripts to curate meal plans and recipes. Refer https://www.subbusworld.com/articles/how-i-decide-what-to-eat for the context of this project.
 
 # Setup
 
 Before running the scripts, please install the necessary packages used in the scripts. You can do this by running the following command in R console:
 
 ```R
- install.packages(c("stringr", "plyr", "dplyr"))
+install.packages(c("stringr", "plyr", "dplyr"))
 ```
 
 # usfda-eda.R
@@ -26,7 +23,7 @@ To add custom portions info
 
 - Add entries to `data/custom-gathered-data/portions.json`. This is to make writing recipes easier, else can always give grams
 
-# menu-curator.R
+# meal-plan-analyzer.R
 
 This script computes the micros and macros of a meal plan and compares it with RDA values hard coded for an Indian adult male as per ICMR guidelines. (Refer `data/custom-gathered-data/rda-values.json`)
 
