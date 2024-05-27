@@ -19,6 +19,10 @@
     {
       "id": "peanut-butter",
       "quantity":"10 g"
+    },
+    {
+      "id": "flaxseed",
+      "quantity": "10 g"
     }
   ],
   "discrete": true

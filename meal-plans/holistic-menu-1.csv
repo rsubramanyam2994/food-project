@@ -1,18 +1,18 @@
 time,food_name,quantity
-breakfast,oats,30 g
-breakfast,my-nut-mix,1 discrete
-breakfast,flaxseed,10 g
+breakfast,oats,50 g
+breakfast,seeds-nut-mix,1 discrete
 breakfast,kiwi,100 g
 breakfast,apple-with-skin,100 g
 breakfast,banana,80 g
+breakfast,blueberry,40 g
 lunch,carrot,100 g
 lunch,broccoli,100 g
-lunch,my-dal-mix,1 discrete
+lunch,toor-dal,50 g
 lunch,white-rice,0.25 cup
 lunch,curd,0.5 cup
 evening,green-gram-sprout,50 g
-evening,milky-mist-skyr-plain,100 g
-evening,blue-milk,100 g
+evening,milky-mist-skyr-plain-yoghurt,100 g
+evening,medium-fat-milk,100 g
 dinner,chapathi,2 discrete
 dinner,curd,0.25 cup
 dinner,sprouted-ragi-flour,50 g

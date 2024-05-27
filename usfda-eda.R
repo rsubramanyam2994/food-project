@@ -4,11 +4,7 @@ library(stringr)
 library(plyr)
 library(dplyr)
 
-
 wd = paste0(getwd(), "/cache/")
-
-source_json <- jsonlite::fromJSON(readLines(paste0("/Users/subramanyam/Downloads/FoodData_Central_sr_legacy_food_json_2021-10-28.json")))
-saveRDS(source_json, paste0(wd, "source_json"))
 
 source_json <- readRDS(paste0(wd, "source_json"))
 
@@ -16,7 +12,7 @@ foundation_foods_df <- read_foundation_food_data(source_json)
 saveRDS(foundation_foods_df, paste0(wd, "foundation_foods_df"))
 
 food_ndb_mapping <- get_food_ndb_mapping(c("fruits", "vegetables", "nuts", "grains", "oil", "processed-grains", "legumes", "processed", "dairy", "spices", "custom", "supplements"))
-saveRDS(food_ndb_mapping, paste0(wd, "food_ndb_mapping")) 
+saveRDS(food_ndb_mapping, paste0(wd, "food_ndb_mapping"))
 
 metadata <- get_metadata(source_json)
 
@@ -29,10 +25,8 @@ saveRDS(food_portions, paste0(wd, "food_portions"))
 
 ## EDA
 unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number", "unit")])
-# saveRDS(unique_nutrients, paste0(wd, "unique_nutrients"))
 
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
-# saveRDS(unique_foods, paste0(wd, "unique_foods"))
 
 required_categories <- c("Cereal Grains and Pasta", "Fats and Oils", "Fruits and Fruit Juices", "Legumes and Legume Products", "Nut and Seed Products", "Spices and Herbs", "Vegetables and Vegetable Products")
 
@@ -73,7 +67,6 @@ vitamin_c <- ingredient_nutrition_info %>% filter(nutrient_number == "401") %>% 
 calcium <- ingredient_nutrition_info %>% filter(nutrient_number == "301") %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
   filter(food_category %in% c("Vegetables and Vegetable Products", "Cereal Grains and Pasta", "Fruits and Fruit Juices", "Legumes and Legume Products")) %>% 
   filter(str_detect(food_description, "raw")) %>% select(food_category, food_description, amount)
-
 
 potassium <- ingredient_nutrition_info %>% filter(nutrient_number == "306") %>% filter(amount > 0) %>% arrange(desc(amount))
 

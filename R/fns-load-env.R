@@ -10,10 +10,10 @@ get_measured_nutrients <- function() {
 
 measureable_nutrients = get_measured_nutrients()
 
-ingredient_portions <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_portions")
-ingredient_ndb_mapping <- readRDS("/Users/subramanyam/subbu/food-project/cache/food_ndb_mapping") 
-ingredient_nutrition_info <- readRDS("/Users/subramanyam/subbu/food-project/cache/foundation_foods_df")
+wd = paste0(getwd(), "/cache/")
 
+ingredient_portions <- readRDS(paste0(wd, "food_portions"))
+ingredient_ndb_mapping <- readRDS(paste0(wd, "food_ndb_mapping")) 
+ingredient_nutrition_info <- readRDS(paste0(wd, "foundation_foods_df"))
 rdas_file_path <- paste0(getwd(), "/data/custom-gathered-data/rda-values.json")
-# conversion_factors <- readRDS("/Users/subramanyam/subbu/food-project/cache/conversion_factors")
 

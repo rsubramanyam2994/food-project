@@ -27,5 +27,3 @@ micros_summary <- rbind.fill(fat_micros_summary, minerals_summary, vitamins_summ
 
 macro_deficiency_stats <- get_macros_deficiency_stats(macros_summary)
 micro_deficiency_stats <- get_micros_deficiency_stats(micros_summary)
-
-

@@ -1,51 +1,41 @@
 # The Food Project
 
+This project contains scripts to explore USFDA data and scripts to curate meal plans and recipes.
+
 Based on USFDA data available in - https://fdc.nal.usda.gov/download-datasets.html
 ICMR RDA - https://www.fssai.gov.in/upload/advisories/2020/01/5e159e0a809bbLetter_RDA_08_01_2020.pdf
 
-ndb_number -> Unique number for an ingredient
-nutrient_number -> Unique number for a nutrient
+# Setup
 
-# Follow through cache-source-data
+Before running the scripts, please install the necessary packages used in the scripts. You can do this by running the following command in R console:
 
-- Download data from above link and update path
-- Look at all ingredients and get an idea of the foods. This df might also have branded foods.
-- Ensure `food_ndb_mapping` has mappings for all of your ingredients. Add custom ingredients or add mapping for existing ingredients
+```R
+ install.packages(c("stringr", "plyr", "dplyr"))
+```
 
-## Adding custom ingredinet
+# usfda-eda.R
 
-- Add entries to `data/custom-gathered-data/ingredients.json`. I've added salt and sugar alone here.
-- Add mapping between ndb_number to a standard name within the food project's terminology in `data/usfda-mapping/<category>/ndb-mapping.json`. I've added files for all the vegetarian ingredients I use.
+This script reads the USFDA data and does some basic EDA on the same. It also stitches custom gathered data with USFDA data. I have pre-cached USFDA data from above link within the cache folder, so you can run this script without having to download anything.
 
-## Adding portions info
+To add custom ingredients
 
-- Read food portions from usfda data
-  -- Can extend this by adding portions to `data/custom-gathered-data/portions.json`
-  -- This is to make writing recipes easier, else can always give grams
+- Add entries to `data/custom-gathered-data/ingredients.json`. I've added a few examples here. This should respect the format of data you see in `foundation_foods_df` in the above script
+- Add mapping between ndb_number to a standard name within the food project's terminology in `data/usfda-mapping/<category>/ndb-mapping.json`
 
-## EDA
+To add custom portions info
 
-- To understand top providers of specific nutrients
+- Add entries to `data/custom-gathered-data/portions.json`. This is to make writing recipes easier, else can always give grams
 
-# Adding a recipe
+# menu-curator.R
 
-- Add file to top level `recipes/` folder
-- Use correct names to make up the recipe
-- Try to use portions in grams if possible, if not, ensure above portions includes an entry for the unit you're using
-- Mark discrete:true for recipes that has discrete items, like a roti or taco.
+This script computes the micros and macros of a meal plan and compares it with RDA values hard coded for an Indian adult male as per ICMR guidelines. (Refer `data/custom-gathered-data/rda-values.json`)
 
-# Adding a meal plan
+Meal plans should be added to the `meal-plans/` folder. I've added one example there.
 
-- Refer meal plans in the `meal-plans/` folder
-- Eaten recipe quantities should be given in terms of cups if non-discrete or grams. Eaten raw ingredient quantities can be given in grams or in cups if conversion info is available
+Custom recipes can be added to the `recipes/` folder. Use correct ingredient names to make up the recipe. Use the same names as in `data/usfda-mapping/<category>/ndb-mapping.json`. Mark discrete:true for recipes that has discrete items, like a roti or taco.
 
-# Follow through menu curator
+The curator script does the following:
 
-- From the menu, convert recipes into the ingredients that make them up and keep ingredients as is
-- Based on the amount consumed of each recipe / ingredient, I compute how much of each type of nutrient is received from every recipe / ingredient.
-- Once I have nutritional data per ingredient per recipe per meal time, I compute various summary statistics on the same
-- I have hard coded RDA values for an Indian adult using ICMR data in `data/custom-gathered-data/rda-values.json`. I compute summary nutrition stats against RDA to see whether it suffices or not
-
-# TODO:
-
-- RDA for Anti-oxidants
+- Break down the menu into the ingredients that make them up
+- Compute nutritional value per ingredient x recipe x meal time
+- Compare above with the RDA values and compute the percentage of RDA met and figure out which nutrients are excess or deficient.

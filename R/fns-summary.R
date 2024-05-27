@@ -228,8 +228,8 @@ get_micros_deficiency_stats <- function(micros_summary) {
   extract_num_df(micros_summary) %>% 
     mutate(ul_num = if_else(is.na(ul_num), 3 * rda_num, ul_num)) %>%
     mutate(consumption_status = "adequate") %>% 
-    mutate(consumption_status = if_else(actual_consumed_num < 0.8 * rda_num, "deficient", consumption_status)) %>% 
-    mutate(consumption_status = if_else(actual_consumed_num > 1.2 * ul_num, "excess", consumption_status)) %>% 
+    mutate(consumption_status = if_else(actual_consumed_num < 0.95 * rda_num, "deficient", consumption_status)) %>% 
+    mutate(consumption_status = if_else(actual_consumed_num > 1 * ul_num, "excess", consumption_status)) %>% 
     mutate(consumption_status = if_else(is.na(ul_num), "adequate", consumption_status)) %>%
     select(-matches('num')) %>% filter(!(element %in% c("fluoride", "vitamin-d", "omega-3.DHA", "omega-3.EPA")))
 } 
