@@ -1,6 +1,8 @@
 # The Food Project
 
-This project contains scripts to explore USFDA data and scripts to curate meal plans and recipes. Refer https://www.subbusworld.com/articles/how-i-decide-what-to-eat for the context of this project.
+This project contains scripts to explore USFDA (US Food and Drug Administration) data and scripts to curate meal plans and recipes. I have used nutritional content data from USFDA available [here](https://fdc.nal.usda.gov/download-datasets.html) and RDA (Recommended Dietary Allowances) guidelines from a mix of ICMR (Indian Council of Medical Research) data available [here](https://www.fssai.gov.in/upload/advisories/2020/01/5e159e0a809bbLetter_RDA_08_01_2020.pdf) and [here](https://main.icmr.nic.in/sites/default/files/upload_documents/DGI_07th_May_2024_fin.pdf).
+
+Refer https://www.subbusworld.com/articles/how-i-decide-what-to-eat for more context on this project.
 
 # Setup
 
