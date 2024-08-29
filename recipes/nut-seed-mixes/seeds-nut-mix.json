@@ -2,7 +2,7 @@
   "ingredients": [
     {
       "id": "almond",
-      "quantity": "15 g"
+      "quantity": "10 g"
     },
     {
       "id": "pista",
@@ -11,18 +11,14 @@
     {
       "id": "walnut",
       "quantity": "15 g"
-    },
-    {
-      "id": "sunflower-seeds",
-      "quantity":"10 g"
-    },
+    },  
     {
       "id": "peanut-butter",
       "quantity":"10 g"
     },
     {
       "id": "flaxseed",
-      "quantity": "10 g"
+      "quantity": "5 g"
     }
   ],
   "discrete": true
