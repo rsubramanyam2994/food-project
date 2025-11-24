@@ -1,18 +1,18 @@
 time,food_name,quantity
-breakfast,oats,20 g
+breakfast,alpino-choco-oats-muesli,70 g
 breakfast,seeds-nut-mix,1 discrete
-breakfast,kiwi,100 g
+breakfast,kiwi,50 g
 breakfast,apple-with-skin,100 g
 breakfast,banana,80 g
-breakfast,blueberry,40 g
+breakfast,blueberry,30 g
+breakfast,medium-fat-milk,150 g
 lunch,carrot,100 g
 lunch,broccoli,100 g
 lunch,toor-dal,50 g
 lunch,white-rice,0.25 cup
-lunch,curd,0.5 cup
+lunch,curd,150 g
 evening,green-gram-sprout,50 g
 evening,milky-mist-skyr-plain-yoghurt,100 g
-evening,medium-fat-milk,100 g
+dinner,curd,150 g
 dinner,chapathi,2 discrete
-dinner,curd,0.25 cup
 dinner,sprouted-ragi-flour,50 g

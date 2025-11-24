@@ -1,0 +1,11 @@
+[
+  {
+    "food_category": "custom",
+    "ndb_number": 10000002,
+    "food_description": "sugar",
+    "nutrient_number": 269,
+    "nutrient_name": "Sugars, total including NLEA",
+    "unit": "g",
+    "amount": 100
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "203": {
+    "nutrient_name": "Protein",
+    "unit": "g"
+  },
+  "204": {
+    "nutrient_name": "Total lipid (fat)",
+    "unit": "g"
+  },
+  "205": {
+    "nutrient_name": "Carbohydrate, by difference",
+    "unit": "g"
+  },
+  "208": {
+    "nutrient_name": "Energy",
+    "unit": "kcal"
+  },
+  "291": {
+    "nutrient_name": "Fiber, total dietary",
+    "unit": "g"
+  },
+  "301": {
+    "nutrient_name": "Calcium, Ca",
+    "unit": "mg"
+  },
+  "303": {
+    "nutrient_name": "Iron, Fe",
+    "unit": "mg"
+  },
+  "304": {
+    "nutrient_name": "Magnesium, Mg",
+    "unit": "mg"
+  },
+  "306": {
+    "nutrient_name": "Potassium, K",
+    "unit": "mg"
+  },
+  "307": {
+    "nutrient_name": "Sodium, Na",
+    "unit": "mg"
+  },
+  "309": {
+    "nutrient_name": "Zinc, Zn",
+    "unit": "mg"
+  },
+  "323": {
+    "nutrient_name": "Vitamin E (alpha-tocopherol)",
+    "unit": "mg"
+  },
+  "415": {
+    "nutrient_name": "Vitamin B-6",
+    "unit": "mg"
+  },
+  "417": {
+    "nutrient_name": "Folate, total",
+    "unit": "µg"
+  },
+  "418": {
+    "nutrient_name": "Vitamin B-12",
+    "unit": "µg"
+  },
+  "421": {
+    "nutrient_name": "Choline, total",
+    "unit": "mg"
+  },
+  "428": {
+    "nutrient_name": "Vitamin K (Menaquinone-4)",
+    "unit": "µg"
+  },
+  "429": {
+    "nutrient_name": "Vitamin K (Dihydrophylloquinone)",
+    "unit": "µg"
+  },
+  "430": {
+    "nutrient_name": "Vitamin K (phylloquinone)",
+    "unit": "µg"
+  },
+  "601": {
+    "nutrient_name": "Cholesterol",
+    "unit": "mg"
+  },
+  "605": {
+    "nutrient_name": "Fatty acids, total trans",
+    "unit": "g"
+  },
+  "606": {
+    "nutrient_name": "Fatty acids, total saturated",
+    "unit": "g"
+  },
+  "645": {
+    "nutrient_name": "Fatty acids, total monounsaturated",
+    "unit": "g"
+  },
+  "646": {
+    "nutrient_name": "Fatty acids, total polyunsaturated",
+    "unit": "g"
+  }
+}

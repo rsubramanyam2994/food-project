@@ -1,0 +1,218 @@
+[
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 203,
+    "nutrient_name": "Protein",
+    "unit": "g",
+    "amount": 22.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 204,
+    "nutrient_name": "Total lipid (fat)",
+    "unit": "g",
+    "amount": 18.6
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 205,
+    "nutrient_name": "Carbohydrate, by difference",
+    "unit": "g",
+    "amount": 51.34
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 208,
+    "nutrient_name": "Energy",
+    "unit": "kcal",
+    "amount": 457.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 291,
+    "nutrient_name": "Fiber, total dietary",
+    "unit": "g",
+    "amount": 11.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 301,
+    "nutrient_name": "Calcium, Ca",
+    "unit": "mg",
+    "amount": 61.4
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 303,
+    "nutrient_name": "Iron, Fe",
+    "unit": "mg",
+    "amount": 6.5
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 304,
+    "nutrient_name": "Magnesium, Mg",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 306,
+    "nutrient_name": "Potassium, K",
+    "unit": "mg",
+    "amount": 559.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 307,
+    "nutrient_name": "Sodium, Na",
+    "unit": "mg",
+    "amount": 13.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 309,
+    "nutrient_name": "Zinc, Zn",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 323,
+    "nutrient_name": "Vitamin E (alpha-tocopherol)",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 415,
+    "nutrient_name": "Vitamin B-6",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 417,
+    "nutrient_name": "Folate, total",
+    "unit": "\u00b5g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 418,
+    "nutrient_name": "Vitamin B-12",
+    "unit": "\u00b5g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 421,
+    "nutrient_name": "Choline, total",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 428,
+    "nutrient_name": "Vitamin K (Menaquinone-4)",
+    "unit": "\u00b5g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 429,
+    "nutrient_name": "Vitamin K (Dihydrophylloquinone)",
+    "unit": "\u00b5g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 430,
+    "nutrient_name": "Vitamin K (phylloquinone)",
+    "unit": "\u00b5g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 601,
+    "nutrient_name": "Cholesterol",
+    "unit": "mg",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 605,
+    "nutrient_name": "Fatty acids, total trans",
+    "unit": "g",
+    "amount": 0.0
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 606,
+    "nutrient_name": "Fatty acids, total saturated",
+    "unit": "g",
+    "amount": 3.1
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 645,
+    "nutrient_name": "Fatty acids, total monounsaturated",
+    "unit": "g",
+    "amount": 5.82
+  },
+  {
+    "food_category": "Cereal Grains and Pasta",
+    "ndb_number": 10000005,
+    "food_description": "Alpino choco oats muesli",
+    "nutrient_number": 646,
+    "nutrient_name": "Fatty acids, total polyunsaturated",
+    "unit": "g",
+    "amount": 8.86
+  }
+]

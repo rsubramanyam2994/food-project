@@ -1,5 +1,9 @@
 read_foundation_food_data <- function(source_json) {
-  custom_data <- jsonlite::fromJSON(readLines("/Users/subramanyam/subbu/food-project/data/custom-gathered-data/ingredients.json")) %>% ldply %>% select(-.id) %>% mutate(amount = as.numeric(amount))
+  ingredients_dir <- "/Users/sm/subbu/food-project/data/custom-gathered-data/ingredients"
+  ingredient_files <- list.files(ingredients_dir, pattern = "\\.json$", full.names = TRUE)
+  custom_data <- ldply(ingredient_files, function(f) {
+    jsonlite::fromJSON(readLines(f))
+  }) %>% mutate(amount = as.numeric(amount))
   
   metadata <- get_metadata(source_json)
   

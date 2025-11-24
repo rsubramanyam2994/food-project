@@ -25,6 +25,7 @@ saveRDS(food_portions, paste0(wd, "food_portions"))
 
 ## EDA
 unique_nutrients <- unique(foundation_foods_df[c("nutrient_name", "nutrient_number", "unit")])
+write.csv(unique_nutrients, "./data/unique_nutrients.csv", row.names = F)
 
 unique_foods <- unique(foundation_foods_df[c("food_category", "food_description", "ndb_number")])
 
@@ -58,7 +59,7 @@ vitamin_b_12 <- ingredient_nutrition_info %>% filter(nutrient_number == "418") %
 
 folate_b9 <- ingredient_nutrition_info %>% filter(nutrient_number == "435") %>% filter(amount > 0) %>% arrange(desc(amount)) %>% 
   filter(food_category %in% c("Vegetables and Vegetable Products", "Cereal Grains and Pasta", "Fruits and Fruit Juices", "Legumes and Legume Products")) %>% 
-  filter(str_detect(food_description, "raw")) %>% select(food_category, food_description, amount)
+  filter(str_detect(food_description, "raw")) %>% select(food_category, food_description, amount) %>% filter(!str_detect(food_description, "enriched"))
 
 fiber <- ingredient_nutrition_info %>% filter(nutrient_number == "291") %>% filter(amount > 0) %>% arrange(desc(amount))
 
